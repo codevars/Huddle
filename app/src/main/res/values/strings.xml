@@ -1,0 +1,46 @@
+<resources>
+
+    <string name="app_name">Huddle</string>
+
+    <string name="fullname">Full Name</string>
+
+    <string name="srmemail">SRM Email</string>
+
+    <string name="password">********</string>
+
+    <string name="registrationnumber">Registration Number</string>
+
+    <string name="swipelogin">SWIPE UP TO LOGIN</string>
+
+    <string name="registerlogin">SWIPE UP TO REGISTER</string>
+
+    <string name="icondesc">Image</string>
+
+    <string name="login">LOGIN</string>
+
+    <string name="register">REGISTER</string>
+
+    <string name="countrycode">+91</string>
+
+    <string name="mobilewarning">Please Enter Your Phone Number. We Will Send A SMS For OTP Verification. Carrier Charges May Apply. </string>
+
+    <string name="submit">SUBMIT</string>
+
+    <string name="otpsent">An OTP Has Been Sent To</string>
+
+    <string name="mobiledefault">9871495638</string>
+
+    <string name="username">Rishabh Singh</string>
+
+    <string name="useremail">reachrishabh@yahoo.com</string>
+
+    <string name="actionsettings">Settings</string>
+
+    <string name="draweropen">Open</string>
+
+    <string name="drawerclose">Close</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+</resources>

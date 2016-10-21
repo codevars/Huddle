@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#E8E8EE"
+    android:paddingBottom="10sp"
+    android:paddingLeft="10sp"
+    android:paddingRight="10sp"
+    android:paddingTop="10sp"
+    tools:context="com.srmvdp.huddle.PhoneNumber">
+
+
+    <LinearLayout
+        android:id="@+id/warningcontainer"
+        android:layout_width="match_parent"
+        android:layout_height="150sp"
+        android:background="@drawable/dialog">
+
+        <TextView
+            android:id="@+id/warning"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="@string/mobilewarning"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:paddingLeft="20sp"
+            android:paddingRight="10sp"
+            android:ems="2"
+            />
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/phonecontainer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/buttonpanel"
+        android:layout_below="@+id/warningcontainer"
+        android:layout_marginTop="6sp"
+        android:layout_marginBottom="200sp"
+        android:layout_centerInParent="true"
+        android:background="@drawable/dialog"
+        android:gravity="center"
+        >
+
+
+        <TextView
+            android:id="@+id/countrycode"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/countrycode"
+            android:textSize="30sp"
+            android:ems="2"
+            />
+
+
+        <EditText
+            android:id="@+id/p1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:gravity="center"
+            android:textSize="20dp"
+            android:maxLength="2"
+            android:inputType="number"
+            android:ems="1" />
+
+        <EditText
+            android:id="@+id/p2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/otp1"
+            android:gravity="center"
+            android:textSize="20dp"
+            android:maxLength="2"
+            android:inputType="number"
+            android:ems="1" />
+
+        <EditText
+            android:id="@+id/p3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:gravity="center"
+            android:textSize="20dp"
+            android:maxLength="2"
+            android:inputType="number"
+            android:ems="1" />
+
+        <EditText
+            android:id="@+id/p4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/otp3"
+            android:gravity="center"
+            android:textSize="20dp"
+            android:maxLength="2"
+            android:inputType="number"
+            android:ems="1" />
+
+        <EditText
+            android:id="@+id/p5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/otp3"
+            android:gravity="center"
+            android:textSize="20dp"
+            android:maxLength="2"
+            android:inputType="number"
+            android:ems="1" />
+
+        <EditText
+            android:id="@+id/p6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/otp3"
+            android:gravity="center"
+            android:textSize="20dp"
+            android:maxLength="2"
+            android:inputType="number"
+            android:ems="1" />
+
+        <EditText
+            android:id="@+id/p7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:gravity="center"
+            android:textSize="20dp"
+            android:maxLength="2"
+            android:inputType="number"
+            android:ems="1" />
+
+        <EditText
+            android:id="@+id/p8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/otp3"
+            android:gravity="center"
+            android:textSize="20dp"
+            android:maxLength="2"
+            android:inputType="number"
+            android:ems="1" />
+
+        <EditText
+            android:id="@+id/p9"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/otp3"
+            android:gravity="center"
+            android:textSize="20dp"
+            android:maxLength="2"
+            android:inputType="number"
+            android:ems="1" />
+
+        <EditText
+            android:id="@+id/p10"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/otp3"
+            android:gravity="center"
+            android:textSize="20dp"
+            android:maxLength="1"
+            android:inputType="number"
+            android:ems="1" />
+
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/buttonpanel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="-0sp"
+        android:background="?android:attr/selectableItemBackground"
+        >
+
+
+    <Button
+        android:id="@+id/submit"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@drawable/buttonmaterial"
+        android:layout_gravity="bottom"
+        android:text="Submit"
+        android:textColor="#ffffff"
+        android:textSize="20dp"
+        />
+
+    </LinearLayout>
+
+
+
+</RelativeLayout>

@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#E8E8EE"
+    tools:context="com.srmvdp.huddle.OTP">
+
+
+    <LinearLayout
+        android:id="@+id/sentcontainer"
+        android:layout_width="match_parent"
+        android:layout_height="220sp"
+        android:orientation="vertical"
+        android:background="@drawable/dialog">
+
+        <TextView
+            android:id="@+id/sent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="20sp"
+            android:gravity="center"
+            android:text="@string/otpsent"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textColor="@color/success"
+            android:paddingLeft="10sp"
+            android:ems="2"
+            />
+
+        <LinearLayout
+            android:id="@+id/phonecontainer"
+            android:layout_width="match_parent"
+            android:layout_height="100sp"
+            android:layout_below="@+id/sentcontainer"
+            android:layout_marginTop="20sp"
+            android:orientation="vertical"
+            >
+
+            <TextView
+                android:id="@+id/number"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="@string/mobiledefault"
+                android:background="@drawable/dashed"
+                android:textSize="30sp"
+                android:layout_gravity="center"
+                android:gravity="center"
+                />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/extrascontainer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/buttonpanel"
+        android:layout_below="@+id/sentcontainer"
+        android:layout_marginTop="5sp"
+        android:orientation="vertical"
+        android:background="@drawable/dialog"
+        android:gravity="bottom"
+        >
+
+
+        <LinearLayout
+            android:id="@+id/timercontainer"
+            android:layout_height="match_parent"
+            android:layout_width="match_parent"
+            android:gravity="center"
+            android:layout_weight="1"
+            >
+
+            <ImageView
+                android:id="@+id/imagetimer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/timer"
+                android:layout_marginRight="10sp"
+                android:layout_gravity="center" />
+
+            <TextView
+                android:id="@+id/timer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@android:color/holo_red_light"
+                android:textSize="15sp"/>
+
+            <TextView
+                android:id="@+id/resend"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@android:color/holo_red_light"
+                android:textSize="15sp"/>
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/otpfieldcontainer"
+            android:layout_height="match_parent"
+            android:layout_width="match_parent"
+            android:layout_gravity="bottom"
+            android:gravity="center"
+            android:layout_weight="1"
+            >
+
+            <EditText
+                android:id="@+id/o1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:gravity="center"
+                android:textSize="25dp"
+                android:maxLength="2"
+                android:inputType="number"
+                android:ems="3" />
+
+            <EditText
+                android:id="@+id/o2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@+id/otp1"
+                android:gravity="center"
+                android:textSize="25dp"
+                android:maxLength="2"
+                android:inputType="number"
+                android:ems="3" />
+
+            <EditText
+                android:id="@+id/o3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:gravity="center"
+                android:textSize="25dp"
+                android:maxLength="2"
+                android:inputType="number"
+                android:ems="3" />
+
+            <EditText
+                android:id="@+id/o4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@+id/otp3"
+                android:gravity="center"
+                android:textSize="25dp"
+                android:maxLength="1"
+                android:inputType="number"
+                android:ems="3" />
+
+
+        </LinearLayout>
+
+
+
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/buttonpanel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="?android:attr/selectableItemBackground"
+        android:padding="10sp"
+        >
+
+        <Button
+            android:id="@+id/submit"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_gravity="bottom"
+            android:background="@drawable/buttonmaterial"
+            android:text="Submit"
+            android:textColor="#ffffff"
+            android:textSize="20dp"
+            />
+
+    </LinearLayout>
+
+
+</RelativeLayout>

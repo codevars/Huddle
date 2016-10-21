@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        is-multidex="true"
+        jar="/Users/Cheesetouch/Desktop/Android Studio/Huddle/app/build/intermediates/exploded-aar/com.android.support/support-vector-drawable/24.2.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.1"
+        sha1="d5c731fc64c03dfe04d51134955b483551c35849">
+        <dex dex="/Users/Cheesetouch/Desktop/Android Studio/Huddle/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-vector-drawable-24.2.1_6de06c5a8b61611e685e43ad61daecd232cb98ae/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/Cheesetouch/Desktop/Android Studio/Huddle/app/build/intermediates/exploded-aar/com.android.support/support-media-compat/24.2.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.1"
+        sha1="09b462bbcb77650284bd6614f1a32f360ef369f8">
+        <dex dex="/Users/Cheesetouch/Desktop/Android Studio/Huddle/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-media-compat-24.2.1_40f1dcb49af667e8226123dc2caec6a04cfdeae3/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/Cheesetouch/Desktop/Android Studio/Huddle/app/build/intermediates/exploded-aar/com.android.support/support-core-ui/24.2.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.1"
+        sha1="e7f3132168957eefc46229fc32c3bd464642b71e">
+        <dex dex="/Users/Cheesetouch/Desktop/Android Studio/Huddle/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-core-ui-24.2.1_4f8d2c86f19c2b26fcc9c1ed5cb50c866a1b231f/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/Cheesetouch/Desktop/Android Studio/Huddle/app/build/intermediates/exploded-aar/com.android.support/support-media-compat/24.2.1/jars/libs/internal_impl-24.2.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.1"
+        sha1="fbf8da429efd5ad21e02e3e5ecaa1efc4167878d">
+        <dex dex="/Users/Cheesetouch/Desktop/Android Studio/Huddle/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-24.2.1_f33720f3de06f47a0b477a28342ff0bb6f4f225a/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/Cheesetouch/Desktop/Android Studio/Huddle/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.2.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.1"
+        sha1="43b2dba6b5a0b14527961b75329d0b90025f15ea">
+        <dex dex="/Users/Cheesetouch/Desktop/Android Studio/Huddle/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-appcompat-v7-24.2.1_1ebcac3d834d7668ef6bd216f211392d2383d71a/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/Cheesetouch/Desktop/Android Studio/Huddle/app/build/intermediates/exploded-aar/com.android.support/design/24.2.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.1"
+        sha1="e03f47f3d1017a093bb3239d4ec47c3447f40744">
+        <dex dex="/Users/Cheesetouch/Desktop/Android Studio/Huddle/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-design-24.2.1_4c52e1764295349a971345b090acbf90075362d8/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/Cheesetouch/Desktop/Android Studio/Huddle/app/build/intermediates/exploded-aar/com.android.support/support-v4/24.2.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.1"
+        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
+        <dex dex="/Users/Cheesetouch/Desktop/Android Studio/Huddle/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-v4-24.2.1_8180a76b495de666f8b3503d9d192226f7af6d1e/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/Cheesetouch/Desktop/Android Studio/Huddle/app/build/intermediates/exploded-aar/com.android.support/support-compat/24.2.1/jars/libs/internal_impl-24.2.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.1"
+        sha1="7e4389bd133359a2ff88623ff1e4ff93d6e6f780">
+        <dex dex="/Users/Cheesetouch/Desktop/Android Studio/Huddle/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-24.2.1_03b4d5e59f9772cd726a53420280377bb8572a3c/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/Cheesetouch/Desktop/Android Studio/Huddle/app/build/intermediates/exploded-aar/de.hdodenhof/circleimageview/1.2.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.1"
+        sha1="4b868b833b0887aa48c4e581558eef4f1196f6a2">
+        <dex dex="/Users/Cheesetouch/Desktop/Android Studio/Huddle/app/build/intermediates/transforms/dex/debug/folders/1000/10/de.hdodenhof-circleimageview-1.2.1_6af20b26d1a338cf225d2aef64ba82d62aa88f5f/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/Cheesetouch/Desktop/Android Studio/Huddle/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.1"
+        sha1="c6419db2541731c60a25d1d25fb8c66f903049db">
+        <dex dex="/Users/Cheesetouch/Desktop/Android Studio/Huddle/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_818a9d02fb769405cb0c2d49fdd4ba06eab79082/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/Cheesetouch/Desktop/Android Studio/Huddle/app/build/intermediates/exploded-aar/com.android.support/support-core-utils/24.2.1/jars/libs/internal_impl-24.2.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.1"
+        sha1="935a969265b2a166b2d20415423f5f6e90fe16e0">
+        <dex dex="/Users/Cheesetouch/Desktop/Android Studio/Huddle/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-24.2.1_0f34e0b586c047d5d7325bb41508316a5a6bea86/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/Cheesetouch/Desktop/Android Studio/Huddle/app/build/intermediates/exploded-aar/com.android.support/animated-vector-drawable/24.2.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.1"
+        sha1="94bc1dfb84dcc8b6f6f8f7cc726d7b2dd39c1574">
+        <dex dex="/Users/Cheesetouch/Desktop/Android Studio/Huddle/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-animated-vector-drawable-24.2.1_8ba50d2f6a6cd622bcd24d804563f8bbbacc788f/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/Cheesetouch/Library/Android/sdk/extras/android/m2repository/com/android/support/support-annotations/24.2.1/support-annotations-24.2.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.1"
+        sha1="8de3aafecbdf98a61db6427f008f2d515bcd2544">
+        <dex dex="/Users/Cheesetouch/Desktop/Android Studio/Huddle/app/build/intermediates/transforms/dex/debug/folders/1000/10/support-annotations-24.2.1_c10225ab24a3d067a7ae616f00be3d701b8f7e91/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/Cheesetouch/Desktop/Android Studio/Huddle/app/build/intermediates/exploded-aar/com.android.support/recyclerview-v7/24.2.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.1"
+        sha1="7521486d9bfd2cd9e756e0cf75ed7d97f2ce2d3b">
+        <dex dex="/Users/Cheesetouch/Desktop/Android Studio/Huddle/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-recyclerview-v7-24.2.1_401514753a478513a064230b1b8c7fdd83164ea0/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/Cheesetouch/Desktop/Android Studio/Huddle/app/build/intermediates/exploded-aar/com.android.support/support-core-utils/24.2.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.1"
+        sha1="9c4c3bc902450c39ed54de170db4fb12aea20a35">
+        <dex dex="/Users/Cheesetouch/Desktop/Android Studio/Huddle/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-core-utils-24.2.1_6b52806ce107856c94d1115a0ef312a9dcde855c/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/Cheesetouch/Desktop/Android Studio/Huddle/app/build/intermediates/exploded-aar/com.android.support/support-core-ui/24.2.1/jars/libs/internal_impl-24.2.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.1"
+        sha1="867dad63c33388ff8c7644b236579355036d075f">
+        <dex dex="/Users/Cheesetouch/Desktop/Android Studio/Huddle/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-24.2.1_7bcf743026bb1f872d75c37aae2347e0fb08891d/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/Cheesetouch/Desktop/Android Studio/Huddle/app/build/intermediates/exploded-aar/com.android.support/support-fragment/24.2.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.1"
+        sha1="b9a1ac78ad7ef3abedc4a4b30cd92bcacb939d1f">
+        <dex dex="/Users/Cheesetouch/Desktop/Android Studio/Huddle/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-fragment-24.2.1_49bdd7fd9acfe5332d6178c9c613172f6dfae98c/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/Cheesetouch/Desktop/Android Studio/Huddle/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.1"
+        sha1="815becca83def80a372a66396ae98f51b9a051b8">
+        <dex dex="/Users/Cheesetouch/Desktop/Android Studio/Huddle/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_c0057c73fc51b64b9d52885a8f4d33b8016a87da/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/Cheesetouch/Desktop/Android Studio/Huddle/app/build/intermediates/exploded-aar/com.android.support/support-compat/24.2.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.1"
+        sha1="0ecb4b595fa0f0f8018a149ace3ea6525624f94e">
+        <dex dex="/Users/Cheesetouch/Desktop/Android Studio/Huddle/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-compat-24.2.1_7ba279260df4dfdb932cc33863363a5b1e649a36/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/Cheesetouch/Desktop/Android Studio/Huddle/app/build/intermediates/exploded-aar/com.android.support/support-fragment/24.2.1/jars/libs/internal_impl-24.2.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.1"
+        sha1="5f64d657e838e8375135c0f6057a7ff8fab6a50e">
+        <dex dex="/Users/Cheesetouch/Desktop/Android Studio/Huddle/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-24.2.1_3683b3a9848f68063676044100e21927040fa04e/classes.dex" />
+    </item>
+
+</items>
