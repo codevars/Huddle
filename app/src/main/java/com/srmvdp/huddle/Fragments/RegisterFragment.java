@@ -1,8 +1,9 @@
 package com.srmvdp.huddle.Fragments;
 
-
 import android.app.ProgressDialog;
+import android.content.Context;
 import android.graphics.Typeface;
+import android.net.ConnectivityManager;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.design.widget.Snackbar;
@@ -15,13 +16,10 @@ import android.view.animation.TranslateAnimation;
 import android.widget.EditText;
 import android.widget.SeekBar;
 import android.widget.TextView;
-
+import com.srmvdp.huddle.LocalStorage.SessionManagement;
 import com.srmvdp.huddle.R;
 import com.srmvdp.huddle.Server.RegisterUserClass;
-
-import java.io.IOException;
 import java.util.HashMap;
-
 
 public class RegisterFragment extends Fragment {
 
@@ -43,6 +41,10 @@ public class RegisterFragment extends Fragment {
 
     private TextView register;
 
+    private String firebasetoken;
+
+    private SessionManagement session;
+
     public RegisterFragment() {
 
     }
@@ -55,6 +57,12 @@ public class RegisterFragment extends Fragment {
         View view =  inflater.inflate(R.layout.fragment_register, container, false);
 
         Typeface one = Typeface.createFromAsset(getActivity().getAssets(), "fonts/Quando-Regular.ttf");
+
+        session = new SessionManagement(getContext());
+
+        HashMap<String, String> token = session.getFirebaseTokenDetails();
+
+        firebasetoken = token.get(SessionManagement.TOKEN);
 
         fullname = (EditText) view.findViewById(R.id.fullname);
 
@@ -117,19 +125,11 @@ public class RegisterFragment extends Fragment {
     }
 
 
-    public boolean isOnline() {
+    public boolean isOnline(final Context context) {
 
-        Runtime runtime = Runtime.getRuntime();
-        try {
+        final ConnectivityManager connectivityManager = ((ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE));
 
-            Process ipProcess = runtime.exec("/system/bin/ping -c 1 8.8.8.8");
-            int     exitValue = ipProcess.waitFor();
-            return (exitValue == 0);
-
-        } catch (IOException e)          { e.printStackTrace(); }
-        catch (InterruptedException e) { e.printStackTrace(); }
-
-        return false;
+        return connectivityManager.getActiveNetworkInfo() != null && connectivityManager.getActiveNetworkInfo().isConnected();
 
     }
 
@@ -193,6 +193,20 @@ public class RegisterFragment extends Fragment {
 
         }
 
+        if (firebasetoken.matches("")) {
+
+            Snackbar snackbar = Snackbar.make(getView(), "Internal Error Occured! Restart The App.", Snackbar.LENGTH_SHORT);
+
+            snackbar.show();
+
+            swipetoregister.setProgress(0);
+
+            slide2.start();
+
+            return;
+
+        }
+
         else {
 
             check();
@@ -205,7 +219,7 @@ public class RegisterFragment extends Fragment {
 
     public void check() {
 
-        if (isOnline())
+        if (isOnline(getContext()))
         {
 
             registerUser();
@@ -242,13 +256,13 @@ public class RegisterFragment extends Fragment {
 
         String reg = registrationnumber.getText().toString();
 
-        register(name,email,password,reg);
+        register(name,email,password,reg, firebasetoken);
 
     }
 
 
 
-    private void register(final String name, final String email, final String password, String mobile) {
+    private void register(final String name, final String email, final String password, String mobile, String firebasetoken) {
         class RegisterUser extends AsyncTask<String, Void, String> {
             ProgressDialog loading;
             RegisterUserClass ruc = new RegisterUserClass();
@@ -316,6 +330,7 @@ public class RegisterFragment extends Fragment {
                 data.put("srmemail",params[1]);
                 data.put("password",params[2]);
                 data.put("registrationnumber",params[3]);
+                data.put("firebasetoken",params[4]);
 
                 String result = ruc.sendPostRequest(REGISTER_URL,data);
 
@@ -324,7 +339,7 @@ public class RegisterFragment extends Fragment {
         }
 
         RegisterUser ru = new RegisterUser();
-        ru.execute(name,email,password,mobile);
+        ru.execute(name,email,password,mobile,firebasetoken);
     }
 
 

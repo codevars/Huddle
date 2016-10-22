@@ -18,6 +18,11 @@ import android.view.animation.TranslateAnimation;
 import android.widget.EditText;
 import android.widget.SeekBar;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import com.google.firebase.iid.FirebaseInstanceId;
+import com.google.firebase.iid.FirebaseInstanceIdService;
+import com.srmvdp.huddle.Firebase.MyFirebaseInstanceIDService;
 import com.srmvdp.huddle.LocalStorage.SessionManagement;
 import com.srmvdp.huddle.PhoneNumber;
 import com.srmvdp.huddle.R;
@@ -168,6 +173,7 @@ public class LoginFragment extends Fragment {
             return;
 
         }
+
 
         if (password.getText().toString().matches("")) {
 

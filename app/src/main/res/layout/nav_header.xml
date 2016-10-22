@@ -15,7 +15,7 @@
         android:layout_height="96dp"
         android:layout_gravity="center"
         android:layout_marginTop="10sp"
-        android:background="?attr/selectableItemBackground" z/>
+        android:background="?attr/selectableItemBackground" />
 
     <TextView
         android:id="@+id/tv_email"

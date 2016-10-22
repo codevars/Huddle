@@ -35,6 +35,8 @@ public class SessionManagement {
 
     public static final String OTP = "OTP";
 
+    public static final String TOKEN = "TOKEN";
+
 
 
     public SessionManagement(Context context){
@@ -158,6 +160,16 @@ public class SessionManagement {
 
 
 
+    public void firebaseToken(String token) {
+
+        editor.putString(TOKEN, token);
+
+        editor.commit();
+
+    }
+
+
+
     public void logoutUser(){
 
         editor.clear();
@@ -209,6 +221,18 @@ public class SessionManagement {
         otp.put(OTP, pref.getString(OTP, null));
 
         return otp;
+
+    }
+
+
+
+    public HashMap<String, String> getFirebaseTokenDetails() {
+
+        HashMap<String, String> token = new HashMap<>();
+
+        token.put(TOKEN, pref.getString(TOKEN, null));
+
+        return token;
 
     }
 

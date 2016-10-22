@@ -29,7 +29,6 @@ public class LoginRegisterTabbed extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login_register_tabbed);
 
-
         // Initializing Viewpager
 
         viewpager = (ViewPager) findViewById(R.id.viewpager);

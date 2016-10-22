@@ -1,0 +1,99 @@
+TASK com.srmvdp.huddle id=803
+  ACTIVITY com.srmvdp.huddle/.LoginRegisterTabbed 4371a920 pid=4141
+    Local FragmentActivity 42aadc40 State:
+      mCreated=truemResumed=true mStopped=false mReallyStopped=false
+      mLoadersStarted=true
+    Active Fragments in 42aadf08:
+      #0: LoginFragment{428cc298 #0 id=0x7f0c0077 android:switcher:2131492983:0}
+        mFragmentId=#7f0c0077 mContainerId=#7f0c0077 mTag=android:switcher:2131492983:0
+        mState=5 mIndex=0 mWho=android:fragment:0 mBackStackNesting=0
+        mAdded=true mRemoving=false mFromLayout=false mInLayout=false
+        mHidden=false mDetached=false mMenuVisible=true mHasMenu=false
+        mRetainInstance=false mRetaining=false mUserVisibleHint=true
+        mFragmentManager=FragmentManager{42aadf08 in HostCallbacks{42aaded0}}
+        mHost=android.support.v4.app.FragmentActivity$HostCallbacks@42aaded0
+        mContainer=android.support.v4.view.ViewPager{428afaa0 VFED.... .......D 0,112-720,1134 #7f0c0077 app:id/viewpager}
+        mView=android.widget.FrameLayout{428995d8 V.E..... .......D 0,0-720,1022}
+        mInnerView=android.widget.FrameLayout{428995d8 V.E..... .......D 0,0-720,1022}
+        Child FragmentManager{428a4a50 in LoginFragment{428cc298}}:
+          FragmentManager misc state:
+            mHost=android.support.v4.app.FragmentActivity$HostCallbacks@42aaded0
+            mContainer=android.support.v4.app.Fragment$1@428a7a18
+            mParent=LoginFragment{428cc298 #0 id=0x7f0c0077 android:switcher:2131492983:0}
+            mCurState=5 mStateSaved=false mDestroyed=false
+      #1: RegisterFragment{428d9bb0 #1 id=0x7f0c0077 android:switcher:2131492983:1}
+        mFragmentId=#7f0c0077 mContainerId=#7f0c0077 mTag=android:switcher:2131492983:1
+        mState=5 mIndex=1 mWho=android:fragment:1 mBackStackNesting=0
+        mAdded=true mRemoving=false mFromLayout=false mInLayout=false
+        mHidden=false mDetached=false mMenuVisible=false mHasMenu=false
+        mRetainInstance=false mRetaining=false mUserVisibleHint=false
+        mFragmentManager=FragmentManager{42aadf08 in HostCallbacks{42aaded0}}
+        mHost=android.support.v4.app.FragmentActivity$HostCallbacks@42aaded0
+        mContainer=android.support.v4.view.ViewPager{428afaa0 VFED.... .......D 0,112-720,1134 #7f0c0077 app:id/viewpager}
+        mView=android.widget.FrameLayout{428b4058 V.E..... .......D 720,0-1440,1022}
+        mInnerView=android.widget.FrameLayout{428b4058 V.E..... .......D 720,0-1440,1022}
+        Child FragmentManager{428b1ef8 in RegisterFragment{428d9bb0}}:
+          FragmentManager misc state:
+            mHost=android.support.v4.app.FragmentActivity$HostCallbacks@42aaded0
+            mContainer=android.support.v4.app.Fragment$1@428cc038
+            mParent=RegisterFragment{428d9bb0 #1 id=0x7f0c0077 android:switcher:2131492983:1}
+            mCurState=5 mStateSaved=false mDestroyed=false
+    Added Fragments:
+      #0: LoginFragment{428cc298 #0 id=0x7f0c0077 android:switcher:2131492983:0}
+      #1: RegisterFragment{428d9bb0 #1 id=0x7f0c0077 android:switcher:2131492983:1}
+    FragmentManager misc state:
+      mHost=android.support.v4.app.FragmentActivity$HostCallbacks@42aaded0
+      mContainer=android.support.v4.app.FragmentActivity$HostCallbacks@42aaded0
+      mCurState=5 mStateSaved=false mDestroyed=false
+    View Hierarchy:
+      com.android.internal.policy.impl.PhoneWindow$DecorView{42ab2f28 V.E..... ... 0,0-720,1184}
+        android.widget.LinearLayout{42ab42e8 V.E..... ... 0,0-720,1184}
+          android.view.ViewStub{42aba678 G.E..... ... 0,0-0,0 #1020319}
+          android.widget.FrameLayout{42abaaa8 V.E..... ... 0,50-720,1184}
+            android.support.v7.widget.FitWindowsLinearLayout{42abd240 V.E..... ... 0,0-720,1134 #7f0c0060 app:id/action_bar_root}
+              android.support.v7.widget.ViewStubCompat{42abd8f8 G.E..... ... 0,0-0,0 #7f0c0061 app:id/action_mode_bar_stub}
+              android.support.v7.widget.ContentFrameLayout{42abe140 V.ED.... ... 0,0-720,1134 #1020002 android:id/content}
+                android.support.design.widget.CoordinatorLayout{42ac27d0 V.E..... ... 0,0-720,1134}
+                  android.support.v7.widget.AppCompatImageView{42acc188 V.ED.... ... 0,0-720,1134 #7f0c0079 app:id/back}
+                  android.support.design.widget.AppBarLayout{42872f38 V.E..... ... 0,0-720,112}
+                    android.support.design.widget.TabLayout{42a71278 VFED.... ... 0,0-720,112 #7f0c0076 app:id/tablayout}
+                      android.support.design.widget.TabLayout$SlidingTabStrip{428a5d18 V.ED.... ... 0,0-720,112}
+                        android.support.design.widget.TabLayout$TabView{428fc590 VFE...C. .S. 0,0-360,112}
+                          android.support.v7.widget.AppCompatImageView{428676c0 G.ED.... .S. 0,0-0,0}
+                          android.support.v7.widget.AppCompatTextView{428a8918 V.ED.... .S. 123,34-237,77}
+                        android.support.design.widget.TabLayout$TabView{428fdc18 VFE...C. ... 360,0-720,112}
+                          android.support.v7.widget.AppCompatImageView{42873840 G.ED.... ... 0,0-0,0}
+                          android.support.v7.widget.AppCompatTextView{42903f30 V.ED.... ... 118,34-242,77}
+                  android.support.v4.view.ViewPager{428afaa0 VFED.... ... 0,112-720,1134 #7f0c0077 app:id/viewpager}
+                    android.widget.FrameLayout{428995d8 V.E..... ... 0,0-720,1022}
+                      android.widget.RelativeLayout{42868260 V.E..... ... 0,0-720,1022}
+                        android.widget.LinearLayout{428e0590 V.E..... ... 32,101-688,359 #7f0c00a6 app:id/credentials}
+                          android.widget.LinearLayout{428fe5d8 V.E..... ... 0,0-656,100}
+                            android.support.v7.widget.AppCompatImageView{42ac17a8 V.ED.... ... 0,28-84,72}
+                            android.support.v7.widget.AppCompatEditText{42906390 VFED..CL F.. 84,0-740,100 #7f0c00a7 app:id/registrationnumber}
+                          android.widget.LinearLayout{42902818 V.E..... ... 0,158-656,258}
+                            android.support.v7.widget.AppCompatImageView{42a725e0 V.ED.... ... 0,24-80,76}
+                            android.support.v7.widget.AppCompatEditText{42a70ef8 VFED..CL ... 80,0-736,100 #7f0c00a8 app:id/password}
+                        android.widget.LinearLayout{42a902d8 V.E..... ... 32,589-688,990 #7f0c00a9 app:id/swipearea}
+                          android.support.v7.widget.AppCompatSeekBar{4289f780 VFED.... ... 0,0-656,401 #7f0c00aa app:id/swipetologin}
+                        android.widget.LinearLayout{429004e0 V.E..... ... 32,954-688,990 #7f0c00ab app:id/swipetext}
+                          android.support.v7.widget.AppCompatTextView{428a60a0 V.ED.... ... 168,0-488,36 #7f0c00ac app:id/logintext}
+                    android.widget.FrameLayout{428b4058 V.E..... ... 720,0-1440,1022}
+                      android.widget.RelativeLayout{428b4840 V.E..... ... 0,0-720,1022}
+                        android.widget.LinearLayout{428c0330 V.E..... ... 32,101-688,675 #7f0c00a6 app:id/credentials}
+                          android.widget.LinearLayout{428ee078 V.E..... ... 0,0-656,100}
+                            android.support.v7.widget.AppCompatImageView{428ee718 V.ED.... ... 0,28-84,72}
+                            android.support.v7.widget.AppCompatEditText{42abe8c0 VFED..CL ... 84,0-740,100 #7f0c00ad app:id/fullname}
+                          android.widget.LinearLayout{428ff680 V.E..... ... 0,158-656,258}
+                            android.support.v7.widget.AppCompatImageView{429042b0 V.ED.... ... 0,28-84,72}
+                            android.support.v7.widget.AppCompatEditText{42acb658 VFED..CL ... 84,0-740,100 #7f0c00ae app:id/email}
+                          android.widget.LinearLayout{428f1b28 V.E..... ... 0,316-656,416}
+                            android.support.v7.widget.AppCompatImageView{428f21f0 V.ED.... ... 0,24-80,76}
+                            android.support.v7.widget.AppCompatEditText{428b01d0 VFED..CL ... 80,0-736,100 #7f0c00a8 app:id/password}
+                          android.widget.LinearLayout{428b62e8 V.E..... ... 0,474-656,574}
+                            android.support.v7.widget.AppCompatImageView{428eeab8 V.ED.... ... 0,28-84,72}
+                            android.support.v7.widget.AppCompatEditText{42909808 VFED..CL ... 84,0-740,100 #7f0c00a7 app:id/registrationnumber}
+                        android.widget.LinearLayout{42a7c748 V.E..... ... 32,790-688,990 #7f0c00af app:id/loginbutton}
+                          android.support.v7.widget.AppCompatSeekBar{4286f6a8 VFED..C. ... 0,0-656,200 #7f0c00b0 app:id/swipetoregister}
+                        android.widget.LinearLayout{4290bd78 V.E..... ... 32,954-688,990 #7f0c00ab app:id/swipetext}
+                          android.support.v7.widget.AppCompatTextView{428afe38 V.ED.... ... 140,0-515,36 #7f0c00b1 app:id/registertext}

@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "239878969520",
+    "firebase_url": "https://huddle-50ae3.firebaseio.com",
+    "project_id": "huddle-50ae3",
+    "storage_bucket": "huddle-50ae3.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:239878969520:android:8fd0dd7620f14337",
+        "android_client_info": {
+          "package_name": "com.srmvdp.huddle"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "239878969520-nube8uvfqpr43a83sq37knc7j22tlnvq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD6oKQzKGlErCex4EcMpWVkO8zj4nl7jK4"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
