@@ -16,6 +16,8 @@ import android.view.animation.TranslateAnimation;
 import android.widget.EditText;
 import android.widget.SeekBar;
 import android.widget.TextView;
+
+import com.google.firebase.auth.FirebaseAuth;
 import com.srmvdp.huddle.LocalStorage.SessionManagement;
 import com.srmvdp.huddle.R;
 import com.srmvdp.huddle.Server.RegisterUserClass;
@@ -53,6 +55,8 @@ public class RegisterFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+
+        final FirebaseAuth auth;
 
         View view =  inflater.inflate(R.layout.fragment_register, container, false);
 
@@ -167,7 +171,7 @@ public class RegisterFragment extends Fragment {
 
         if (pass.getText().toString().matches("")) {
 
-            Snackbar snackbar = Snackbar.make(getView(), "Please Enter Your Password!", Snackbar.LENGTH_SHORT);
+            Snackbar snackbar = Snackbar.make(getView(), "Please enter your password!", Snackbar.LENGTH_SHORT);
 
             snackbar.show();
 
@@ -181,7 +185,7 @@ public class RegisterFragment extends Fragment {
 
         if (registrationnumber.getText().toString().matches("")) {
 
-            Snackbar snackbar = Snackbar.make(getView(), "Please Enter Your Registration Number!", Snackbar.LENGTH_SHORT);
+            Snackbar snackbar = Snackbar.make(getView(), "Please enter your Registration number!", Snackbar.LENGTH_SHORT);
 
             snackbar.show();
 
@@ -194,8 +198,7 @@ public class RegisterFragment extends Fragment {
         }
 
         if (firebasetoken.matches("")) {
-
-            Snackbar snackbar = Snackbar.make(getView(), "Internal Error Occured! Restart The App.", Snackbar.LENGTH_SHORT);
+            Snackbar snackbar = Snackbar.make(getView(), "Internal error occured! Restart the app.", Snackbar.LENGTH_SHORT);
 
             snackbar.show();
 
@@ -340,6 +343,7 @@ public class RegisterFragment extends Fragment {
 
         RegisterUser ru = new RegisterUser();
         ru.execute(name,email,password,mobile,firebasetoken);
+
     }
 
 
