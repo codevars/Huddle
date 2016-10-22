@@ -1,9 +1,9 @@
-package com.srmvdp.huddle.adapter;
+package com.srmvdp.huddle.Adapters;
 
-import com.srmvdp.huddle.FeedImageView;
+import com.srmvdp.huddle.News.FeedImageView;
 import com.srmvdp.huddle.R;
-import com.srmvdp.huddle.app.AppController;
-import com.srmvdp.huddle.data.FeedItem;
+import com.srmvdp.huddle.News.AppController;
+import com.srmvdp.huddle.News.FeedItem;
 import java.util.List;
 import android.app.Activity;
 import android.content.Context;

@@ -1,4 +1,4 @@
-package com.srmvdp.huddle.data;
+package com.srmvdp.huddle.News;
 
 public class FeedItem {
 	private int id;

@@ -1,8 +1,8 @@
 package com.srmvdp.huddle;
 
-import com.srmvdp.huddle.adapter.FeedListAdapter;
-import com.srmvdp.huddle.app.AppController;
-import com.srmvdp.huddle.data.FeedItem;
+import com.srmvdp.huddle.Adapters.FeedListAdapter;
+import com.srmvdp.huddle.News.AppController;
+import com.srmvdp.huddle.News.FeedItem;
 import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
 import java.util.List;

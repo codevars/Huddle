@@ -6,8 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.srmvdp.huddle.BioPage"
-    android:background="@color/colorPrimary"
-    >
+    android:background="@color/colorPrimary">
 
     <android.support.v7.widget.Toolbar
         android:layout_width="match_parent"
@@ -16,7 +15,7 @@
         android:id="@+id/toolbarbio"
         android:layout_alignParentTop="true"
         android:layout_alignParentStart="true"
-        android:elevation="10px">
+        android:elevation="10dp">
 
 
     </android.support.v7.widget.Toolbar>

@@ -1,4 +1,4 @@
-package com.srmvdp.huddle;
+package com.srmvdp.huddle.News;
 
 import android.content.Context;
 import android.text.TextUtils;

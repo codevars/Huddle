@@ -1,4 +1,4 @@
-package com.srmvdp.huddle.volley;
+package com.srmvdp.huddle.Volley;
 
 import com.android.volley.toolbox.ImageLoader.ImageCache;
 

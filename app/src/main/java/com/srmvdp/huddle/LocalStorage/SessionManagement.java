@@ -8,10 +8,8 @@ import android.content.SharedPreferences.Editor;
 
 import com.srmvdp.huddle.Dashboard;
 import com.srmvdp.huddle.LoginRegisterTabbed;
-import com.srmvdp.huddle.MainActivity;
 import com.srmvdp.huddle.OTP;
 import com.srmvdp.huddle.PhoneNumber;
-import com.srmvdp.huddle.app.AppController;
 
 public class SessionManagement {
 

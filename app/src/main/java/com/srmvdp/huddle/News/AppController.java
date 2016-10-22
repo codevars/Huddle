@@ -1,6 +1,6 @@
-package com.srmvdp.huddle.app;
+package com.srmvdp.huddle.News;
 
-import com.srmvdp.huddle.volley.LruBitmapCache;
+import com.srmvdp.huddle.Volley.LruBitmapCache;
 import android.app.Application;
 import android.text.TextUtils;
 import com.android.volley.Request;
