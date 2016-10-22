@@ -10,4 +10,6 @@
     <color name="colorSecondaryDark">#795548</color>
     <color name="colorSecondaryAccent">#9e9e9e</color>
     <color name="White">#FFFFFF</color>
+    <color name="Transparent">#0000</color>
+    <color name="WhiteTransparent">#17ffffff</color>
 </resources>
