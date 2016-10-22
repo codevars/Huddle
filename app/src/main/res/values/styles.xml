@@ -1,6 +1,6 @@
 <resources>
 
-    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar"/>
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
 
     <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 
@@ -29,7 +29,6 @@
         <item name="colorPrimaryDark">#242424</item>
         <item name="colorAccent">#6C7A89</item>
     </style>
-
 
 
     <style name="AppThemeNoActionBar" parent="Theme.AppCompat.Light.DarkActionBar">
