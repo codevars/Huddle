@@ -11,10 +11,12 @@
     <android.support.v7.widget.Toolbar
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/colorPrimaryDark"
+        android:background="@color/colorPrimary"
         android:id="@+id/toolbarbio"
         android:layout_alignParentTop="true"
-        android:layout_alignParentStart="true">
+        android:layout_alignParentStart="true"
+        android:elevation="10px"
+        >
 
 
     </android.support.v7.widget.Toolbar>
@@ -24,13 +26,15 @@
         android:layout_height="120dp"
         android:layout_below="@+id/toolbarbio"
         android:layout_alignParentStart="true"
-        android:background="@drawable/back_background"
-        android:elevation="10px"
+        android:background="#fff"
+        android:orientation="horizontal"
+        android:id="@+id/bio1"
         >
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/profilepic"
+            android:layout_gravity="center_vertical"
             >
 
             <de.hdodenhof.circleimageview.CircleImageView
@@ -65,16 +69,18 @@
                     android:layout_height="wrap_content"
                     android:textStyle="bold"
                     android:text="Posts :"
-                    android:textColor="#fff"
-                    android:textSize="25sp"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textSize="20sp"
                     android:id="@+id/textView" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text=""
+                    android:text="26"
+                    android:textSize="20sp"
                     android:id="@+id/userpostcount"
                     android:layout_marginLeft="10dp"
+                    android:textColor="#000"
                     />
 
             </LinearLayout>
@@ -91,16 +97,18 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Class :"
-                    android:textSize="25sp"
+                    android:textSize="20sp"
                     android:textStyle="bold"
-                    android:textColor="#fff"
+                    android:textColor="@color/colorPrimaryDark"
                     />
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text=""
+                    android:text="CSE E"
                     android:id="@+id/userclass"
                     android:layout_marginLeft="10dp"
+                    android:textColor="#000"
+                    android:textSize="20sp"
                     />
 
 
@@ -113,6 +121,47 @@
 
 
     </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/bio2"
+        android:layout_below="@+id/bio1"
+        android:orientation="horizontal"
+        android:layout_marginTop="15dp"
+        >
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Sagar Vakkala"
+                android:textStyle="bold"
+                android:textColor="#000"
+                android:id="@+id/namebio"
+                android:layout_marginLeft="15sp"
+                />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/namebio"
+                android:textStyle="normal"
+                android:text="I love to fuck,h ah ah a ah ha h a ha ha ha h ah ah ah ha h ah ah ah h a ha"
+                android:textColor="#000"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="10dp"
+                />
+
+
+        </RelativeLayout>
+
+
+
+
+    </LinearLayout>
+
 
 
 </RelativeLayout>

@@ -3,6 +3,7 @@ package com.srmvdp.huddle;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
+import android.text.Html;
 
 public class BioPage extends AppCompatActivity {
 
@@ -17,6 +18,7 @@ public class BioPage extends AppCompatActivity {
         setSupportActionBar(toolbar);
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setTitle(Html.fromHtml("<font color='#000000'>Profile page</font>"));
     }
 
 }
