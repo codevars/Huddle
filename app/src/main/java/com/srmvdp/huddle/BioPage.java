@@ -15,10 +15,13 @@ public class BioPage extends AppCompatActivity {
         setContentView(R.layout.activity_bio_page);
 
         toolbar = (Toolbar) findViewById(R.id.toolbarbio);
+
         setSupportActionBar(toolbar);
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
         getSupportActionBar().setTitle(Html.fromHtml("<font color='#000000'>Profile page</font>"));
+
     }
 
 }
