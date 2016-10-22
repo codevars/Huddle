@@ -84,7 +84,7 @@ public class Dashboard extends AppCompatActivity {
 
                     case R.id.Profile:
 
-                        Intent in = new Intent(Dashboard.this,SelfProfile.class);
+                        Intent in = new Intent(Dashboard.this,BioPage.class);
 
                         drawerLayout.closeDrawers();
                         startActivity(in);

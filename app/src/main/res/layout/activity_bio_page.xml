@@ -5,16 +5,114 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.srmvdp.huddle.BioPage"
-    android:background="#2b2b2b"
+    android:background="@color/colorPrimary"
     >
 
     <android.support.v7.widget.Toolbar
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/colorPrimaryDark"
-        >
+        android:id="@+id/toolbarbio"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true">
 
 
     </android.support.v7.widget.Toolbar>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:layout_below="@+id/toolbarbio"
+        android:layout_alignParentStart="true"
+        android:background="@drawable/back_background"
+        android:elevation="10px"
+        >
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/profilepic"
+            >
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/profile_image"
+                android:layout_width="96dp"
+                android:layout_height="96dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="10sp"
+                android:background="@drawable/civil256" />
+
+        </LinearLayout>
+
+
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:nextFocusRight="@id/profilepic"
+                android:layout_marginLeft="40dp"
+                android:layout_marginTop="30dp"
+                android:id="@+id/postsid"
+                >
+
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textStyle="bold"
+                    android:text="Posts :"
+                    android:textColor="#fff"
+                    android:textSize="25sp"
+                    android:id="@+id/textView" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:id="@+id/userpostcount"
+                    android:layout_marginLeft="10dp"
+                    />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/postsid"
+                android:layout_marginLeft="40dp"
+                android:layout_marginTop="20dp"
+                >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Class :"
+                    android:textSize="25sp"
+                    android:textStyle="bold"
+                    android:textColor="#fff"
+                    />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:id="@+id/userclass"
+                    android:layout_marginLeft="10dp"
+                    />
+
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+
+
+
+
+    </LinearLayout>
+
 
 </RelativeLayout>
