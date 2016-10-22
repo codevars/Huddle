@@ -64,6 +64,8 @@
             </intent-filter>
         </service>
 
+        <activity android:name=".BioPage" />
+        <activity android:name=".SelfProfile"></activity>
     </application>
 
 </manifest>

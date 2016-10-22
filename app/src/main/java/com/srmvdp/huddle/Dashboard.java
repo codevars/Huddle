@@ -1,5 +1,6 @@
 package com.srmvdp.huddle;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
 import android.support.design.widget.TabLayout;
@@ -81,11 +82,12 @@ public class Dashboard extends AppCompatActivity {
 
                 switch (id){
 
-                    case R.id.home:
+                    case R.id.Profile:
 
-                        Toast.makeText(getApplicationContext(),"Home",Toast.LENGTH_SHORT).show();
+                        Intent in = new Intent(Dashboard.this,SelfProfile.class);
 
                         drawerLayout.closeDrawers();
+                        startActivity(in);
 
                         break;
 
