@@ -36,15 +36,12 @@
     <LinearLayout
         android:id="@+id/phonecontainer"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_above="@+id/buttonpanel"
+        android:layout_height="110sp"
         android:layout_below="@+id/warningcontainer"
         android:layout_marginTop="6sp"
-        android:layout_marginBottom="200sp"
         android:layout_centerInParent="true"
         android:background="@drawable/dialog"
-        android:gravity="center"
-        >
+        android:gravity="center">
 
 
         <TextView
@@ -176,9 +173,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:layout_marginBottom="-0sp"
-        android:background="?android:attr/selectableItemBackground"
-        >
+        android:layout_marginBottom="0sp"
+        android:background="?android:attr/selectableItemBackground">
 
 
     <Button
