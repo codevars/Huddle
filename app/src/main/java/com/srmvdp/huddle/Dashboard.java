@@ -1,6 +1,8 @@
 package com.srmvdp.huddle;
 
 import android.content.Intent;
+import android.content.res.ColorStateList;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
 import android.support.design.widget.TabLayout;
@@ -72,6 +74,14 @@ public class Dashboard extends AppCompatActivity {
     public void NavigationDrawer() {
 
         NavigationView navigationView = (NavigationView)findViewById(R.id.navigation_view);
+
+        navigationView.setBackgroundColor(getResources().getColor(R.color.WhiteTransparent));
+
+        navigationView.setItemIconTintList(getResources().getColorStateList(R.color.White));
+
+        navigationView.setItemTextColor(ColorStateList.valueOf(Color.WHITE));
+
+
 
         navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
 
