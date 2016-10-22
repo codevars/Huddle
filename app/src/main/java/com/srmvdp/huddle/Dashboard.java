@@ -47,6 +47,10 @@ public class Dashboard extends AppCompatActivity {
 
         tablayout.setupWithViewPager(viewpager);
 
+        TabLayout.Tab tab = tablayout.getTabAt(1);
+
+        tab.select();
+
         drawerLayout = (DrawerLayout)findViewById(R.id.drawer);
 
         NavigationDrawer();
@@ -59,9 +63,9 @@ public class Dashboard extends AppCompatActivity {
 
         ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager());
 
-        adapter.addFragment(new NewsFragment(), "News");
-
         adapter.addFragment(new ShelfFragment(), "Shelf");
+
+        adapter.addFragment(new NewsFragment(), "News");
 
         adapter.addFragment(new SubjectsFragment(), "Subjects");
 
