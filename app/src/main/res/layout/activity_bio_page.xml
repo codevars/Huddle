@@ -148,7 +148,7 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@id/namebio"
                 android:textStyle="normal"
-                android:text="I love to fuck,h ah ah a ah ha h a ha ha ha h ah ah ah ha h ah ah ah h a ha"
+                android:text="I love to fuck"
                 android:textColor="#000"
                 android:layout_marginLeft="15dp"
                 android:layout_marginTop="10dp"
@@ -161,6 +161,17 @@
 
 
     </LinearLayout>
+
+    <android.support.design.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        
+
+
+
+    </android.support.design.widget.CoordinatorLayout>
+
 
 
 
