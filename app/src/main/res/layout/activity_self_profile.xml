@@ -184,10 +184,10 @@
 
 
             <EditText
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:drawableLeft="@drawable/name"
-                android:hint="Email (Sensitive, Only the SRM email should be provided)" />
+                android:hint="Email" />
 
         </LinearLayout>
 
