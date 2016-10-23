@@ -8,6 +8,8 @@
     <uses-permission android:name="android.permission.RECEIVE_SMS" />
     <uses-permission android:name="android.permission.READ_SMS" />
     <uses-permission android:name="android.permission.SEND_SMS" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
     <application
         android:name="com.srmvdp.huddle.News.AppController"
@@ -70,13 +72,10 @@
             </intent-filter>
         </service>
 
-        <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
-        <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
-
-        <activity android:name="com.tangxiaolv.telegramgallery.GalleryActivity" />
-
         <activity android:name=".BioPage" />
-        <activity android:name=".SelfProfile"></activity>
+        <activity android:name=".SelfProfile" />
+        <activity android:name=".Extras.AdminPanelIntro" />
+        <activity android:name=".AdminPanel" />
     </application>
 
 </manifest>

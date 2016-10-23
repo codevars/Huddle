@@ -151,6 +151,7 @@ public class LoginFragment extends Fragment {
                     });
 
             snackbar.show();
+
         }
 
 
@@ -237,13 +238,53 @@ public class LoginFragment extends Fragment {
 
                 }
 
-                if(s.equalsIgnoreCase("Successfully Logged In!")){
+                if(s.equals("Student")){
 
                     Snackbar snackbar = Snackbar.make(getView(), "Successfully Logged In!", Snackbar.LENGTH_SHORT);
 
                     snackbar.show();
 
-                    session.createLoginSession(username);
+                    session.createLoginSession(username, s);
+
+                    new Handler().postDelayed(new Runnable() {
+                        @Override
+                        public void run() {
+
+                            Intent i=new Intent(getContext(),PhoneNumber.class);
+                            startActivity(i);
+                            getActivity().finish();
+                        }
+                    }, 1000);
+
+                }
+
+                if(s.equalsIgnoreCase("Admin")){
+
+                    Snackbar snackbar = Snackbar.make(getView(), "Successfully Logged In!", Snackbar.LENGTH_SHORT);
+
+                    snackbar.show();
+
+                    session.createLoginSession(username, s);
+
+                    new Handler().postDelayed(new Runnable() {
+                        @Override
+                        public void run() {
+
+                            Intent i=new Intent(getContext(),PhoneNumber.class);
+                            startActivity(i);
+                            getActivity().finish();
+                        }
+                    }, 1000);
+
+                }
+
+                if(s.equalsIgnoreCase("Teacher")){
+
+                    Snackbar snackbar = Snackbar.make(getView(), "Successfully Logged In!", Snackbar.LENGTH_SHORT);
+
+                    snackbar.show();
+
+                    session.createLoginSession(username, s);
 
                     new Handler().postDelayed(new Runnable() {
                         @Override

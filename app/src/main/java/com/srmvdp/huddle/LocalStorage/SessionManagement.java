@@ -5,8 +5,11 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
+import android.widget.Toast;
 
+import com.srmvdp.huddle.AdminPanel;
 import com.srmvdp.huddle.Dashboard;
+import com.srmvdp.huddle.Extras.AdminPanelIntro;
 import com.srmvdp.huddle.LoginRegisterTabbed;
 import com.srmvdp.huddle.OTP;
 import com.srmvdp.huddle.PhoneNumber;
@@ -29,6 +32,8 @@ public class SessionManagement {
 
     public static final String DASHBOARD = "Nah";
 
+    public static final String PANEL = "Nuh";
+
     public static final String REG_NUM = "regnum";
 
     public static final String MOB_NUM = "mobnum";
@@ -36,6 +41,8 @@ public class SessionManagement {
     public static final String OTP = "OTP";
 
     public static final String TOKEN = "TOKEN";
+
+    public static final String PRIVILEGE = "PRIVILEGE";
 
 
 
@@ -47,11 +54,13 @@ public class SessionManagement {
 
 
 
-    public void createLoginSession(String regnum){
+    public void createLoginSession(String regnum, String privilege){
 
         editor.putBoolean(PHONE, true);
 
         editor.putString(REG_NUM, regnum);
+
+        editor.putString(PRIVILEGE, privilege);
 
         editor.commit();
 
@@ -80,6 +89,16 @@ public class SessionManagement {
         editor.putBoolean(ONETIMEPASSWORD, false);
 
         editor.putBoolean(DASHBOARD, true);
+
+        editor.commit();
+
+    }
+
+
+
+    public void createAdminPanelSession(){
+
+        editor.putBoolean(PANEL, true);
 
         editor.commit();
 
@@ -145,6 +164,39 @@ public class SessionManagement {
 
         }
 
+
+    }
+
+
+
+    public void adminPanel(){
+
+        if(this.adminpanelIn()){
+
+            Intent i = new Intent(_context, AdminPanel.class);
+
+            i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+
+            i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+
+            i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
+
+            _context.startActivity(i);
+
+        }
+
+        else {
+
+            Intent i = new Intent(_context, AdminPanelIntro.class);
+
+            i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+
+            i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+
+            _context.startActivity(i);
+
+
+        }
 
     }
 
@@ -238,6 +290,18 @@ public class SessionManagement {
 
 
 
+    public HashMap<String, String> getPrivilegeDetails() {
+
+        HashMap<String, String> privilege = new HashMap<>();
+
+        privilege.put(PRIVILEGE, pref.getString(PRIVILEGE, null));
+
+        return privilege;
+
+    }
+
+
+
     public boolean phoneIn() {return pref.getBoolean(PHONE, false);}
 
     public boolean otpIn(){
@@ -248,6 +312,8 @@ public class SessionManagement {
         return pref.getBoolean(DASHBOARD, false);
     }
 
-
+    public boolean adminpanelIn(){
+        return pref.getBoolean(PANEL, false);
+    }
 
 }

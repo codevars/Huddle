@@ -19,6 +19,9 @@ import com.srmvdp.huddle.Adapters.ViewPagerAdapter;
 import com.srmvdp.huddle.Fragments.NewsFragment;
 import com.srmvdp.huddle.Fragments.ShelfFragment;
 import com.srmvdp.huddle.Fragments.SubjectsFragment;
+import com.srmvdp.huddle.LocalStorage.SessionManagement;
+
+import java.util.HashMap;
 
 public class Dashboard extends AppCompatActivity {
 
@@ -30,10 +33,20 @@ public class Dashboard extends AppCompatActivity {
 
     private ViewPager viewpager;
 
+    private String privilege;
+
+    private SessionManagement session;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dashboard);
+
+        session = new SessionManagement(getApplicationContext());
+
+        HashMap<String, String> right = session.getPrivilegeDetails();
+
+        privilege = right.get(SessionManagement.PRIVILEGE);
 
         toolbar = (Toolbar) findViewById(R.id.toolbar);
 
@@ -96,7 +109,7 @@ public class Dashboard extends AppCompatActivity {
 
                 switch (id){
 
-                    case R.id.Profile:
+                    case R.id.profile:
 
                         Intent in = new Intent(Dashboard.this,BioPage.class);
 
@@ -106,14 +119,31 @@ public class Dashboard extends AppCompatActivity {
                         break;
 
 
-                    case R.id.settings:
+                    case R.id.adminpanel:
 
-                        Toast.makeText(getApplicationContext(),"Settings",Toast.LENGTH_SHORT).show();
+                        if (privilege.equals("Admin")) {
+
+                            drawerLayout.closeDrawers();
+
+                            Toast.makeText(getApplicationContext(), "Access Granted!" ,Toast.LENGTH_SHORT).show();
+
+                            session.adminPanel();
+
+
+                        }
+
+                        else {
+
+                            drawerLayout.closeDrawers();
+
+                            Toast.makeText(getApplicationContext(), "Access Denied!" ,Toast.LENGTH_SHORT).show();
+
+                        }
 
                         break;
 
 
-                    case R.id.trash:
+                    case R.id.photos:
 
                         Toast.makeText(getApplicationContext(),"Trash",Toast.LENGTH_SHORT).show();
 
@@ -122,7 +152,7 @@ public class Dashboard extends AppCompatActivity {
                         break;
 
 
-                    case R.id.logout:
+                    case R.id.exit:
 
                         finish();
 

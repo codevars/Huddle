@@ -40,6 +40,36 @@
 
     <string name="drawerclose">Close</string>
 
+    <string name="profile">Profile</string>
+
+    <string name="admin">Admin Panel</string>
+
+    <string name="photos">Photos</string>
+
+    <string name="image">Image</string>
+
+    <string name="exit">Exit</string>
+
+    <string name="introoneheader">ADMIN PANEL</string>
+
+    <string name="introonemain">Control What Happens Around Huddle With Few Taps.</string>
+
+    <string name="introtwoheader">POSTS</string>
+
+    <string name="introtwomain">Add, Delete Or Edit The Posts To Work Your Way. Include Texts, Pictures, Docx, PPTs And So Much More!</string>
+
+    <string name="introthreeheader">NEWS</string>
+
+    <string name="introthreemain">Post, Delete Or Post News, Happenings, Circulars, Events, Notices On Our Generalised News Feed!</string>
+
+    <string name="introfourheader">USERS</string>
+
+    <string name="introfourmain">Manage Any Audience Across Huddle. Students, Teachers, Content Creators. Add, Delete, Block, Restrict, Provoke Privileges.</string>
+
+    <string name="introfiveheader">NOTIFICATIONS</string>
+
+    <string name="introfivemain">Send Notifications Easily, Efficiently And Hassle Freely To Any User Across Huddle With Our Notification Central!</string>
+
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="title_activity_main">MainActivity</string>

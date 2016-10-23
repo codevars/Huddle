@@ -5,20 +5,20 @@
     <group android:checkableBehavior="single">
 
         <item
-            android:id="@+id/Profile"
-            android:title="Profile"
+            android:id="@+id/profile"
+            android:title="@string/profile"
             android:icon="@drawable/ic_home"/>
         <item
-            android:id="@+id/settings"
-            android:title="People"
+            android:id="@+id/adminpanel"
+            android:title="@string/admin"
             android:icon="@drawable/ic_people"/>
         <item
-            android:id="@+id/trash"
-            android:title="Photos"
+            android:id="@+id/photos"
+            android:title="@string/photos"
             android:icon="@drawable/ic_photos"/>
         <item
-            android:id="@+id/logout"
-            android:title="Trending"
+            android:id="@+id/exit"
+            android:title="@string/exit"
             android:icon="@drawable/ic_whats_hot"/>
 
     </group>
