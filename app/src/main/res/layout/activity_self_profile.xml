@@ -93,7 +93,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Name"
-                    android:drawableLeft="@drawable/name"
+                    android:drawableRight="@drawable/name3"
                 />
 
         </LinearLayout>
@@ -112,7 +112,7 @@
                     android:layout_height="wrap_content"
                     android:hint="Bio"
                     android:inputType="textMultiLine"
-                    android:drawableLeft="@drawable/name"
+                    android:drawableLeft="@drawable/bio2"
 
                     />
 
@@ -132,7 +132,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="Roll no (Sensitive)"
-                    android:drawableLeft="@drawable/name"
+                    android:drawableLeft="@drawable/rollno"
                     />
 
         </LinearLayout>
@@ -141,10 +141,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/rowsofedit3"
-            android:background="@drawable/custompostsforbio"
             android:id="@+id/privateinfo"
             android:layout_marginTop="20dp"
-            android:layout_marginBottom="15dp"
+            android:layout_marginBottom="5dp"
             >
 
             <TextView
@@ -153,10 +152,19 @@
                 android:text="Private Information"
                 android:textSize="25dp"
                 android:textColor="#d9000000"
-                android:gravity="center_horizontal"
+                android:layout_marginLeft="20dp"
                 />
 
         </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginLeft="20dp"
+            android:background="@color/colorPrimaryDark"
+            android:id="@+id/blackline"
+            android:layout_below="@id/privateinfo"/>
 
         <RelativeLayout
             android:layout_width="match_parent"
