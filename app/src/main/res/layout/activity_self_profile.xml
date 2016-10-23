@@ -1,4 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
+
+
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/activity_self_profile"
@@ -15,12 +17,21 @@
         >
     </android.support.v7.widget.Toolbar>
 
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/toolbarselfprofile">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/toolbarselfprofile">
+
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/profileimageholderself"
-        android:orientation="horizontal"
-        android:layout_below="@+id/toolbarselfprofile">
+        android:orientation="horizontal">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -34,6 +45,7 @@
                 android:layout_height="96dp"
                 android:layout_gravity="center"
                 android:background="@drawable/civil256"
+                    android:id="@+id/profilephoto"
                 />
 
         </LinearLayout>
@@ -77,22 +89,11 @@
         android:paddingLeft="20dp"
         android:paddingRight="20dp"
         >
-
-
-
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/name"
-                    />
-
-
-
-
-                <EditText
+               <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Name"
+                    android:drawableLeft="@drawable/name"
                 />
 
         </LinearLayout>
@@ -102,25 +103,124 @@
             android:layout_below="@id/rowsofedit"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
+            android:layout_marginTop="15dp"
+            android:id="@+id/rowsofedit2"
 
             >
-
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/name"
-
-                    />
                 <EditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Bio"
+                    android:hint="Bio"
+                    android:inputType="textMultiLine"
+                    android:drawableLeft="@drawable/name"
+
                     />
 
 
         </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/rowsofedit2"
+            android:layout_marginLeft="20dp"
+            android:id="@+id/rowsofedit3"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="15dp">
+
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Roll no (Sensitive)"
+                    android:drawableLeft="@drawable/name"
+                    />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/rowsofedit3"
+            android:background="@drawable/custompostsforbio"
+            android:id="@+id/privateinfo"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="15dp"
+            >
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Private Information"
+                android:textSize="25dp"
+                android:textColor="#d9000000"
+                android:gravity="center_horizontal"
+                />
+
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/privateinfo"
+            android:id="@+id/rel2prof"
+            android:layout_marginTop="15dp"
+
+            >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:id="@+id/emailprof">
+
+
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableLeft="@drawable/name"
+                android:hint="Email (Sensitive, Only the SRM email should be provided)" />
+
+        </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_below="@+id/emailprof"
+                android:id="@+id/rowsofedit4"
+                android:layout_marginBottom="20dp"
+                >
+
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:drawableLeft="@drawable/name"
+                    android:hint="Phone Number:" />
+
+            </LinearLayout>
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/rowsofedit4"
+                android:background="@drawable/customgreenbutton"
+                android:layout_marginLeft="25dp"
+                android:layout_marginRight="25dp"
+                android:layout_marginBottom="20dp"
+                android:text="SUBMIT"
+                android:textColor="@color/colorPrimary"
+                />
+
+        </RelativeLayout>
 
     </RelativeLayout>
+
+    </RelativeLayout>
+
+    </ScrollView>
 
 
 </RelativeLayout>

@@ -3,66 +3,12 @@
 
     <item
         is-multidex="false"
-        jar="Z:\GitHub Projects\Huddle2\app\build\intermediates\exploded-aar\com.android.support\support-core-utils\24.2.1\jars\libs\internal_impl-24.2.1.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="24.0.3"
-        sha1="935a969265b2a166b2d20415423f5f6e90fe16e0">
-        <dex dex="Z:\GitHub Projects\Huddle2\app\build\intermediates\pre-dexed\debug\internal_impl-24.2.1_d78793e5071c2fc952b2090e701ac027d8179646.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="Z:\GitHub Projects\Huddle2\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-base\9.2.0\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="24.0.3"
-        sha1="30489a97b06cc3945bdbcc1770089af9e3b3b64d">
-        <dex dex="Z:\GitHub Projects\Huddle2\app\build\intermediates\pre-dexed\debug\com.google.android.gms-play-services-base-9.2.0_6a76e6f784a588aae5cc3105b4ac4f4a7f3e92d7.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="Z:\GitHub Projects\Huddle2\app\build\intermediates\exploded-aar\com.google.firebase\firebase-common\9.2.0\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="24.0.3"
-        sha1="363f626ad5686283250cdb6073ae1bba5cb07a87">
-        <dex dex="Z:\GitHub Projects\Huddle2\app\build\intermediates\pre-dexed\debug\com.google.firebase-firebase-common-9.2.0_2ce99921fd5c2659e3305fb647065bc465f9b7ec.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="Z:\GitHub Projects\Huddle2\app\build\intermediates\exploded-aar\com.google.firebase\firebase-analytics\9.2.0\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="24.0.3"
-        sha1="4838df6db988160b107e954e02a745370df543b6">
-        <dex dex="Z:\GitHub Projects\Huddle2\app\build\intermediates\pre-dexed\debug\com.google.firebase-firebase-analytics-9.2.0_5e350254f1d99dc11fa2c8c42cbeb4068e8d31c0.jar" />
-    </item>
-    <item
-        is-multidex="false"
         jar="Z:\GitHub Projects\Huddle2\app\build\intermediates\exploded-aar\com.android.support\support-core-ui\24.2.1\jars\libs\internal_impl-24.2.1.jar"
         jumboMode="false"
         optimize="true"
         revision="24.0.3"
         sha1="867dad63c33388ff8c7644b236579355036d075f">
         <dex dex="Z:\GitHub Projects\Huddle2\app\build\intermediates\pre-dexed\debug\internal_impl-24.2.1_e74bf525dff603efc6b7d459a37a1313eb6a9fd0.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="Z:\GitHub Projects\Huddle2\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\24.2.1\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="24.0.3"
-        sha1="43b2dba6b5a0b14527961b75329d0b90025f15ea">
-        <dex dex="Z:\GitHub Projects\Huddle2\app\build\intermediates\pre-dexed\debug\com.android.support-appcompat-v7-24.2.1_9bd5ac7c5cba8988ded0cf68326aa7a10c9cc4a0.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="Z:\GitHub Projects\Huddle2\app\build\intermediates\exploded-aar\com.google.firebase\firebase-messaging\9.2.0\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="24.0.3"
-        sha1="21bb89120d84fa29afeb0f9c0ebf415bc3b45a7e">
-        <dex dex="Z:\GitHub Projects\Huddle2\app\build\intermediates\pre-dexed\debug\com.google.firebase-firebase-messaging-9.2.0_bc54c66d525fe87a3da11bb46ba8823e698cff9e.jar" />
     </item>
     <item
         is-multidex="false"
@@ -75,30 +21,12 @@
     </item>
     <item
         is-multidex="false"
-        jar="Z:\GitHub Projects\Huddle2\app\build\intermediates\exploded-aar\com.android.support\support-media-compat\24.2.1\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="24.0.3"
-        sha1="09b462bbcb77650284bd6614f1a32f360ef369f8">
-        <dex dex="Z:\GitHub Projects\Huddle2\app\build\intermediates\pre-dexed\debug\com.android.support-support-media-compat-24.2.1_1349da7d23aec50efc11d8bd9ba4046eeb621ea5.jar" />
-    </item>
-    <item
-        is-multidex="false"
         jar="Z:\GitHub Projects\Huddle2\app\build\intermediates\exploded-aar\com.android.support\support-v4\24.2.1\jars\classes.jar"
         jumboMode="false"
         optimize="true"
         revision="24.0.3"
         sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
         <dex dex="Z:\GitHub Projects\Huddle2\app\build\intermediates\pre-dexed\debug\com.android.support-support-v4-24.2.1_4aab3e6599f33bfb7d34eade9fccff81af91a312.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="Z:\GitHub Projects\Huddle2\app\build\intermediates\exploded-aar\de.hdodenhof\circleimageview\1.2.1\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="24.0.3"
-        sha1="4b868b833b0887aa48c4e581558eef4f1196f6a2">
-        <dex dex="Z:\GitHub Projects\Huddle2\app\build\intermediates\pre-dexed\debug\de.hdodenhof-circleimageview-1.2.1_b72c7309f76c63ee4227df1309ce9baec1d46051.jar" />
     </item>
     <item
         is-multidex="false"
@@ -120,33 +48,6 @@
     </item>
     <item
         is-multidex="false"
-        jar="Z:\GitHub Projects\Huddle2\app\build\intermediates\exploded-aar\com.android.support\animated-vector-drawable\24.2.1\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="24.0.3"
-        sha1="94bc1dfb84dcc8b6f6f8f7cc726d7b2dd39c1574">
-        <dex dex="Z:\GitHub Projects\Huddle2\app\build\intermediates\pre-dexed\debug\com.android.support-animated-vector-drawable-24.2.1_73cc8158628a12657a0a2773f06f55de33442471.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="Z:\GitHub Projects\Huddle2\app\build\intermediates\exploded-aar\com.google.firebase\firebase-auth-module\9.2.0\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="24.0.3"
-        sha1="e791f7f2fbf9ca5b3b576916533f844dfb384024">
-        <dex dex="Z:\GitHub Projects\Huddle2\app\build\intermediates\pre-dexed\debug\com.google.firebase-firebase-auth-module-9.2.0_7da0ae7c111ab4cbc2d56761c9914dd65d47cdb5.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="Z:\GitHub Projects\Huddle2\app\libs\volley.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="24.0.3"
-        sha1="d4aaa36e04ee71a83444f8367c97a46fda662d2c">
-        <dex dex="Z:\GitHub Projects\Huddle2\app\build\intermediates\pre-dexed\debug\volley_4eae47f8cd5e82a2ca26c962c618cb1bd759e149.jar" />
-    </item>
-    <item
-        is-multidex="false"
         jar="Z:\GitHub Projects\Huddle2\app\build\intermediates\exploded-aar\com.android.support\support-compat\24.2.1\jars\libs\internal_impl-24.2.1.jar"
         jumboMode="false"
         optimize="true"
@@ -162,42 +63,6 @@
         revision="24.0.3"
         sha1="e7f3132168957eefc46229fc32c3bd464642b71e">
         <dex dex="Z:\GitHub Projects\Huddle2\app\build\intermediates\pre-dexed\debug\com.android.support-support-core-ui-24.2.1_8261b329e14a90c469058eb61cc71463b57bf994.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="Z:\GitHub Projects\Huddle2\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-tasks\9.2.0\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="24.0.3"
-        sha1="593fbaec1c3e100480a2bd72457b64b7dde6ac2d">
-        <dex dex="Z:\GitHub Projects\Huddle2\app\build\intermediates\pre-dexed\debug\com.google.android.gms-play-services-tasks-9.2.0_984c8702ae2cd0e57437c47b1a37f695274c1038.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="Z:\GitHub Projects\Huddle2\app\build\intermediates\exploded-aar\com.google.firebase\firebase-iid\9.2.0\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="24.0.3"
-        sha1="dc4c18602ecffb3e69cda6cdc51ba4feac0f97d7">
-        <dex dex="Z:\GitHub Projects\Huddle2\app\build\intermediates\pre-dexed\debug\com.google.firebase-firebase-iid-9.2.0_ac97bb7e00e16d076ae662856ba248c3cfc921c5.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="Z:\GitHub Projects\Huddle2\app\build\intermediates\exploded-aar\com.google.firebase\firebase-auth-common\9.2.0\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="24.0.3"
-        sha1="44120508d7240c3e34a05957981a5c3c9b9f61aa">
-        <dex dex="Z:\GitHub Projects\Huddle2\app\build\intermediates\pre-dexed\debug\com.google.firebase-firebase-auth-common-9.2.0_b3446a593edce3fb93d365c6b7f8fdea70721d30.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="Z:\GitHub Projects\Huddle2\app\build\intermediates\exploded-aar\com.android.support\support-fragment\24.2.1\jars\libs\internal_impl-24.2.1.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="24.0.3"
-        sha1="5f64d657e838e8375135c0f6057a7ff8fab6a50e">
-        <dex dex="Z:\GitHub Projects\Huddle2\app\build\intermediates\pre-dexed\debug\internal_impl-24.2.1_e4fa5e311e9a6ce455d52a1a07c563593c19e9a7.jar" />
     </item>
     <item
         is-multidex="false"
@@ -237,21 +102,156 @@
     </item>
     <item
         is-multidex="false"
-        jar="Z:\GitHub Projects\Huddle2\app\build\intermediates\exploded-aar\com.android.support\support-core-utils\24.2.1\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="24.0.3"
-        sha1="9c4c3bc902450c39ed54de170db4fb12aea20a35">
-        <dex dex="Z:\GitHub Projects\Huddle2\app\build\intermediates\pre-dexed\debug\com.android.support-support-core-utils-24.2.1_648d713c28763a39e55e7310fad20a0a84ee574a.jar" />
-    </item>
-    <item
-        is-multidex="false"
         jar="Z:\GitHub Projects\Huddle2\app\build\intermediates\exploded-aar\com.google.firebase\firebase-auth\9.2.0\jars\classes.jar"
         jumboMode="false"
         optimize="true"
         revision="24.0.3"
         sha1="20ca7888c59f63d439f218a8810c88039f8bc7db">
         <dex dex="Z:\GitHub Projects\Huddle2\app\build\intermediates\pre-dexed\debug\com.google.firebase-firebase-auth-9.2.0_c9799ab1bdfd7a29abab3bc7fe1dea91390a6f26.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="Z:\GitHub Projects\Huddle2\app\build\intermediates\exploded-aar\com.android.support\support-core-utils\24.2.1\jars\libs\internal_impl-24.2.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.3"
+        sha1="935a969265b2a166b2d20415423f5f6e90fe16e0">
+        <dex dex="Z:\GitHub Projects\Huddle2\app\build\intermediates\pre-dexed\debug\internal_impl-24.2.1_d78793e5071c2fc952b2090e701ac027d8179646.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="Z:\GitHub Projects\Huddle2\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-base\9.2.0\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.3"
+        sha1="30489a97b06cc3945bdbcc1770089af9e3b3b64d">
+        <dex dex="Z:\GitHub Projects\Huddle2\app\build\intermediates\pre-dexed\debug\com.google.android.gms-play-services-base-9.2.0_6a76e6f784a588aae5cc3105b4ac4f4a7f3e92d7.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="Z:\GitHub Projects\Huddle2\app\build\intermediates\exploded-aar\com.google.firebase\firebase-common\9.2.0\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.3"
+        sha1="363f626ad5686283250cdb6073ae1bba5cb07a87">
+        <dex dex="Z:\GitHub Projects\Huddle2\app\build\intermediates\pre-dexed\debug\com.google.firebase-firebase-common-9.2.0_2ce99921fd5c2659e3305fb647065bc465f9b7ec.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="Z:\GitHub Projects\Huddle2\app\build\intermediates\exploded-aar\com.google.firebase\firebase-analytics\9.2.0\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.3"
+        sha1="4838df6db988160b107e954e02a745370df543b6">
+        <dex dex="Z:\GitHub Projects\Huddle2\app\build\intermediates\pre-dexed\debug\com.google.firebase-firebase-analytics-9.2.0_5e350254f1d99dc11fa2c8c42cbeb4068e8d31c0.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="Z:\GitHub Projects\Huddle2\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\24.2.1\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.3"
+        sha1="43b2dba6b5a0b14527961b75329d0b90025f15ea">
+        <dex dex="Z:\GitHub Projects\Huddle2\app\build\intermediates\pre-dexed\debug\com.android.support-appcompat-v7-24.2.1_9bd5ac7c5cba8988ded0cf68326aa7a10c9cc4a0.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="Z:\GitHub Projects\Huddle2\app\build\intermediates\exploded-aar\com.google.firebase\firebase-messaging\9.2.0\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.3"
+        sha1="21bb89120d84fa29afeb0f9c0ebf415bc3b45a7e">
+        <dex dex="Z:\GitHub Projects\Huddle2\app\build\intermediates\pre-dexed\debug\com.google.firebase-firebase-messaging-9.2.0_bc54c66d525fe87a3da11bb46ba8823e698cff9e.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="Z:\GitHub Projects\Huddle2\app\build\intermediates\exploded-aar\com.android.support\support-media-compat\24.2.1\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.3"
+        sha1="09b462bbcb77650284bd6614f1a32f360ef369f8">
+        <dex dex="Z:\GitHub Projects\Huddle2\app\build\intermediates\pre-dexed\debug\com.android.support-support-media-compat-24.2.1_1349da7d23aec50efc11d8bd9ba4046eeb621ea5.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="Z:\GitHub Projects\Huddle2\app\build\intermediates\exploded-aar\de.hdodenhof\circleimageview\1.2.1\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.3"
+        sha1="4b868b833b0887aa48c4e581558eef4f1196f6a2">
+        <dex dex="Z:\GitHub Projects\Huddle2\app\build\intermediates\pre-dexed\debug\de.hdodenhof-circleimageview-1.2.1_b72c7309f76c63ee4227df1309ce9baec1d46051.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="Z:\GitHub Projects\Huddle2\app\build\intermediates\exploded-aar\com.android.support\animated-vector-drawable\24.2.1\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.3"
+        sha1="94bc1dfb84dcc8b6f6f8f7cc726d7b2dd39c1574">
+        <dex dex="Z:\GitHub Projects\Huddle2\app\build\intermediates\pre-dexed\debug\com.android.support-animated-vector-drawable-24.2.1_73cc8158628a12657a0a2773f06f55de33442471.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="Z:\GitHub Projects\Huddle2\app\build\intermediates\exploded-aar\com.google.firebase\firebase-auth-module\9.2.0\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.3"
+        sha1="e791f7f2fbf9ca5b3b576916533f844dfb384024">
+        <dex dex="Z:\GitHub Projects\Huddle2\app\build\intermediates\pre-dexed\debug\com.google.firebase-firebase-auth-module-9.2.0_7da0ae7c111ab4cbc2d56761c9914dd65d47cdb5.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="Z:\GitHub Projects\Huddle2\app\libs\volley.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.3"
+        sha1="d4aaa36e04ee71a83444f8367c97a46fda662d2c">
+        <dex dex="Z:\GitHub Projects\Huddle2\app\build\intermediates\pre-dexed\debug\volley_4eae47f8cd5e82a2ca26c962c618cb1bd759e149.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="Z:\GitHub Projects\Huddle2\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-tasks\9.2.0\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.3"
+        sha1="593fbaec1c3e100480a2bd72457b64b7dde6ac2d">
+        <dex dex="Z:\GitHub Projects\Huddle2\app\build\intermediates\pre-dexed\debug\com.google.android.gms-play-services-tasks-9.2.0_984c8702ae2cd0e57437c47b1a37f695274c1038.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="Z:\GitHub Projects\Huddle2\app\build\intermediates\exploded-aar\com.google.firebase\firebase-iid\9.2.0\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.3"
+        sha1="dc4c18602ecffb3e69cda6cdc51ba4feac0f97d7">
+        <dex dex="Z:\GitHub Projects\Huddle2\app\build\intermediates\pre-dexed\debug\com.google.firebase-firebase-iid-9.2.0_ac97bb7e00e16d076ae662856ba248c3cfc921c5.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="Z:\GitHub Projects\Huddle2\app\build\intermediates\exploded-aar\com.google.firebase\firebase-auth-common\9.2.0\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.3"
+        sha1="44120508d7240c3e34a05957981a5c3c9b9f61aa">
+        <dex dex="Z:\GitHub Projects\Huddle2\app\build\intermediates\pre-dexed\debug\com.google.firebase-firebase-auth-common-9.2.0_b3446a593edce3fb93d365c6b7f8fdea70721d30.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="Z:\GitHub Projects\Huddle2\app\build\intermediates\exploded-aar\com.android.support\support-fragment\24.2.1\jars\libs\internal_impl-24.2.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.3"
+        sha1="5f64d657e838e8375135c0f6057a7ff8fab6a50e">
+        <dex dex="Z:\GitHub Projects\Huddle2\app\build\intermediates\pre-dexed\debug\internal_impl-24.2.1_e4fa5e311e9a6ce455d52a1a07c563593c19e9a7.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="Z:\GitHub Projects\Huddle2\app\build\intermediates\exploded-aar\com.android.support\support-core-utils\24.2.1\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.3"
+        sha1="9c4c3bc902450c39ed54de170db4fb12aea20a35">
+        <dex dex="Z:\GitHub Projects\Huddle2\app\build\intermediates\pre-dexed\debug\com.android.support-support-core-utils-24.2.1_648d713c28763a39e55e7310fad20a0a84ee574a.jar" />
     </item>
     <item
         is-multidex="false"

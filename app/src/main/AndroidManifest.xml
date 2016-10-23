@@ -70,6 +70,11 @@
             </intent-filter>
         </service>
 
+        <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+        <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+
+        <activity android:name="com.tangxiaolv.telegramgallery.GalleryActivity" />
+
         <activity android:name=".BioPage" />
         <activity android:name=".SelfProfile"></activity>
     </application>
