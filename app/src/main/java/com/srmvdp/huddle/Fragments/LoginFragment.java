@@ -22,6 +22,7 @@ import android.widget.Toast;
 
 import com.google.firebase.iid.FirebaseInstanceId;
 import com.google.firebase.iid.FirebaseInstanceIdService;
+import com.srmvdp.huddle.Dashboard;
 import com.srmvdp.huddle.Firebase.MyFirebaseInstanceIDService;
 import com.srmvdp.huddle.LocalStorage.SessionManagement;
 import com.srmvdp.huddle.PhoneNumber;
@@ -230,13 +231,6 @@ public class LoginFragment extends Fragment {
                 super.onPostExecute(s);
                 loading.dismiss();
 
-                if(s.equalsIgnoreCase("")){
-
-                    Snackbar snackbar = Snackbar.make(getView(), "Loading... Try Again!", Snackbar.LENGTH_SHORT);
-
-                    snackbar.show();
-
-                }
 
                 if(s.equals("Student")){
 
@@ -250,11 +244,13 @@ public class LoginFragment extends Fragment {
                         @Override
                         public void run() {
 
-                            Intent i=new Intent(getContext(),PhoneNumber.class);
+                            Intent i=new Intent(getContext(), Dashboard.class);
                             startActivity(i);
                             getActivity().finish();
                         }
                     }, 1000);
+
+                    return;
 
                 }
 
@@ -270,11 +266,13 @@ public class LoginFragment extends Fragment {
                         @Override
                         public void run() {
 
-                            Intent i=new Intent(getContext(),PhoneNumber.class);
+                            Intent i=new Intent(getContext(), Dashboard.class);
                             startActivity(i);
                             getActivity().finish();
                         }
                     }, 1000);
+
+                    return;
 
                 }
 
@@ -290,11 +288,89 @@ public class LoginFragment extends Fragment {
                         @Override
                         public void run() {
 
-                            Intent i=new Intent(getContext(),PhoneNumber.class);
+                            Intent i=new Intent(getContext(), Dashboard.class);
                             startActivity(i);
                             getActivity().finish();
                         }
                     }, 1000);
+
+                    return;
+
+                }
+
+                if(s.equalsIgnoreCase("uAdmin")){
+
+                    Snackbar snackbar = Snackbar.make(getView(), "Successfully Logged In!", Snackbar.LENGTH_SHORT);
+
+                    snackbar.show();
+
+                    session.createVerifiedDashboardSession(username, "Admin");
+
+                    new Handler().postDelayed(new Runnable() {
+                        @Override
+                        public void run() {
+
+                            Intent i=new Intent(getContext(), PhoneNumber.class);
+                            startActivity(i);
+                            getActivity().finish();
+                        }
+                    }, 1000);
+
+                    return;
+
+                }
+
+                if(s.equalsIgnoreCase("uStudent")){
+
+                    Snackbar snackbar = Snackbar.make(getView(), "Successfully Logged In!", Snackbar.LENGTH_SHORT);
+
+                    snackbar.show();
+
+                    session.createVerifiedDashboardSession(username, "Student");
+
+                    new Handler().postDelayed(new Runnable() {
+                        @Override
+                        public void run() {
+
+                            Intent i=new Intent(getContext(), PhoneNumber.class);
+                            startActivity(i);
+                            getActivity().finish();
+                        }
+                    }, 1000);
+
+                    return;
+
+                }
+
+                if(s.equalsIgnoreCase("uTeacher")){
+
+                    Snackbar snackbar = Snackbar.make(getView(), "Successfully Logged In!", Snackbar.LENGTH_SHORT);
+
+                    snackbar.show();
+
+                    session.createVerifiedDashboardSession(username, "Teacher");
+
+                    new Handler().postDelayed(new Runnable() {
+                        @Override
+                        public void run() {
+
+                            Intent i=new Intent(getContext(), PhoneNumber.class);
+                            startActivity(i);
+                            getActivity().finish();
+                        }
+                    }, 1000);
+
+                    return;
+
+                }
+
+                if(s.equalsIgnoreCase("")){
+
+                    Snackbar snackbar = Snackbar.make(getView(), "Loading... Try Again!", Snackbar.LENGTH_SHORT);
+
+                    snackbar.show();
+
+                    return;
 
                 }
 
@@ -307,6 +383,8 @@ public class LoginFragment extends Fragment {
                     swipetologin.setProgress(0);
 
                     slide2.start();
+
+                    return;
 
                 }
 

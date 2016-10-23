@@ -96,6 +96,24 @@ public class SessionManagement {
 
 
 
+    public void createVerifiedDashboardSession(String regnum, String privilege){
+
+        editor.putBoolean(PHONE, false);
+
+        editor.putBoolean(ONETIMEPASSWORD, false);
+
+        editor.putString(REG_NUM, regnum);
+
+        editor.putString(PRIVILEGE, privilege);
+
+        editor.putBoolean(DASHBOARD, true);
+
+        editor.commit();
+
+    }
+
+
+
     public void createAdminPanelSession(){
 
         editor.putBoolean(PANEL, true);
