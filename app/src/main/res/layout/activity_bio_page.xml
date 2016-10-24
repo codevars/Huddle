@@ -174,7 +174,7 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@id/namebio"
                 android:textStyle="normal"
-                android:text="I love to fuck"
+                android:text="From Delhi to Chennai in a whiff :)"
                 android:textColor="#000"
                 android:layout_marginLeft="15dp"
                 android:layout_marginTop="10dp"

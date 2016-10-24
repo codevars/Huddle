@@ -145,7 +145,10 @@ public class Dashboard extends AppCompatActivity {
 
                     case R.id.photos:
 
-                        Toast.makeText(getApplicationContext(),"Trash",Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(),"Teachers list",Toast.LENGTH_SHORT).show();
+
+                        Intent intent = new Intent(Dashboard.this,TeacherProfile.class);
+                        startActivity(intent);
 
                         drawerLayout.closeDrawers();
 
