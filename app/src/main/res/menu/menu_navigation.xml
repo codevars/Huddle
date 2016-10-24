@@ -21,6 +21,11 @@
             android:title="Settings"
             android:icon="@drawable/ic_whats_hot"/>
 
+        <item
+            android:id="@+id/exit"
+            android:title="Exit"
+            android:icon="@drawable/ic_arrow_back_white" />
+
     </group>
 
 </menu>

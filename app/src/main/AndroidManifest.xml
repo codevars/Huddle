@@ -71,11 +71,24 @@
             </intent-filter>
         </service>
 
-        <activity android:name=".BioPage" />
-        <activity android:name=".SelfProfile" />
-        <activity android:name=".Extras.AdminPanelIntro" />
-        <activity android:name=".AdminPanel" />
-        <activity android:name=".TeacherProfile"></activity>
+        <activity
+            android:name=".BioPage"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".SelfProfile"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".Extras.AdminPanelIntro"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".AdminPanel"
+            android:label="Admin Panel"
+            android:theme="@style/AppThemeLogged"/>
+
+        <activity
+            android:name=".TeacherProfile"
+            android:screenOrientation="portrait"/>
+
     </application>
 
 </manifest>

@@ -238,7 +238,7 @@ public class LoginFragment extends Fragment {
 
                     snackbar.show();
 
-                    session.createLoginSession(username, s);
+                    session.createVerifiedDashboardSession(username, s);
 
                     new Handler().postDelayed(new Runnable() {
                         @Override
@@ -253,6 +253,8 @@ public class LoginFragment extends Fragment {
                     return;
 
                 }
+
+
 
                 if(s.equalsIgnoreCase("Admin")){
 
@@ -260,7 +262,7 @@ public class LoginFragment extends Fragment {
 
                     snackbar.show();
 
-                    session.createLoginSession(username, s);
+                    session.createVerifiedDashboardSession(username, s);
 
                     new Handler().postDelayed(new Runnable() {
                         @Override
@@ -275,6 +277,8 @@ public class LoginFragment extends Fragment {
                     return;
 
                 }
+
+
 
                 if(s.equalsIgnoreCase("Teacher")){
 
@@ -282,7 +286,7 @@ public class LoginFragment extends Fragment {
 
                     snackbar.show();
 
-                    session.createLoginSession(username, s);
+                    session.createVerifiedDashboardSession(username, s);
 
                     new Handler().postDelayed(new Runnable() {
                         @Override
@@ -298,13 +302,15 @@ public class LoginFragment extends Fragment {
 
                 }
 
+
+
                 if(s.equalsIgnoreCase("uAdmin")){
 
                     Snackbar snackbar = Snackbar.make(getView(), "Successfully Logged In!", Snackbar.LENGTH_SHORT);
 
                     snackbar.show();
 
-                    session.createVerifiedDashboardSession(username, "Admin");
+                    session.createLoginSession(username, "Admin");
 
                     new Handler().postDelayed(new Runnable() {
                         @Override
@@ -319,6 +325,8 @@ public class LoginFragment extends Fragment {
                     return;
 
                 }
+
+
 
                 if(s.equalsIgnoreCase("uStudent")){
 
@@ -326,7 +334,7 @@ public class LoginFragment extends Fragment {
 
                     snackbar.show();
 
-                    session.createVerifiedDashboardSession(username, "Student");
+                    session.createLoginSession(username, "Student");
 
                     new Handler().postDelayed(new Runnable() {
                         @Override
@@ -341,6 +349,8 @@ public class LoginFragment extends Fragment {
                     return;
 
                 }
+
+
 
                 if(s.equalsIgnoreCase("uTeacher")){
 
@@ -348,7 +358,7 @@ public class LoginFragment extends Fragment {
 
                     snackbar.show();
 
-                    session.createVerifiedDashboardSession(username, "Teacher");
+                    session.createLoginSession(username, "Teacher");
 
                     new Handler().postDelayed(new Runnable() {
                         @Override
@@ -363,6 +373,8 @@ public class LoginFragment extends Fragment {
                     return;
 
                 }
+
+
 
                 if(s.equalsIgnoreCase("")){
 
@@ -373,6 +385,8 @@ public class LoginFragment extends Fragment {
                     return;
 
                 }
+
+
 
                 else{
 
@@ -385,6 +399,8 @@ public class LoginFragment extends Fragment {
                     slide2.start();
 
                     return;
+
+
 
                 }
 
