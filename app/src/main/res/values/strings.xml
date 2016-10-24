@@ -32,7 +32,7 @@
 
     <string name="username">Rishabh Singh</string>
 
-    <string name="useremail">reachrishabh@yahoo.com</string>
+    <string name="useremail">vsagarofficial@gmail.com</string>
 
     <string name="actionsettings">Settings</string>
 
@@ -44,11 +44,13 @@
 
     <string name="admin">Admin Panel</string>
 
-    <string name="photos">Photos</string>
+    <string name="photos">Teachers</string>
 
     <string name="image">Image</string>
 
     <string name="exit">Exit</string>
+
+    <string name="settings">Settings</string>
 
     <string name="introoneheader">ADMIN PANEL</string>
 

@@ -12,7 +12,7 @@
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
     <application
-        android:name="com.srmvdp.huddle.News.AppController"
+        android:name=".News.AppController"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -38,7 +38,6 @@
             android:label="News"
             android:screenOrientation="portrait"
             android:theme="@style/AppThemeLogged" />
-
         <activity
             android:name=".LoginRegisterTabbed"
             android:screenOrientation="portrait"
@@ -57,7 +56,8 @@
             android:name=".Dashboard"
             android:label="Dashboard"
             android:screenOrientation="portrait"
-            android:theme="@style/AppThemeNavigation" />
+            android:theme="@style/AppThemeNavigation"
+            android:uiOptions="splitActionBarWhenNarrow" />
 
         <service
             android:name=".Firebase.MyFirebaseInstanceIDService"
@@ -74,17 +74,21 @@
 
         <activity
             android:name=".BioPage"
-            android:screenOrientation="portrait"/>
+            android:screenOrientation="portrait" />
         <activity
             android:name=".SelfProfile"
-            android:screenOrientation="portrait"/>
+            android:screenOrientation="portrait" />
         <activity
             android:name=".Extras.AdminPanelIntro"
-            android:screenOrientation="portrait"/>
+            android:screenOrientation="portrait" />
         <activity
             android:name=".AdminPanel"
             android:label="Admin Panel"
-            android:theme="@style/AppThemeLogged"/>
+            android:theme="@style/AppThemeLogged" />
+        <activity
+            android:name=".TeacherProfile"
+            android:screenOrientation="portrait" />
+        <activity android:name=".Post1"></activity>
     </application>
 
 </manifest>

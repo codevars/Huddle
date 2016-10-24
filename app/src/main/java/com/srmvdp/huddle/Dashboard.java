@@ -6,11 +6,14 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
 import android.support.design.widget.TabLayout;
+import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.View;
 import android.view.MenuItem;
 import android.widget.TextView;
@@ -69,6 +72,16 @@ public class Dashboard extends AppCompatActivity {
         drawerLayout = (DrawerLayout)findViewById(R.id.drawer);
 
         NavigationDrawer();
+
+
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.menu_main, menu);
+        return super.onCreateOptionsMenu(menu);
+
 
     }
 
@@ -147,7 +160,10 @@ public class Dashboard extends AppCompatActivity {
 
                     case R.id.photos:
 
-                        Toast.makeText(getApplicationContext(),"Trash",Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(),"Teachers list",Toast.LENGTH_SHORT).show();
+
+                        Intent intent = new Intent(Dashboard.this,TeacherProfile.class);
+                        startActivity(intent);
 
                         drawerLayout.closeDrawers();
 
@@ -169,7 +185,7 @@ public class Dashboard extends AppCompatActivity {
 
         TextView tv_email = (TextView)header.findViewById(R.id.tv_email);
 
-        tv_email.setText("reachrishabh@gmail.com");
+        tv_email.setText("VsagarOfficial@gmail.com");
 
 
 
@@ -191,6 +207,7 @@ public class Dashboard extends AppCompatActivity {
         actionBarDrawerToggle.syncState();
 
     }
+
 
 
     @Override
@@ -217,6 +234,22 @@ public class Dashboard extends AppCompatActivity {
 
         Toast.makeText(this, "Please Click Back Again To Exit!", Toast.LENGTH_SHORT).show();
 
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.action_add:
+
+               startActivity(new Intent(Dasshboard.this,Post1.class));
+
+
+            default:
+                // If we got here, the user's action was not recognized.
+                // Invoke the superclass to handle it.
+                return super.onOptionsItemSelected(item);
+
+        }
     }
 
 
