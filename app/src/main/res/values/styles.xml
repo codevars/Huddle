@@ -20,6 +20,12 @@
         <item name="colorAccent">#6C7A89</item>
     </style>
 
+    <style name="AppThemeAdminPanel" parent="Theme.AppCompat.Light">
+        <item name="android:textColorPrimary">@color/introthree</item>
+        <item name="colorPrimary">@android:color/transparent</item>
+        <item name="windowActionBarOverlay">true</item>
+    </style>
+
 
     <style name="AppThemeNavigation" parent="Theme.AppCompat.Light.DarkActionBar">
         <!-- Customize your theme here. -->
