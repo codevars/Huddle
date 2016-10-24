@@ -88,7 +88,7 @@
         <activity
             android:name=".TeacherProfile"
             android:screenOrientation="portrait" />
-        <activity android:name=".Post1"></activity>
+        <activity android:name=".Post"></activity>
     </application>
 
 </manifest>

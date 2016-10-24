@@ -6,7 +6,6 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
 import android.support.design.widget.TabLayout;
-import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
@@ -185,7 +184,7 @@ public class Dashboard extends AppCompatActivity {
 
         TextView tv_email = (TextView)header.findViewById(R.id.tv_email);
 
-        tv_email.setText("VsagarOfficial@gmail.com");
+        tv_email.setText("codevars@gmail.com");
 
 
 
@@ -238,20 +237,20 @@ public class Dashboard extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
+
         switch (item.getItemId()) {
+
             case R.id.action_add:
 
-               startActivity(new Intent(Dasshboard.this,Post1.class));
-
+               startActivity(new Intent(Dashboard.this,Post.class));
 
             default:
-                // If we got here, the user's action was not recognized.
-                // Invoke the superclass to handle it.
+
                 return super.onOptionsItemSelected(item);
 
         }
-    }
 
+    }
 
 
 }

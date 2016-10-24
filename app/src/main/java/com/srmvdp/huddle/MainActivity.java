@@ -14,10 +14,8 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.view.Menu;
-import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
-
 import com.android.volley.Cache;
 import com.android.volley.Cache.Entry;
 import com.android.volley.Request.Method;

@@ -1,12 +1,9 @@
-
-
-
 package com.srmvdp.huddle;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
-public class Post1 extends AppCompatActivity {
+public class Post extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
