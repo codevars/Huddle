@@ -56,7 +56,8 @@
             android:name=".Dashboard"
             android:label="Dashboard"
             android:screenOrientation="portrait"
-            android:theme="@style/AppThemeNavigation" />
+            android:theme="@style/AppThemeNavigation"
+            android:uiOptions="splitActionBarWhenNarrow"/>
 
         <service
             android:name=".Firebase.MyFirebaseInstanceIDService"
