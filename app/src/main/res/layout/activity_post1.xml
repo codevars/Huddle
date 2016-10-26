@@ -87,22 +87,29 @@
         android:orientation="horizontal"
         android:layout_marginTop="20dp">
 
-        <GridView
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/buttonpanel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/ln4post"
+        android:layout_marginStart="40sp"
+        android:layout_marginEnd="40sp"
+        android:background="@drawable/customgreenbutton">
+
+        <Button
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"></GridView>
+            android:layout_height="wrap_content"
+            android:id="@+id/buttonpost"
+            android:background="?attr/selectableItemBackground"
+            android:text="@string/post"
+            android:textColor="#fff" />
 
     </LinearLayout>
 
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/ln4post"
-        android:id="@+id/buttonpost"
-        android:background="@drawable/customgreenbutton"
-        android:text="Post!"
-        android:textColor="#fff"
-        android:layout_marginRight="40dp"
-        android:layout_marginLeft="40dp"/>
+
 
 
 

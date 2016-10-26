@@ -36,7 +36,8 @@
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                android:paddingLeft="@dimen/feed_item_profile_info_padd" >
+                android:paddingStart="@dimen/feed_item_profile_info_padd"
+                android:paddingEnd="0dp">
 
                 <TextView
                     android:id="@+id/name"
