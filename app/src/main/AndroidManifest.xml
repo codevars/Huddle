@@ -91,6 +91,7 @@
             android:name=".TeacherProfile"
             android:screenOrientation="portrait" />
         <activity android:name=".Post" />
+        <activity android:name=".PostNews"></activity>
     </application>
 
 </manifest>
