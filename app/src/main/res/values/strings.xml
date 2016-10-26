@@ -72,11 +72,17 @@
 
     <string name="introoneheader">ADMIN PANEL</string>
 
-    <string name="introonemain">Control What Happens Around Huddle With Few Taps.</string>
+    <string name="introonemain">Control what happens around Huddle with few taps.</string>
 
     <string name="introtwoheader">POSTS</string>
 
-    <string name="introtwomain">Add, Delete Or Edit The Posts To Work Your Way. Include Texts, Pictures, Docx, PPTs And So Much More!</string>
+    <string name="summary">Summary</string>
+
+    <string name="title">Title</string>
+
+    <string name="imagechooser">Select your images</string>
+
+    <string name="introtwomain">Add, delete Or edit the posts to work your way. Include texts, pPictures, Docx, PPTs and so much more!</string>
 
     <string name="introthreeheader">NEWS</string>
 
