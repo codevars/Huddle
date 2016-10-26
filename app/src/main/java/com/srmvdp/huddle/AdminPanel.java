@@ -1,6 +1,7 @@
 package com.srmvdp.huddle;
 
 import android.content.Intent;
+import android.provider.ContactsContract;
 import android.support.v7.app.ActionBar;
 
 import android.support.v7.app.AppCompatActivity;
@@ -9,13 +10,18 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.GridView;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.srmvdp.huddle.Adapters.CustomGridViewActivity;
 
-public class AdminPanel extends AppCompatActivity {
+import de.hdodenhof.circleimageview.CircleImageView;
+
+public class AdminPanel extends AppCompatActivity implements View.OnClickListener {
 
     private ActionBar bar;
+
+    ImageView posts,news,users,notifications;
 
     private boolean doubleBackToExitPressedOnce = false;
 
@@ -25,11 +31,23 @@ public class AdminPanel extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_admin_panel);
 
+        posts = (ImageView) findViewById(R.id.adminposts);
+        news = (ImageView) findViewById(R.id.adminnews);
+        users = (ImageView) findViewById(R.id.adminusers);
+        notifications = (ImageView) findViewById(R.id.adminnotifications);
+
+
+
         bar = getSupportActionBar();
 
         bar.setHomeButtonEnabled(true);
 
         bar.setDisplayHomeAsUpEnabled(true);
+
+        posts.setOnClickListener(this);
+        news.setOnClickListener(this);
+        users.setOnClickListener(this);
+        notifications.setOnClickListener(this);
 
 
     }
@@ -57,6 +75,28 @@ public class AdminPanel extends AppCompatActivity {
 
         }
 
+    }
+
+    @Override
+
+    public void onClick (View view) {
+
+        if (view == news) {
+
+            startActivity(new Intent(AdminPanel.this,PostNews.class));
+        }
+
+        if (view == posts) {
+            startActivity(new Intent(AdminPanel.this,AdminPosts.class));
+        }
+
+        if (view == users) {
+            startActivity(new Intent(AdminPanel.this,AdminUsers.class));
+        }
+
+        if (view == notifications) {
+            startActivity(new Intent(AdminPanel.this,AdminNotifications.class));
+        }
     }
 
 

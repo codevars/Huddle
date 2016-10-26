@@ -238,7 +238,7 @@ public class Dashboard extends AppCompatActivity {
 
             case R.id.action_add:
 
-               startActivity(new Intent(Dashboard.this,Post.class));
+               startActivity(new Intent(Dashboard.this,PostNews.class));
 
             default:
 

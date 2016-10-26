@@ -91,7 +91,13 @@
             android:name=".TeacherProfile"
             android:screenOrientation="portrait" />
         <activity android:name=".Post" />
-        <activity android:name=".PostNews"></activity>
+        <activity
+            android:name=".PostNews"
+            android:theme="@style/Theme.Design.Light"
+            android:label="Post news"/>
+        <activity android:name=".AdminPosts" />
+        <activity android:name=".AdminNotifications" />
+        <activity android:name=".AdminUsers"></activity>
     </application>
 
 </manifest>

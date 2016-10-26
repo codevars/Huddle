@@ -28,6 +28,7 @@
 
 
             <ImageView
+                android:id="@+id/adminposts"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="?attr/selectableItemBackground"
@@ -57,6 +58,7 @@
 
 
             <ImageView
+                android:id="@+id/adminnews"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="?attr/selectableItemBackground"
@@ -97,6 +99,7 @@
 
 
             <ImageView
+                android:id="@+id/adminusers"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="?attr/selectableItemBackground"
@@ -126,6 +129,7 @@
 
 
             <ImageView
+                android:id="@+id/adminnotifications"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="?attr/selectableItemBackground"
