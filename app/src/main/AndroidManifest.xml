@@ -74,7 +74,9 @@
 
         <activity
             android:name=".BioPage"
-            android:screenOrientation="portrait" />
+            android:label="Student Profile"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.Design.Light" />
         <activity
             android:name=".SelfProfile"
             android:screenOrientation="portrait" />
@@ -88,7 +90,7 @@
         <activity
             android:name=".TeacherProfile"
             android:screenOrientation="portrait" />
-        <activity android:name=".Post"></activity>
+        <activity android:name=".Post" />
     </application>
 
 </manifest>

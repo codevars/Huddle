@@ -9,7 +9,7 @@
         android:id="@+id/buttonpanel"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="50sp">
+        android:layout_margin="20sp">
 
         <Button
             android:id="@+id/editbutton"

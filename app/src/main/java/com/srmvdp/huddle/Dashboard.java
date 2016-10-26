@@ -75,15 +75,6 @@ public class Dashboard extends AppCompatActivity {
 
     }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        MenuInflater inflater = getMenuInflater();
-        inflater.inflate(R.menu.menu_main, menu);
-        return super.onCreateOptionsMenu(menu);
-
-
-    }
-
 
 
     public void setUpViewPager(ViewPager set) {
@@ -128,6 +119,7 @@ public class Dashboard extends AppCompatActivity {
                         Intent in = new Intent(Dashboard.this,BioPage.class);
 
                         drawerLayout.closeDrawers();
+
                         startActivity(in);
 
                         break;
@@ -218,6 +210,8 @@ public class Dashboard extends AppCompatActivity {
 
     }
 
+
+
     @Override
     public void onBackPressed() {
 
@@ -235,6 +229,8 @@ public class Dashboard extends AppCompatActivity {
 
     }
 
+
+
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
 
@@ -249,6 +245,17 @@ public class Dashboard extends AppCompatActivity {
                 return super.onOptionsItemSelected(item);
 
         }
+
+    }
+
+
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.menu_main, menu);
+        return super.onCreateOptionsMenu(menu);
+
 
     }
 

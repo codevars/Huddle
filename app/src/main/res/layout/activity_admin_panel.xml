@@ -1,6 +1,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@color/introfive">
 
 
     <LinearLayout
@@ -8,28 +9,40 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_centerInParent="true"
-        android:orientation="vertical"/>
+        android:orientation="vertical" />
 
     <LinearLayout
         android:id="@+id/containerone"
-        android:layout_above="@+id/center_point"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_above="@+id/center_point"
         android:baselineAligned="false">
 
 
         <LinearLayout
             android:layout_width="fill_parent"
             android:layout_height="match_parent"
+            android:layout_margin="10sp"
             android:layout_weight="1"
-            android:layout_margin="10sp">
+            android:orientation="vertical">
 
 
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@drawable/post"
-                android:contentDescription="@string/image"/>
+                android:background="?attr/selectableItemBackground"
+                android:clickable="true"
+                android:contentDescription="@string/image"
+                android:src="@drawable/post" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/introtwoheader"
+                android:layout_gravity="center"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textColor="#fff"/>
 
 
         </LinearLayout>
@@ -38,15 +51,27 @@
         <LinearLayout
             android:layout_width="fill_parent"
             android:layout_height="match_parent"
+            android:layout_margin="10sp"
             android:layout_weight="1"
-            android:layout_margin="10sp">
+            android:orientation="vertical">
 
 
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@drawable/news"
-                android:contentDescription="@string/image"/>
+                android:background="?attr/selectableItemBackground"
+                android:clickable="true"
+                android:contentDescription="@string/image"
+                android:src="@drawable/news" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/introthreeheader"
+                android:layout_gravity="center"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textColor="#fff"/>
 
 
         </LinearLayout>
@@ -57,24 +82,36 @@
 
     <LinearLayout
         android:id="@+id/containertwo"
-        android:layout_below="@+id/center_point"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_below="@+id/center_point"
         android:baselineAligned="false">
 
 
         <LinearLayout
             android:layout_width="fill_parent"
             android:layout_height="match_parent"
+            android:layout_margin="10sp"
             android:layout_weight="1"
-            android:layout_margin="10sp">
+            android:orientation="vertical">
 
 
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@drawable/users"
-                android:contentDescription="@string/image"/>
+                android:background="?attr/selectableItemBackground"
+                android:clickable="true"
+                android:contentDescription="@string/image"
+                android:src="@drawable/users" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/introfourheader"
+                android:layout_gravity="center"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textColor="#fff"/>
 
 
         </LinearLayout>
@@ -83,15 +120,27 @@
         <LinearLayout
             android:layout_width="fill_parent"
             android:layout_height="match_parent"
+            android:layout_margin="10sp"
             android:layout_weight="1"
-            android:layout_margin="10sp">
+            android:orientation="vertical">
 
 
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@drawable/notification"
-                android:contentDescription="@string/image"/>
+                android:background="?attr/selectableItemBackground"
+                android:clickable="true"
+                android:contentDescription="@string/image"
+                android:src="@drawable/notification" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/introfiveheader"
+                android:layout_gravity="center"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textColor="#fff"/>
 
 
         </LinearLayout>
