@@ -7,19 +7,19 @@
         <item
             android:id="@+id/profile"
             android:title="@string/profile"
-            android:icon="@drawable/ic_home"/>
+            android:icon="@drawable/ic_face_profile_grey600_36dp"/>
         <item
             android:id="@+id/adminpanel"
             android:title="@string/admin"
-            android:icon="@drawable/ic_people"/>
+            android:icon="@drawable/ic_yin_yang_grey600_36dp"/>
         <item
             android:id="@+id/photos"
             android:title="@string/photos"
-            android:icon="@drawable/ic_photos"/>
+            android:icon="@drawable/ic_school_grey600_36dp"/>
         <item
             android:id="@+id/settings"
             android:title="Settings"
-            android:icon="@drawable/ic_whats_hot"/>
+            android:icon="@drawable/ic_settings_grey600_36dp"/>
 
         <item
             android:id="@+id/exit"

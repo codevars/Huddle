@@ -2,7 +2,7 @@
 
     <string name="app_name">Huddle</string>
 
-    <string name="fullname">Full Name</string>
+    <string name="fullname">Full name</string>
 
     <string name="srmemail">SRM Email</string>
 
@@ -22,11 +22,11 @@
 
     <string name="countrycode">+91</string>
 
-    <string name="mobilewarning">Please Enter Your Phone Number. We Will Send A SMS For OTP Verification. Carrier Charges May Apply.</string>
+    <string name="mobilewarning">Please enter your phone number. We will send a SMS for OTP Verification. Carrier charges may apply.</string>
 
     <string name="submit">SUBMIT</string>
 
-    <string name="otpsent">An OTP Has Been Sent To</string>
+    <string name="otpsent">An OTP has been sent to</string>
 
     <string name="mobiledefault">9871495638</string>
 
@@ -72,7 +72,7 @@
 
     <string name="introoneheader">ADMIN PANEL</string>
 
-    <string name="introonemain">Control what happens around Huddle with few taps.</string>
+    <string name="introonemain">Control what happens around Huddle with just a few taps.</string>
 
     <string name="introtwoheader">POSTS</string>
 
@@ -82,18 +82,18 @@
 
     <string name="imagechooser">Select your images</string>
 
-    <string name="introtwomain">Add, delete Or edit the posts to work your way. Include texts, pPictures, Docx, PPTs and so much more!</string>
+    <string name="introtwomain">Add, Delete Or edit the posts to maintain the peace. Include texts, Pictures, Docx, PPTs and so much more!</string>
 
     <string name="introthreeheader">NEWS</string>
 
-    <string name="introthreemain">Post, Delete Or Post News, Happenings, Circulars, Events, Notices On Our Generalised News Feed!</string>
+    <string name="introthreemain">Post, Delete or Post News, Happenings, Circulars, Events, Notices on our generalised News Feed!</string>
 
     <string name="introfourheader">USERS</string>
 
-    <string name="introfourmain">Manage Any Audience Across Huddle. Students, Teachers, Content Creators. Add, Delete, Block, Restrict, Provoke Privileges.</string>
+    <string name="introfourmain">Manage any audience across Huddle. Students, Teachers, Content creators. Add, Delete, Block, Restrict, Provoke Privileges.</string>
 
     <string name="introfiveheader">NOTIFICATIONS</string>
 
-    <string name="introfivemain">Send Notifications Easily, Efficiently And Hassle Freely To Any User Across Huddle With Our Notification Central!</string>
+    <string name="introfivemain">Send notifications easily, Efficiently and hassle freely to any user across Huddle with our notification central!</string>
 
 </resources>
