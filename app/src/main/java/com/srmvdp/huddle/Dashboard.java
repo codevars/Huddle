@@ -97,6 +97,7 @@ public class Dashboard extends AppCompatActivity {
 
             makeuserprofile(registration);
 
+            session.createUserProfileSession();
 
         }
 
@@ -111,6 +112,8 @@ public class Dashboard extends AppCompatActivity {
             @Override
             protected void onPreExecute() {
                 super.onPreExecute();
+
+                Toast.makeText(Dashboard.this, "Generating Your Profile!", Toast.LENGTH_LONG).show();
 
                 loading = new ProgressDialog(Dashboard.this, R.style.MyTheme);
                 loading.setCancelable(false);
@@ -132,7 +135,9 @@ public class Dashboard extends AppCompatActivity {
 
                 else {
 
-                    Toast.makeText(Dashboard.this, s, Toast.LENGTH_LONG).show();
+                    String fullname = s;
+
+                    session.createUserProfile(fullname);
 
                 }
 

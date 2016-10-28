@@ -32,6 +32,8 @@ public class SessionManagement {
 
     public static final String PANEL = "Nuh";
 
+    public static final String FULLNAME = "fullname";
+
     public static final String REG_NUM = "regnum";
 
     public static final String MOB_NUM = "mobnum";
@@ -134,9 +136,9 @@ public class SessionManagement {
 
 
 
-    public void createUserProfile(){
+    public void createUserProfile(String fullname){
 
-        editor.putBoolean(USERPROFILE, true);
+        editor.putString(FULLNAME, fullname);
 
         editor.commit();
 
@@ -337,6 +339,18 @@ public class SessionManagement {
         privilege.put(PRIVILEGE, pref.getString(PRIVILEGE, null));
 
         return privilege;
+
+    }
+
+
+
+    public HashMap<String, String> getUserProfileDetails() {
+
+        HashMap<String, String> profile = new HashMap<>();
+
+        profile.put(FULLNAME, pref.getString(FULLNAME, null));
+
+        return profile;
 
     }
 

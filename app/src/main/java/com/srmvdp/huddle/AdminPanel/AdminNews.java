@@ -8,7 +8,11 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+
+import com.srmvdp.huddle.LocalStorage.SessionManagement;
 import com.srmvdp.huddle.R;
+
+import java.util.HashMap;
 
 public class AdminNews extends AppCompatActivity implements View.OnClickListener{
 
@@ -18,13 +22,21 @@ public class AdminNews extends AppCompatActivity implements View.OnClickListener
 
     private Button post;
 
-    private EditText title;
+    private String fullname;
+
+    private SessionManagement session;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_admin_panel_news);
 
+
+        session = new SessionManagement(getApplicationContext());
+
+        HashMap<String, String> profile = session.getUserProfileDetails();
+
+        fullname = profile.get(SessionManagement.FULLNAME);
 
         bar = getSupportActionBar();
 
