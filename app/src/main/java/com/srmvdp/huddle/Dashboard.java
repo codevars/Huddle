@@ -48,8 +48,6 @@ public class Dashboard extends AppCompatActivity {
 
     private SessionManagement session;
 
-    private boolean doubleBackToExitPressedOnce = false;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -283,33 +281,6 @@ public class Dashboard extends AppCompatActivity {
 
     }
 
-
-    @Override
-    protected void onResume() {
-
-        super.onResume();
-
-        this.doubleBackToExitPressedOnce = false;
-
-    }
-
-
-    @Override
-    public void onBackPressed() {
-
-        if (doubleBackToExitPressedOnce) {
-
-            super.onBackPressed();
-
-            return;
-
-        }
-
-        this.doubleBackToExitPressedOnce = true;
-
-        Toast.makeText(this, "Please Click Back Again To Exit!", Toast.LENGTH_SHORT).show();
-
-    }
 
 
     @Override

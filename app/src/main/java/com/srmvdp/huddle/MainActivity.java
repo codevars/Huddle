@@ -129,7 +129,7 @@ public class MainActivity extends Activity implements SwipeRefreshLayout.OnRefre
                 item.setImge(image);
                 item.setStatus(feedObj.getString("status"));
                 item.setProfilePic(feedObj.getString("profilePic"));
-                item.setTimeStamp(feedObj.getString("timeStamp"));
+                item.setTime(feedObj.getString("uploadtime"));
 
                 // url might be null sometimes
                 String feedUrl = feedObj.isNull("url") ? null : feedObj
@@ -173,7 +173,7 @@ public class MainActivity extends Activity implements SwipeRefreshLayout.OnRefre
 				item.setImge(image);
 				item.setStatus(feedObj.getString("status"));
 				item.setProfilePic(feedObj.getString("profilePic"));
-				item.setTimeStamp(feedObj.getString("timeStamp"));
+				item.setTime(feedObj.getString("uploadtime"));
 
 				// url might be null sometimes
 				String feedUrl = feedObj.isNull("url") ? null : feedObj

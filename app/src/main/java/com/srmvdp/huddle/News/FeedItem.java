@@ -2,20 +2,20 @@ package com.srmvdp.huddle.News;
 
 public class FeedItem {
 	private int id;
-	private String name, status, image, profilePic, timeStamp, url;
+	private String name, status, image, profilePic, uploadtime, url;
 
 	public FeedItem() {
 	}
 
 	public FeedItem(int id, String name, String image, String status,
-			String profilePic, String timeStamp, String url) {
+			String profilePic, String time, String url) {
 		super();
 		this.id = id;
 		this.name = name;
 		this.image = image;
 		this.status = status;
 		this.profilePic = profilePic;
-		this.timeStamp = timeStamp;
+		this.uploadtime = uploadtime;
 		this.url = url;
 	}
 
@@ -59,12 +59,12 @@ public class FeedItem {
 		this.profilePic = profilePic;
 	}
 
-	public String getTimeStamp() {
-		return timeStamp;
+	public String getTime() {
+		return uploadtime;
 	}
 
-	public void setTimeStamp(String timeStamp) {
-		this.timeStamp = timeStamp;
+	public void setTime(String uploadtime) {
+		this.uploadtime = uploadtime;
 	}
 
 	public String getUrl() {

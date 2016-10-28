@@ -46,6 +46,8 @@ public class SessionManagement {
 
     public static final String USERPROFILE = "USERPROFILE";
 
+    public static final String PROFILEPIC = "PROFILEPIC";
+
 
 
     public SessionManagement(Context context){
@@ -146,6 +148,16 @@ public class SessionManagement {
 
 
 
+    public void createProfilePicSession(){
+
+        editor.putBoolean(PROFILEPIC, true);
+
+        editor.commit();
+
+    }
+
+
+
     public void phone(){
 
         if(this.phoneIn()){
@@ -194,13 +206,12 @@ public class SessionManagement {
 
             Intent i = new Intent(_context, Dashboard.class);
 
-            i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-
-            i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-
-            i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
+            i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
 
             _context.startActivity(i);
+
+            i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
+
 
         }
 
@@ -372,6 +383,10 @@ public class SessionManagement {
 
     public boolean userProfileIn(){
         return pref.getBoolean(USERPROFILE, false);
+    }
+
+    public boolean hasProfilePic(){
+        return pref.getBoolean(PROFILEPIC, false);
     }
 
 }

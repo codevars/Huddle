@@ -22,17 +22,21 @@ public class Splash extends AppCompatActivity {
 
             Intent go = new Intent(Splash.this, LoginRegisterTabbed.class);
 
-            finish();
-
             startActivity(go);
 
-        } else {
+            finish();
+
+        }
+
+        else {
 
             session.phone();
 
             session.otp();
 
             session.dashboard();
+
+
         }
 
     }

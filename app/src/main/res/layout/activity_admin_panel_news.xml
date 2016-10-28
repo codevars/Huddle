@@ -11,9 +11,8 @@
         android:id="@+id/scrollview"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="19dp"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentStart="true">
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true">
 
         <RelativeLayout
             android:id="@+id/reaLayout1"
@@ -24,15 +23,13 @@
                 android:id="@+id/ln2post"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="20dp"
                 android:layout_marginLeft="20dp"
                 android:layout_marginRight="20dp"
                 android:layout_marginTop="50dp"
-                android:orientation="vertical"
-                android:paddingBottom="40dp">
+                android:orientation="vertical">
 
                 <EditText
-                    android:id="@+id/postinfo"
+                    android:id="@+id/status"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:drawableStart="@drawable/summary"
@@ -43,9 +40,26 @@
                     android:id="@+id/url"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="30sp"
                     android:drawableStart="@drawable/summary"
                     android:hint="@string/url"
-                    android:layout_marginTop="30sp"/>
+                    android:inputType="textUri"/>
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:id="@+id/previewcontainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/ln2post"
+                android:orientation="vertical"
+                android:layout_margin="40sp">
+
+                <ImageView
+                    android:id="@+id/preview"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
 
             </LinearLayout>
 
@@ -54,7 +68,7 @@
                 android:id="@+id/ln4post"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/ln2post"
+                android:layout_below="@+id/previewcontainer"
                 android:layout_marginEnd="40dp"
                 android:layout_marginStart="40dp"
                 android:layout_marginTop="20dp"
@@ -68,21 +82,6 @@
                     android:background="?attr/selectableItemBackground"
                     android:text="@string/imagechooser"
                     android:textColor="#fff" />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:id="@+id/gridveiw"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/ln4post"
-                android:layout_marginBottom="25dp"
-                android:layout_marginTop="20dp">
-
-                <GridView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent" />
-
 
             </LinearLayout>
 
@@ -106,21 +105,8 @@
 
             </LinearLayout>
 
-            <TextView
-                android:id="@+id/postheading"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_alignParentStart="true"
-                android:layout_alignParentTop="true"
-                android:gravity="center_horizontal"
-                android:text="Post"
-                android:textSize="25sp" />
-
-
         </RelativeLayout>
 
-
     </ScrollView>
-
 
 </RelativeLayout>

@@ -62,6 +62,8 @@
 
     <string name="postsnormal">Posts</string>
 
+    <string name="newsnormal">POST NEWS</string>
+
     <string name="inclass">Class :</string>
 
     <string name="examplenumber">26</string>
@@ -82,9 +84,9 @@
 
     <string name="title">Title</string>
 
-    <string name="imagechooser">Select your images</string>
+    <string name="imagechooser">Select your image</string>
 
-    <string name="introtwomain">Add, Delete Or edit the posts to maintain the peace. Include texts, Pictures, Docx, PPTs and so much more!</string>
+    <string name="introtwomain">Add, Delete or Edit the posts accrodingly. Include Texts, Pictures, Docx, PPTs and so much more!</string>
 
     <string name="introthreeheader">NEWS</string>
 
@@ -92,10 +94,10 @@
 
     <string name="introfourheader">USERS</string>
 
-    <string name="introfourmain">Manage any audience across Huddle. Students, Teachers, Content creators. Add, Delete, Block, Restrict, Provoke Privileges.</string>
+    <string name="introfourmain">Manage any audience across Huddle. Students, Teachers, Content Creators. Add, Delete, Block, Restrict, Provoke Privileges.</string>
 
     <string name="introfiveheader">NOTIFICATIONS</string>
 
-    <string name="introfivemain">Send notifications easily, Efficiently and hassle freely to any user across Huddle with our notification central!</string>
+    <string name="introfivemain">Send notifications easily, efficiently and hassle freely to any user across Huddle with our Notification Central!</string>
 
 </resources>
