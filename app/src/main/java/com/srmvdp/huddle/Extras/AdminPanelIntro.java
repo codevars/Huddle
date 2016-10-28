@@ -8,7 +8,7 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Toast;
 import com.github.paolorotolo.appintro.AppIntro;
-import com.srmvdp.huddle.AdminPanel;
+import com.srmvdp.huddle.AdminPanel.AdminPanel;
 import com.srmvdp.huddle.LocalStorage.SessionManagement;
 import com.srmvdp.huddle.R;
 

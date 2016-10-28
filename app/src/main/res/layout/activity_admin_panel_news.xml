@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_post1"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.srmvdp.huddle.AdminPanel.AdminNews">
+
+
+    <ScrollView
+        android:id="@+id/scrollview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="19dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true">
+
+        <RelativeLayout
+            android:id="@+id/reaLayout1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:id="@+id/ln2post"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="50dp"
+                android:orientation="vertical"
+                android:paddingBottom="40dp">
+
+                <EditText
+                    android:id="@+id/postinfo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:drawableStart="@drawable/summary"
+                    android:hint="@string/summary" />
+
+
+                <EditText
+                    android:id="@+id/url"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:drawableStart="@drawable/summary"
+                    android:hint="@string/url"
+                    android:layout_marginTop="30sp"/>
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:id="@+id/ln4post"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/ln2post"
+                android:layout_marginEnd="40dp"
+                android:layout_marginStart="40dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/customorangebutton"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/selectImages"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="?attr/selectableItemBackground"
+                    android:text="@string/imagechooser"
+                    android:textColor="#fff" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/gridveiw"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/ln4post"
+                android:layout_marginBottom="25dp"
+                android:layout_marginTop="20dp">
+
+                <GridView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/buttonpanel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/ln4post"
+                android:layout_marginEnd="40sp"
+                android:layout_marginStart="40sp"
+                android:layout_marginTop="40dp"
+                android:background="@drawable/customgreenbutton">
+
+                <Button
+                    android:id="@+id/buttonpost"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="?attr/selectableItemBackground"
+                    android:text="@string/post"
+                    android:textColor="#fff" />
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/postheading"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:gravity="center_horizontal"
+                android:text="Post"
+                android:textSize="25sp" />
+
+
+        </RelativeLayout>
+
+
+    </ScrollView>
+
+
+</RelativeLayout>

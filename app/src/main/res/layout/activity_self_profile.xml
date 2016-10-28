@@ -1,6 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
-
-
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/activity_self_profile"
@@ -8,225 +6,209 @@
     android:layout_height="match_parent"
     tools:context="com.srmvdp.huddle.SelfProfile">
 
-    <android.support.v7.widget.Toolbar
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:elevation="10px"
-        android:id="@+id/toolbarselfprofile"
-        android:background="@color/colorPrimary"
-        >
-    </android.support.v7.widget.Toolbar>
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/toolbarselfprofile">
-
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/toolbarselfprofile">
-
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/profileimageholderself"
-        android:orientation="horizontal">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center_horizontal"
-            android:id="@+id/changeprofilepcimage"
-
-            >
-                <de.hdodenhof.circleimageview.CircleImageView
-                android:layout_width="96dp"
-                android:layout_height="96dp"
-                android:layout_gravity="center"
-                android:background="@drawable/civil256"
-                    android:id="@+id/profilephoto"
-                />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/changeprofilepcimage"
-            android:layout_centerHorizontal="true"
-            >
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/changeprofilepictesxt"
-                android:text="Change Photo"
-                android:textColor="#2196F3"
-                android:textStyle="bold"
-                />
-
-
-        </LinearLayout>
-
-
-
-    </RelativeLayout>
-
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/namerel"
-        android:layout_below="@+id/profileimageholderself"
-        android:layout_alignParentStart="true">
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/rowsofedit"
-        android:orientation="horizontal"
-        android:layout_marginTop="30dp"
-        android:paddingLeft="20dp"
-        android:paddingRight="20dp"
-        >
-               <EditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="Name"
-                    android:drawableRight="@drawable/name3"
-                />
-
-        </LinearLayout>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/rowsofedit"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp"
-            android:layout_marginTop="15dp"
-            android:id="@+id/rowsofedit2"
-
-            >
-                <EditText
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="Bio"
-                    android:inputType="textMultiLine"
-                    android:drawableLeft="@drawable/bio2"
-
-                    />
-
-
-        </LinearLayout>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/rowsofedit2"
-            android:layout_marginLeft="20dp"
-            android:id="@+id/rowsofedit3"
-            android:layout_marginRight="20dp"
-            android:layout_marginTop="15dp">
-
-
-                <EditText
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="Roll no (Sensitive)"
-                    android:drawableLeft="@drawable/rollno"
-                    />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/rowsofedit3"
-            android:id="@+id/privateinfo"
-            android:layout_marginTop="20dp"
-            android:layout_marginBottom="5dp"
-            >
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Private Information"
-                android:textSize="25dp"
-                android:textColor="#d9000000"
-                android:layout_marginLeft="20dp"
-                />
-
-        </LinearLayout>
-
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="2dp"
-            android:layout_marginRight="20dp"
-            android:layout_marginLeft="20dp"
-            android:background="@color/colorPrimaryDark"
-            android:id="@+id/blackline"
-            android:layout_below="@id/privateinfo"/>
+        android:layout_height="wrap_content">
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/privateinfo"
-            android:id="@+id/rel2prof"
-            android:layout_marginTop="15dp"
+            android:layout_height="wrap_content">
 
-            >
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp"
-            android:id="@+id/emailprof">
-
-
-            <EditText
+            <RelativeLayout
+                android:id="@+id/profileimageholderself"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:drawableLeft="@drawable/name"
-                android:hint="Email" />
+                android:orientation="horizontal">
 
-        </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="20dp"
-                android:layout_marginRight="20dp"
-                android:layout_below="@+id/emailprof"
-                android:id="@+id/rowsofedit4"
-                android:layout_marginBottom="20dp"
-                >
-
-
-                <EditText
+                <LinearLayout
+                    android:id="@+id/changeprofilepcimage"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:drawableLeft="@drawable/name"
-                    android:hint="Phone Number:" />
+                    android:gravity="center_horizontal"
 
-            </LinearLayout>
+                    >
 
-            <Button
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/profilephoto"
+                        android:layout_width="96dp"
+                        android:layout_height="96dp"
+                        android:layout_gravity="center"
+                        android:background="@drawable/civil256" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/changeprofilepcimage"
+                    android:layout_centerHorizontal="true">
+
+                    <TextView
+                        android:id="@+id/changeprofilepictesxt"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Change Photo"
+                        android:textColor="#2196F3"
+                        android:textStyle="bold" />
+
+
+                </LinearLayout>
+
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/namerel"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/rowsofedit4"
-                android:background="@drawable/customgreenbutton"
-                android:layout_marginLeft="25dp"
-                android:layout_marginRight="25dp"
-                android:layout_marginBottom="20dp"
-                android:text="SUBMIT"
-                android:textColor="@color/colorPrimary"
-                />
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/profileimageholderself">
+
+                <LinearLayout
+                    android:id="@+id/rowsofedit"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="30dp"
+                    android:orientation="horizontal"
+                    android:paddingLeft="20dp"
+                    android:paddingRight="20dp">
+
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:drawableRight="@drawable/name3"
+                        android:hint="Name" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/rowsofedit2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/rowsofedit"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginTop="15dp"
+
+                    >
+
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:drawableLeft="@drawable/bio2"
+                        android:hint="Bio"
+                        android:inputType="textMultiLine"
+
+                        />
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/rowsofedit3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/rowsofedit2"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginTop="15dp">
+
+
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:drawableLeft="@drawable/rollno"
+                        android:hint="Roll no (Sensitive)" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/privateinfo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/rowsofedit3"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginTop="20dp">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:text="Private Information"
+                        android:textColor="#d9000000"
+                        android:textSize="25dp" />
+
+                </LinearLayout>
+
+                <View
+                    android:id="@+id/blackline"
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:layout_below="@id/privateinfo"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:background="@color/colorPrimaryDark" />
+
+                <RelativeLayout
+                    android:id="@+id/rel2prof"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/privateinfo"
+                    android:layout_marginTop="15dp"
+
+                    >
+
+                    <LinearLayout
+                        android:id="@+id/emailprof"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="20dp">
+
+
+                        <EditText
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:drawableLeft="@drawable/name"
+                            android:hint="Email" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/rowsofedit4"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/emailprof"
+                        android:layout_marginBottom="20dp"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="20dp">
+
+
+                        <EditText
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:drawableLeft="@drawable/name"
+                            android:hint="Phone Number:" />
+
+                    </LinearLayout>
+
+                    <Button
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/rowsofedit4"
+                        android:layout_marginBottom="20dp"
+                        android:layout_marginLeft="25dp"
+                        android:layout_marginRight="25dp"
+                        android:background="@drawable/customgreenbutton"
+                        android:text="SUBMIT"
+                        android:textColor="@color/colorPrimary" />
+
+                </RelativeLayout>
+
+            </RelativeLayout>
 
         </RelativeLayout>
-
-    </RelativeLayout>
-
-    </RelativeLayout>
 
     </ScrollView>
 

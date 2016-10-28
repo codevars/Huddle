@@ -22,13 +22,12 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
+            android:ems="2"
+            android:paddingStart="20sp"
+            android:paddingEnd="10sp"
             android:text="@string/mobilewarning"
             android:textSize="20sp"
-            android:textStyle="bold"
-            android:paddingLeft="20sp"
-            android:paddingRight="10sp"
-            android:ems="2"
-            />
+            android:textStyle="bold" />
 
     </LinearLayout>
 
@@ -38,8 +37,8 @@
         android:layout_width="match_parent"
         android:layout_height="110sp"
         android:layout_below="@+id/warningcontainer"
-        android:layout_marginTop="6sp"
         android:layout_centerInParent="true"
+        android:layout_marginTop="6sp"
         android:background="@drawable/dialog"
         android:gravity="center">
 
@@ -48,121 +47,112 @@
             android:id="@+id/countrycode"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/countrycode"
-            android:textSize="30sp"
             android:ems="2"
-            />
+            android:text="@string/countrycode"
+            android:textSize="30sp" />
 
 
         <EditText
             android:id="@+id/p1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_centerVertical="true"
+            android:ems="1"
             android:gravity="center"
-            android:textSize="20dp"
-            android:maxLength="2"
             android:inputType="number"
-            android:ems="1" />
+            android:maxLength="2"
+            android:textSize="20sp" />
 
         <EditText
             android:id="@+id/p2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignTop="@+id/otp1"
+            android:ems="1"
             android:gravity="center"
-            android:textSize="20dp"
-            android:maxLength="2"
             android:inputType="number"
-            android:ems="1" />
+            android:maxLength="2"
+            android:textSize="20sp" />
 
         <EditText
             android:id="@+id/p3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
+            android:ems="1"
             android:gravity="center"
-            android:textSize="20dp"
-            android:maxLength="2"
             android:inputType="number"
-            android:ems="1" />
+            android:maxLength="2"
+            android:textSize="20sp" />
 
         <EditText
             android:id="@+id/p4"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignTop="@+id/otp3"
+            android:ems="1"
             android:gravity="center"
-            android:textSize="20dp"
-            android:maxLength="2"
             android:inputType="number"
-            android:ems="1" />
+            android:maxLength="2"
+            android:textSize="20sp" />
 
         <EditText
             android:id="@+id/p5"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignTop="@+id/otp3"
+            android:ems="1"
             android:gravity="center"
-            android:textSize="20dp"
-            android:maxLength="2"
             android:inputType="number"
-            android:ems="1" />
+            android:maxLength="2"
+            android:textSize="20sp" />
 
         <EditText
             android:id="@+id/p6"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignTop="@+id/otp3"
+            android:ems="1"
             android:gravity="center"
-            android:textSize="20dp"
-            android:maxLength="2"
             android:inputType="number"
-            android:ems="1" />
+            android:maxLength="2"
+            android:textSize="20sp" />
 
         <EditText
             android:id="@+id/p7"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
+            android:ems="1"
             android:gravity="center"
-            android:textSize="20dp"
-            android:maxLength="2"
             android:inputType="number"
-            android:ems="1" />
+            android:maxLength="2"
+            android:textSize="20sp" />
 
         <EditText
             android:id="@+id/p8"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignTop="@+id/otp3"
+            android:ems="1"
             android:gravity="center"
-            android:textSize="20dp"
-            android:maxLength="2"
             android:inputType="number"
-            android:ems="1" />
+            android:maxLength="2"
+            android:textSize="20sp" />
 
         <EditText
             android:id="@+id/p9"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignTop="@+id/otp3"
+            android:ems="1"
             android:gravity="center"
-            android:textSize="20dp"
-            android:maxLength="2"
             android:inputType="number"
-            android:ems="1" />
+            android:maxLength="2"
+            android:textSize="20sp" />
 
         <EditText
             android:id="@+id/p10"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignTop="@+id/otp3"
+            android:ems="1"
             android:gravity="center"
-            android:textSize="20dp"
-            android:maxLength="1"
             android:inputType="number"
-            android:ems="1" />
+            android:maxLength="1"
+            android:textSize="20sp" />
 
 
     </LinearLayout>
@@ -177,19 +167,17 @@
         android:background="?android:attr/selectableItemBackground">
 
 
-    <Button
-        android:id="@+id/submit"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:background="@drawable/buttonmaterial"
-        android:layout_gravity="bottom"
-        android:text="Submit"
-        android:textColor="#ffffff"
-        android:textSize="20dp"
-        />
+        <Button
+            android:id="@+id/submit"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_gravity="bottom"
+            android:background="@drawable/buttonmaterial"
+            android:text="@string/submit"
+            android:textColor="#ffffff"
+            android:textSize="20sp" />
 
     </LinearLayout>
-
 
 
 </RelativeLayout>

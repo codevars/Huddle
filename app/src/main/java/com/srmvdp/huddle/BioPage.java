@@ -22,6 +22,8 @@ public class BioPage extends AppCompatActivity implements View.OnClickListener {
 
         button = (Button) findViewById(R.id.editbutton);
 
+        button.setOnClickListener(this);
+
         bar = getSupportActionBar();
 
         bar.setDisplayHomeAsUpEnabled(true);

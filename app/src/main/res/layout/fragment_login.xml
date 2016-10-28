@@ -12,38 +12,34 @@
         android:paddingLeft="@dimen/activity_horizontal_margin"
         android:paddingRight="@dimen/activity_horizontal_margin"
         android:paddingTop="@dimen/activity_vertical_margin"
-        tools:context="com.srmvdp.huddle"
-        >
+        tools:context="com.srmvdp.huddle">
 
 
         <LinearLayout
             android:id="@+id/credentials"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
             android:layout_centerHorizontal="true"
-            android:gravity="center"
             android:layout_marginTop="30sp"
-            >
+            android:gravity="center"
+            android:orientation="vertical">
 
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="25sp"
-                android:background="@drawable/materialbutton"
-                >
+                android:background="@drawable/materialbutton">
 
                 <ImageView
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/username"
-                    android:layout_weight="1"
                     android:layout_gravity="center"
-                    android:paddingLeft="10dp"
-                    android:paddingStart="10dp"
+                    android:layout_weight="1"
+                    android:contentDescription="@string/icondesc"
                     android:paddingEnd="10dp"
-                    android:contentDescription="@string/icondesc" />
+                    android:paddingStart="10dp"
+                    android:src="@drawable/username" />
 
 
                 <EditText
@@ -51,16 +47,15 @@
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
                     android:background="#00000000"
+                    android:hint="@string/registrationnumber"
+                    android:inputType="text"
+                    android:maxLength="15"
+                    android:paddingEnd="10dp"
                     android:paddingLeft="10dp"
                     android:paddingStart="10dp"
-                    android:paddingEnd="10dp"
-                    android:hint="@string/registrationnumber"
                     android:textColor="#fff"
                     android:textColorHint="#fff"
-                    android:textSize="15sp"
-                    android:maxLength="15"
-                    android:inputType="text"
-                    />
+                    android:textSize="15sp" />
 
 
             </LinearLayout>
@@ -68,40 +63,38 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
                 android:background="@drawable/materialbutton"
-                >
+                android:orientation="horizontal">
 
 
                 <ImageView
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/password"
-                    android:layout_weight="1"
                     android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:contentDescription="@string/icondesc"
+                    android:paddingEnd="10dp"
                     android:paddingLeft="10dp"
                     android:paddingStart="10dp"
-                    android:paddingEnd="10dp"
-                    android:contentDescription="@string/icondesc" />
+                    android:src="@drawable/password" />
 
 
                 <EditText
                     android:id="@+id/password"
-                    android:imeActionLabel="Login"
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
+                    android:layout_weight="1"
                     android:background="#00000000"
+                    android:hint="@string/password"
+                    android:imeActionLabel="Login"
+                    android:inputType="textPassword"
+                    android:maxLength="16"
+                    android:paddingEnd="10dp"
                     android:paddingLeft="10dp"
                     android:paddingStart="10dp"
-                    android:paddingEnd="10dp"
-                    android:hint="@string/password"
-                    android:inputType="textPassword"
-                    android:textColorHint="#fff"
                     android:textColor="#fff"
-                    android:textSize="15sp"
-                    android:layout_weight="1"
-                    android:maxLength="16"
-                    />
+                    android:textColorHint="#fff"
+                    android:textSize="15sp" />
 
 
             </LinearLayout>
@@ -110,14 +103,13 @@
 
         <LinearLayout
             android:id="@+id/swipearea"
-            android:layout_below="@+id/credentials"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:gravity="center"
-            android:layout_centerInParent="true"
             android:layout_alignParentBottom="true"
+            android:layout_below="@+id/credentials"
+            android:layout_centerInParent="true"
             android:layout_marginTop="100sp"
-            >
+            android:gravity="center">
 
 
             <SeekBar
@@ -126,11 +118,10 @@
                 android:layout_height="match_parent"
                 android:clickable="false"
                 android:max="100"
-                android:progressDrawable="@android:color/transparent"
                 android:progress="0"
+                android:progressDrawable="@android:color/transparent"
                 android:rotation="270"
-                android:thumb="@drawable/empty"
-                />
+                android:thumb="@drawable/empty" />
 
 
         </LinearLayout>
@@ -139,10 +130,9 @@
             android:id="@+id/swipetext"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="center"
-            android:layout_centerInParent="true"
             android:layout_alignParentBottom="true"
-            >
+            android:layout_centerInParent="true"
+            android:gravity="center">
 
             <TextView
                 android:id="@+id/logintext"
@@ -150,8 +140,7 @@
                 android:layout_height="wrap_content"
                 android:text="@string/swipelogin"
                 android:textColor="#fff"
-                android:textSize="12sp"
-                />
+                android:textSize="12sp" />
 
         </LinearLayout>
 

@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/feed_bg"
-    android:orientation="vertical" >
+    android:orientation="vertical">
 
 
     <LinearLayout
@@ -16,7 +16,7 @@
         android:background="@drawable/news_dialog"
         android:orientation="vertical"
         android:paddingBottom="@dimen/feed_item_padding_top_bottom"
-        android:paddingTop="@dimen/feed_item_padding_top_bottom" >
+        android:paddingTop="@dimen/feed_item_padding_top_bottom">
 
 
         <LinearLayout
@@ -24,7 +24,7 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:paddingLeft="@dimen/feed_item_padding_left_right"
-            android:paddingRight="@dimen/feed_item_padding_left_right" >
+            android:paddingRight="@dimen/feed_item_padding_left_right">
 
             <com.android.volley.toolbox.NetworkImageView
                 android:id="@+id/profilePic"
@@ -36,8 +36,8 @@
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                android:paddingStart="@dimen/feed_item_profile_info_padd"
-                android:paddingEnd="0dp">
+                android:paddingEnd="0dp"
+                android:paddingStart="@dimen/feed_item_profile_info_padd">
 
                 <TextView
                     android:id="@+id/name"
@@ -58,32 +58,32 @@
 
         </LinearLayout>
 
-            <TextView
-                android:id="@+id/txtStatusMsg"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:paddingBottom="5dp"
-                android:paddingLeft="@dimen/feed_item_status_pad_left_right"
-                android:paddingRight="@dimen/feed_item_status_pad_left_right"
-                android:paddingTop="@dimen/feed_item_status_pad_top" />
+        <TextView
+            android:id="@+id/txtStatusMsg"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="5dp"
+            android:paddingLeft="@dimen/feed_item_status_pad_left_right"
+            android:paddingRight="@dimen/feed_item_status_pad_left_right"
+            android:paddingTop="@dimen/feed_item_status_pad_top" />
 
-            <TextView
-                android:id="@+id/txtUrl"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:linksClickable="true"
-                android:paddingBottom="10dp"
-                android:paddingLeft="@dimen/feed_item_status_pad_left_right"
-                android:paddingRight="@dimen/feed_item_status_pad_left_right"
-                android:textColorLink="@color/link" />
+        <TextView
+            android:id="@+id/txtUrl"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:linksClickable="true"
+            android:paddingBottom="10dp"
+            android:paddingLeft="@dimen/feed_item_status_pad_left_right"
+            android:paddingRight="@dimen/feed_item_status_pad_left_right"
+            android:textColorLink="@color/link" />
 
-            <com.srmvdp.huddle.News.FeedImageView
-                android:id="@+id/feedImage1"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@color/white"
-                android:scaleType="fitXY"
-                android:visibility="visible" />
+        <com.srmvdp.huddle.News.FeedImageView
+            android:id="@+id/feedImage1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:scaleType="fitXY"
+            android:visibility="visible" />
 
     </LinearLayout>
 

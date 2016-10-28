@@ -8,6 +8,6 @@
         android:id="@+id/newsget"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="GET NEWS (BETA)"/>
+        android:text="GET NEWS (BETA)" />
 
 </FrameLayout>

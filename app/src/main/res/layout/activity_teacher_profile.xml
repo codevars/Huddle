@@ -6,47 +6,31 @@
     android:layout_height="match_parent"
     tools:context="com.srmvdp.huddle.TeacherProfile">
 
-    <android.support.v7.widget.Toolbar
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/colorPrimary"
-        android:id="@+id/toolbarteacherbio"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentStart="true"
-        android:elevation="10dp">
-
-
-    </android.support.v7.widget.Toolbar>
 
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/toolbarteacherbio"
-        android:layout_marginTop="15dp"
-        >
+        android:layout_marginTop="15dp">
 
         <RelativeLayout
+            android:id="@+id/tbiosemrel"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/tbiosemrel">
+            android:layout_height="wrap_content">
 
 
             <LinearLayout
+                android:id="@+id/tbio1"
                 android:layout_width="match_parent"
                 android:layout_height="120dp"
                 android:layout_alignParentStart="true"
-                android:orientation="horizontal"
-                android:id="@+id/tbio1"
                 android:layout_marginTop="15dp"
-
-                >
+                android:orientation="horizontal">
 
                 <LinearLayout
+                    android:id="@+id/profilepic"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:id="@+id/profilepic"
-                    android:layout_gravity="center_vertical"
-                    >
+                    android:layout_gravity="center_vertical">
 
                     <de.hdodenhof.circleimageview.CircleImageView
                         android:id="@+id/profile_image"
@@ -59,40 +43,36 @@
                 </LinearLayout>
 
 
-
                 <RelativeLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content">
 
                     <LinearLayout
+                        android:id="@+id/postsid"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:nextFocusRight="@id/profilepic"
                         android:layout_marginLeft="40dp"
                         android:layout_marginTop="30dp"
-                        android:id="@+id/postsid"
-                        >
-
+                        android:nextFocusRight="@id/profilepic">
 
 
                         <TextView
+                            android:id="@+id/textView"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:textStyle="bold"
                             android:text="Posts :"
                             android:textColor="@color/colorPrimaryDark"
                             android:textSize="20sp"
-                            android:id="@+id/textView" />
+                            android:textStyle="bold" />
 
                         <TextView
+                            android:id="@+id/userpostcount"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="26"
-                            android:textSize="20sp"
-                            android:id="@+id/userpostcount"
                             android:layout_marginLeft="10dp"
+                            android:text="26"
                             android:textColor="#000"
-                            />
+                            android:textSize="20sp" />
 
                     </LinearLayout>
 
@@ -101,26 +81,24 @@
                         android:layout_height="wrap_content"
                         android:layout_below="@+id/postsid"
                         android:layout_marginLeft="40dp"
-                        android:layout_marginTop="20dp"
-                        >
+                        android:layout_marginTop="20dp">
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Department:"
-                            android:textSize="20sp"
-                            android:textStyle="bold"
                             android:textColor="@color/colorPrimaryDark"
-                            />
+                            android:textSize="20sp"
+                            android:textStyle="bold" />
+
                         <TextView
+                            android:id="@+id/userclass"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="CSE E"
-                            android:id="@+id/userclass"
                             android:layout_marginLeft="10dp"
+                            android:text="CSE E"
                             android:textColor="#000"
-                            android:textSize="20sp"
-                            />
+                            android:textSize="20sp" />
 
 
                     </LinearLayout>
@@ -128,67 +106,60 @@
                 </RelativeLayout>
 
 
-
-
-
             </LinearLayout>
 
             <LinearLayout
+                android:id="@+id/bio2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/bio2"
                 android:layout_below="@+id/tbio1"
-                android:orientation="horizontal"
                 android:layout_marginTop="15dp"
-                >
+                android:orientation="horizontal">
+
                 <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
 
                     <TextView
+                        android:id="@+id/namebio"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Mrs. Mullai"
-                        android:textStyle="bold"
-                        android:textColor="#000"
-                        android:id="@+id/namebio"
                         android:layout_marginLeft="15sp"
-                        />
+                        android:text="Mrs. Mullai"
+                        android:textColor="#000"
+                        android:textStyle="bold" />
+
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_below="@id/namebio"
-                        android:textStyle="normal"
-                        android:text="Hello World"
-                        android:textColor="#000"
                         android:layout_marginLeft="15dp"
                         android:layout_marginTop="10dp"
-                        />
+                        android:text="Hello World"
+                        android:textColor="#000"
+                        android:textStyle="normal" />
 
 
                 </RelativeLayout>
 
 
-
-
             </LinearLayout>
 
             <LinearLayout
+                android:id="@+id/postsbio2"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:layout_below="@+id/bio2"
                 android:layout_marginTop="25dp"
                 android:background="@drawable/custompostsforbio"
-                android:orientation="horizontal"
-                android:id="@+id/postsbio2"
-                >
+                android:orientation="horizontal">
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:gravity="center"
                     android:text="Posts"
-                    android:textSize="20dp"
-                    android:gravity="center" />
+                    android:textSize="20dp" />
 
 
             </LinearLayout>
@@ -204,13 +175,10 @@
                     android:layout_height="wrap_content">
 
 
-
-
                 </RelativeLayout>
 
 
             </ScrollView>
-
 
 
         </RelativeLayout>

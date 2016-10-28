@@ -4,9 +4,9 @@
     tools:context="com.srmvdp.huddle.Dashboard">
     <item
         android:id="@+id/action_add"
+        android:icon="@drawable/ic_border_color"
         android:orderInCategory="100"
         android:title="Post"
-        android:icon="@drawable/ic_border_color"
         app:showAsAction="always" />
 
 

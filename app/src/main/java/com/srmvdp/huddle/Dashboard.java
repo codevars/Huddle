@@ -1,8 +1,10 @@
 package com.srmvdp.huddle;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.content.res.ColorStateList;
 import android.graphics.Color;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
 import android.support.design.widget.TabLayout;
@@ -13,19 +15,24 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuInflater;
-import android.view.View;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
+
 import com.srmvdp.huddle.Adapters.ViewPagerAdapter;
+import com.srmvdp.huddle.AdminPanel.AdminPosts;
 import com.srmvdp.huddle.Fragments.NewsFragment;
 import com.srmvdp.huddle.Fragments.ShelfFragment;
 import com.srmvdp.huddle.Fragments.SubjectsFragment;
 import com.srmvdp.huddle.LocalStorage.SessionManagement;
+import com.srmvdp.huddle.Server.RegisterUserClass;
 
 import java.util.HashMap;
 
 public class Dashboard extends AppCompatActivity {
+
+    private static final String REQUEST_PROFILE = "http://codevars.esy.es/userinfo.php";
 
     private DrawerLayout drawerLayout;
 
@@ -36,6 +43,8 @@ public class Dashboard extends AppCompatActivity {
     private ViewPager viewpager;
 
     private String privilege;
+
+    private String registration;
 
     private SessionManagement session;
 
@@ -48,9 +57,13 @@ public class Dashboard extends AppCompatActivity {
 
         session = new SessionManagement(getApplicationContext());
 
+        HashMap<String, String> reg = session.getRegistrationDetails();
+
         HashMap<String, String> right = session.getPrivilegeDetails();
 
         privilege = right.get(SessionManagement.PRIVILEGE);
+
+        registration = reg.get(SessionManagement.REG_NUM);
 
         toolbar = (Toolbar) findViewById(R.id.toolbar);
 
@@ -68,12 +81,83 @@ public class Dashboard extends AppCompatActivity {
 
         tab.select();
 
-        drawerLayout = (DrawerLayout)findViewById(R.id.drawer);
+        userprofilecheck();
+
+        drawerLayout = (DrawerLayout) findViewById(R.id.drawer);
 
         NavigationDrawer();
 
 
     }
+
+
+    public void userprofilecheck() {
+
+        if (!session.userProfileIn()) {
+
+            makeuserprofile(registration);
+
+
+        }
+
+    }
+
+
+    public void makeuserprofile(final String number) {
+        class RegisterUser extends AsyncTask<String, Void, String> {
+            RegisterUserClass ruc = new RegisterUserClass();
+            ProgressDialog loading;
+
+            @Override
+            protected void onPreExecute() {
+                super.onPreExecute();
+
+                loading = new ProgressDialog(Dashboard.this, R.style.MyTheme);
+                loading.setCancelable(false);
+                loading.setProgressStyle(android.R.style.Widget_ProgressBar_Small);
+                loading.show();
+
+            }
+
+            @Override
+            protected void onPostExecute(String s) {
+                super.onPostExecute(s);
+                loading.dismiss();
+
+                if (s.equalsIgnoreCase("")) {
+
+                    Toast.makeText(Dashboard.this, "Please Try Again Later!", Toast.LENGTH_LONG).show();
+
+                }
+
+                else {
+
+                    Toast.makeText(Dashboard.this, s, Toast.LENGTH_LONG).show();
+
+                }
+
+
+            }
+
+            @Override
+            protected String doInBackground (String...params){
+
+                HashMap<String, String> data = new HashMap<String, String>();
+
+                data.put("registrationnumber", params[0]);
+
+                String result = ruc.sendPostRequest(REQUEST_PROFILE, data);
+
+                return result;
+            }
+        }
+
+    RegisterUser ru = new RegisterUser();
+
+    ru.execute(number);
+
+    }
+
 
 
 
@@ -92,17 +176,15 @@ public class Dashboard extends AppCompatActivity {
     }
 
 
-
     public void NavigationDrawer() {
 
-        NavigationView navigationView = (NavigationView)findViewById(R.id.navigation_view);
+        NavigationView navigationView = (NavigationView) findViewById(R.id.navigation_view);
 
         navigationView.setBackgroundColor(getResources().getColor(R.color.WhiteTransparent));
 
         navigationView.setItemIconTintList(getResources().getColorStateList(R.color.White));
 
         navigationView.setItemTextColor(ColorStateList.valueOf(Color.WHITE));
-
 
 
         navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
@@ -112,11 +194,11 @@ public class Dashboard extends AppCompatActivity {
 
                 int id = menuItem.getItemId();
 
-                switch (id){
+                switch (id) {
 
                     case R.id.profile:
 
-                        Intent in = new Intent(Dashboard.this,BioPage.class);
+                        Intent in = new Intent(Dashboard.this, BioPage.class);
 
                         drawerLayout.closeDrawers();
 
@@ -131,18 +213,16 @@ public class Dashboard extends AppCompatActivity {
 
                             drawerLayout.closeDrawers();
 
-                            Toast.makeText(getApplicationContext(), "Access Granted!" ,Toast.LENGTH_SHORT).show();
+                            Toast.makeText(getApplicationContext(), "Access Granted!", Toast.LENGTH_SHORT).show();
 
                             session.adminPanel();
 
 
-                        }
-
-                        else {
+                        } else {
 
                             drawerLayout.closeDrawers();
 
-                            Toast.makeText(getApplicationContext(), "Access Denied!" ,Toast.LENGTH_SHORT).show();
+                            Toast.makeText(getApplicationContext(), "Access Denied!", Toast.LENGTH_SHORT).show();
 
                         }
 
@@ -151,9 +231,9 @@ public class Dashboard extends AppCompatActivity {
 
                     case R.id.photos:
 
-                        Toast.makeText(getApplicationContext(),"Teachers list",Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(), "Teacher List", Toast.LENGTH_SHORT).show();
 
-                        Intent intent = new Intent(Dashboard.this,TeacherProfile.class);
+                        Intent intent = new Intent(Dashboard.this, TeacherProfile.class);
                         startActivity(intent);
 
                         drawerLayout.closeDrawers();
@@ -174,16 +254,15 @@ public class Dashboard extends AppCompatActivity {
 
         View header = navigationView.getHeaderView(0);
 
-        TextView tv_email = (TextView)header.findViewById(R.id.tv_email);
+        TextView tv_email = (TextView) header.findViewById(R.id.tv_email);
 
         tv_email.setText("codevars@gmail.com");
 
 
-
-        ActionBarDrawerToggle actionBarDrawerToggle = new ActionBarDrawerToggle(this,drawerLayout,toolbar,R.string.draweropen,R.string.drawerclose){
+        ActionBarDrawerToggle actionBarDrawerToggle = new ActionBarDrawerToggle(this, drawerLayout, toolbar, R.string.draweropen, R.string.drawerclose) {
 
             @Override
-            public void onDrawerClosed(View v){
+            public void onDrawerClosed(View v) {
                 super.onDrawerClosed(v);
             }
 
@@ -200,7 +279,6 @@ public class Dashboard extends AppCompatActivity {
     }
 
 
-
     @Override
     protected void onResume() {
 
@@ -209,7 +287,6 @@ public class Dashboard extends AppCompatActivity {
         this.doubleBackToExitPressedOnce = false;
 
     }
-
 
 
     @Override
@@ -230,7 +307,6 @@ public class Dashboard extends AppCompatActivity {
     }
 
 
-
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
 
@@ -238,7 +314,7 @@ public class Dashboard extends AppCompatActivity {
 
             case R.id.action_add:
 
-               startActivity(new Intent(Dashboard.this,PostNews.class));
+                startActivity(new Intent(Dashboard.this, AdminPosts.class));
 
             default:
 
@@ -249,16 +325,16 @@ public class Dashboard extends AppCompatActivity {
     }
 
 
-
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
+
         MenuInflater inflater = getMenuInflater();
+
         inflater.inflate(R.menu.menu_main, menu);
+
         return super.onCreateOptionsMenu(menu);
 
-
     }
-
 
 }
 

@@ -39,11 +39,11 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/introtwoheader"
                 android:layout_gravity="center"
+                android:text="@string/introtwoheader"
+                android:textColor="#fff"
                 android:textSize="20sp"
-                android:textStyle="bold"
-                android:textColor="#fff"/>
+                android:textStyle="bold" />
 
 
         </LinearLayout>
@@ -69,11 +69,11 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/introthreeheader"
                 android:layout_gravity="center"
+                android:text="@string/introthreeheader"
+                android:textColor="#fff"
                 android:textSize="20sp"
-                android:textStyle="bold"
-                android:textColor="#fff"/>
+                android:textStyle="bold" />
 
 
         </LinearLayout>
@@ -110,11 +110,11 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/introfourheader"
                 android:layout_gravity="center"
+                android:text="@string/introfourheader"
+                android:textColor="#fff"
                 android:textSize="20sp"
-                android:textStyle="bold"
-                android:textColor="#fff"/>
+                android:textStyle="bold" />
 
 
         </LinearLayout>
@@ -140,11 +140,11 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/introfiveheader"
                 android:layout_gravity="center"
+                android:text="@string/introfiveheader"
+                android:textColor="#fff"
                 android:textSize="20sp"
-                android:textStyle="bold"
-                android:textColor="#fff"/>
+                android:textStyle="bold" />
 
 
         </LinearLayout>

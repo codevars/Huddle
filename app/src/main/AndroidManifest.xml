@@ -79,25 +79,28 @@
             android:theme="@style/Theme.Design.Light" />
         <activity
             android:name=".SelfProfile"
-            android:screenOrientation="portrait" />
+            android:label="Edit Your Profile"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.Design.Light" />
         <activity
             android:name=".Extras.AdminPanelIntro"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".AdminPanel"
+            android:name=".AdminPanel.AdminPanel"
             android:label="Admin Panel"
             android:theme="@style/AppThemeLogged" />
         <activity
             android:name=".TeacherProfile"
-            android:screenOrientation="portrait" />
-        <activity android:name=".Post" />
+            android:label="Teachers"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.Design.Light" />
         <activity
-            android:name=".PostNews"
-            android:theme="@style/Theme.Design.Light"
-            android:label="Post news"/>
-        <activity android:name=".AdminPosts" />
-        <activity android:name=".AdminNotifications" />
-        <activity android:name=".AdminUsers"></activity>
+            android:name=".AdminPanel.AdminNews"
+            android:label="Post News"
+            android:theme="@style/Theme.Design.Light" />
+        <activity android:name=".AdminPanel.AdminPosts" />
+        <activity android:name=".AdminPanel.AdminNotifications" />
+        <activity android:name=".AdminPanel.AdminUsers"></activity>
     </application>
 
 </manifest>

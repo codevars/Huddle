@@ -50,6 +50,8 @@
 
     <string name="exit">Exit</string>
 
+    <string name="url"> URL (Optional)</string>
+
     <string name="settings">Settings</string>
 
     <string name="editprofile">Edit Profile</string>

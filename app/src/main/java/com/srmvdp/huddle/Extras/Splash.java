@@ -2,7 +2,6 @@ package com.srmvdp.huddle.Extras;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 
 import com.srmvdp.huddle.LocalStorage.SessionManagement;
@@ -15,43 +14,28 @@ public class Splash extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
-        super.onCreate(savedInstanceState);
-
         session = new SessionManagement(getApplicationContext());
 
+        super.onCreate(savedInstanceState);
 
-        new Handler().postDelayed(new Runnable() {
+        if (!session.phoneIn() & !session.otpIn() & !session.dashboardIn()) {
 
-            @Override
-            public void run() {
-                if (!session.phoneIn() & !session.otpIn() & !session.dashboardIn()) {
+            Intent go = new Intent(Splash.this, LoginRegisterTabbed.class);
 
-                    Intent go = new Intent(Splash.this, LoginRegisterTabbed.class);
+            finish();
 
-                    finish();
+            startActivity(go);
 
-                    startActivity(go);
+        } else {
 
-                } else {
+            session.phone();
 
-                    session.phone();
+            session.otp();
 
-                    session.otp();
-
-                    session.dashboard();
-
-                }
-            }
-        }, 7 * 1000);
+            session.dashboard();
+        }
 
     }
 
-    @Override
-    protected void onDestroy() {
-
-        super.onDestroy();
-
-
-    }
 }
 

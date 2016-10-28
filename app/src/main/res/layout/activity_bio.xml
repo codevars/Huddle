@@ -4,21 +4,21 @@
     android:layout_height="match_parent">
 
 
-
     <LinearLayout
         android:id="@+id/buttonpanel"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="20sp">
+        android:layout_margin="20sp"
+        android:background="@drawable/customgreenbutton">
 
         <Button
             android:id="@+id/editbutton"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:background="?attr/selectableItemBackground"
             android:text="@string/editprofile"
             android:textColor="@color/colorPrimary"
-            android:textSize="12sp"
-            android:background="@drawable/customgreenbutton" />
+            android:textSize="12sp" />
 
     </LinearLayout>
 
@@ -28,8 +28,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/buttonpanel"
-        android:orientation="horizontal"
         android:baselineAligned="false"
+        android:orientation="horizontal"
         android:weightSum="2">
 
         <LinearLayout
@@ -49,9 +49,9 @@
             android:id="@+id/basics"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:layout_margin="20sp"
             android:layout_weight="0.5"
-            android:orientation="vertical"
-            android:layout_margin="20sp">
+            android:orientation="vertical">
 
             <LinearLayout
                 android:layout_width="wrap_content"
@@ -61,18 +61,18 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/posts"
-                    android:textStyle="bold"
+                    android:textColor="@color/colorPrimaryDark"
                     android:textSize="20sp"
-                    android:textColor="@color/colorPrimaryDark" />
+                    android:textStyle="bold" />
 
                 <TextView
                     android:id="@+id/posts"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
                     android:text="@string/examplenumber"
-                    android:textSize="20sp"
                     android:textColor="#000"
-                    android:layout_marginStart="10dp" />
+                    android:textSize="20sp" />
 
             </LinearLayout>
 
@@ -85,17 +85,17 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/inclass"
+                    android:textColor="@color/colorPrimaryDark"
                     android:textSize="20sp"
-                    android:textStyle="bold"
-                    android:textColor="@color/colorPrimaryDark" />
+                    android:textStyle="bold" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
                     android:text="@string/exampleclass"
                     android:textColor="#000"
-                    android:textSize="20sp"
-                    android:layout_marginStart="10dp" />
+                    android:textSize="20sp" />
 
             </LinearLayout>
 
@@ -108,26 +108,26 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/basicscontainer"
-        android:orientation="vertical"
-        android:layout_marginTop="15sp">
+        android:layout_marginTop="15sp"
+        android:orientation="vertical">
 
         <TextView
+            android:id="@+id/namebio"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="15sp"
             android:text="@string/bioname"
-            android:textStyle="bold"
             android:textColor="#000"
-            android:id="@+id/namebio"
-            android:layout_marginStart="15sp" />
+            android:textStyle="bold" />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textStyle="normal"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="10dp"
             android:text="@string/biodescription"
             android:textColor="#000"
-            android:layout_marginStart="15dp"
-            android:layout_marginTop="10dp" />
+            android:textStyle="normal" />
 
     </LinearLayout>
 
@@ -142,9 +142,9 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:gravity="center"
             android:text="@string/postsnormal"
-            android:textSize="20sp"
-            android:gravity="center" />
+            android:textSize="20sp" />
 
     </LinearLayout>
 

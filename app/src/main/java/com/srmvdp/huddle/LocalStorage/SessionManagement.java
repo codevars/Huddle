@@ -5,9 +5,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
-import android.widget.Toast;
-
-import com.srmvdp.huddle.AdminPanel;
+import com.srmvdp.huddle.AdminPanel.AdminPanel;
 import com.srmvdp.huddle.Dashboard;
 import com.srmvdp.huddle.Extras.AdminPanelIntro;
 import com.srmvdp.huddle.LoginRegisterTabbed;
@@ -43,6 +41,8 @@ public class SessionManagement {
     public static final String TOKEN = "TOKEN";
 
     public static final String PRIVILEGE = "PRIVILEGE";
+
+    public static final String USERPROFILE = "USERPROFILE";
 
 
 
@@ -117,6 +117,26 @@ public class SessionManagement {
     public void createAdminPanelSession(){
 
         editor.putBoolean(PANEL, true);
+
+        editor.commit();
+
+    }
+
+
+
+    public void createUserProfileSession(){
+
+        editor.putBoolean(USERPROFILE, true);
+
+        editor.commit();
+
+    }
+
+
+
+    public void createUserProfile(){
+
+        editor.putBoolean(USERPROFILE, true);
 
         editor.commit();
 
@@ -334,6 +354,10 @@ public class SessionManagement {
 
     public boolean adminpanelIn(){
         return pref.getBoolean(PANEL, false);
+    }
+
+    public boolean userProfileIn(){
+        return pref.getBoolean(USERPROFILE, false);
     }
 
 }
