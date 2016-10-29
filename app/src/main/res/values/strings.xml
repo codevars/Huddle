@@ -49,6 +49,10 @@
     <string name="image">Image</string>
 
     <string name="exit">Exit</string>
+    
+    <string name="connected">Connected</string>
+
+    <string name="notconnected">No Internet Connection</string>
 
     <string name="url"> URL (Optional)</string>
 

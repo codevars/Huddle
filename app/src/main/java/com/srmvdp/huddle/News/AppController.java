@@ -1,5 +1,6 @@
 package com.srmvdp.huddle.News;
 
+import com.srmvdp.huddle.Extras.ConnectivityReceiver;
 import com.srmvdp.huddle.Volley.LruBitmapCache;
 import android.app.Application;
 import android.text.TextUtils;
@@ -66,5 +67,11 @@ public class AppController extends Application {
 		if (mRequestQueue != null) {
 			mRequestQueue.cancelAll(tag);
 		}
+	}
+
+	public void setConnectivityListener(ConnectivityReceiver.ConnectivityReceiverListener listener) {
+
+		ConnectivityReceiver.connectivityReceiverListener = listener;
+
 	}
 }

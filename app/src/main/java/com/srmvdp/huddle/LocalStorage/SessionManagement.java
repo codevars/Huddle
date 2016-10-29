@@ -226,11 +226,7 @@ public class SessionManagement {
 
             Intent i = new Intent(_context, AdminPanel.class);
 
-            i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-
             i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-
-            i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
 
             _context.startActivity(i);
 

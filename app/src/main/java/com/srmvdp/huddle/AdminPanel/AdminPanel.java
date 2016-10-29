@@ -15,10 +15,13 @@ public class AdminPanel extends AppCompatActivity implements View.OnClickListene
 
     private ActionBar bar;
 
-    ImageView posts,news,users,notifications;
+    private ImageView posts;
 
-    private boolean doubleBackToExitPressedOnce = false;
+    private ImageView news;
 
+    private ImageView users;
+
+    private ImageView notifications;
 
 
     @Override
@@ -107,33 +110,5 @@ public class AdminPanel extends AppCompatActivity implements View.OnClickListene
     }
 
 
-
-    @Override
-    protected void onResume() {
-
-        super.onResume();
-
-        this.doubleBackToExitPressedOnce = false;
-
-    }
-
-
-
-    @Override
-    public void onBackPressed() {
-
-        if (doubleBackToExitPressedOnce) {
-
-            super.onBackPressed();
-
-            return;
-
-        }
-
-        this.doubleBackToExitPressedOnce = true;
-
-        Toast.makeText(this, "Please Click Back Again To Exit!", Toast.LENGTH_SHORT).show();
-
-    }
 
 }

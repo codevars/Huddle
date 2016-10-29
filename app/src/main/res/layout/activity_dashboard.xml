@@ -30,7 +30,16 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
 
+            <Button
+                android:id="@+id/notification"
+                android:layout_width="match_parent"
+                android:layout_height="35sp"
+                android:background="@drawable/notificationgreen"
+                />
+
         </android.support.design.widget.AppBarLayout>
+
+
 
         <android.support.v4.view.ViewPager
             android:id="@+id/viewpager"

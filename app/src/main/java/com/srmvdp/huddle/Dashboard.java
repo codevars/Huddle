@@ -1,11 +1,14 @@
 package com.srmvdp.huddle;
 
 import android.app.ProgressDialog;
+import android.content.Context;
 import android.content.Intent;
 import android.content.res.ColorStateList;
 import android.graphics.Color;
+import android.net.ConnectivityManager;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.design.widget.NavigationView;
 import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
@@ -17,22 +20,31 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.TranslateAnimation;
+import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.srmvdp.huddle.Adapters.ViewPagerAdapter;
 import com.srmvdp.huddle.AdminPanel.AdminPosts;
+import com.srmvdp.huddle.Extras.ConnectivityReceiver;
 import com.srmvdp.huddle.Fragments.NewsFragment;
 import com.srmvdp.huddle.Fragments.ShelfFragment;
 import com.srmvdp.huddle.Fragments.SubjectsFragment;
 import com.srmvdp.huddle.LocalStorage.SessionManagement;
+import com.srmvdp.huddle.News.AppController;
 import com.srmvdp.huddle.Server.RegisterUserClass;
 
 import java.util.HashMap;
 
-public class Dashboard extends AppCompatActivity {
+public class Dashboard extends AppCompatActivity implements ConnectivityReceiver.ConnectivityReceiverListener {
 
     private static final String REQUEST_PROFILE = "http://codevars.esy.es/userinfo.php";
+
+    private Button notification;
+
+    private Animation slide;
 
     private DrawerLayout drawerLayout;
 
@@ -65,6 +77,8 @@ public class Dashboard extends AppCompatActivity {
 
         toolbar = (Toolbar) findViewById(R.id.toolbar);
 
+        notification = (Button) findViewById(R.id.notification);
+
         setSupportActionBar(toolbar);
 
         viewpager = (ViewPager) findViewById(R.id.viewpager);
@@ -85,6 +99,35 @@ public class Dashboard extends AppCompatActivity {
 
         NavigationDrawer();
 
+        notification.setVisibility(View.GONE);
+
+        initialInternetCheck();
+
+    }
+
+
+    public boolean isOnline() {
+
+        final ConnectivityManager connectivityManager = ((ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE));
+
+        return connectivityManager.getActiveNetworkInfo() != null && connectivityManager.getActiveNetworkInfo().isConnected();
+
+    }
+
+
+    public void initialInternetCheck() {
+
+        if (!isOnline()) {
+
+            slide();
+
+            notification.setVisibility(View.VISIBLE);
+
+            notification.setBackground(getResources().getDrawable(R.drawable.notificationred));
+
+            notification.setText(getResources().getString(R.string.notconnected));
+
+        }
 
     }
 
@@ -98,6 +141,17 @@ public class Dashboard extends AppCompatActivity {
             session.createUserProfileSession();
 
         }
+
+    }
+
+
+    private void slide() {
+
+        slide = new TranslateAnimation(0, 0, 500, 0);
+
+        slide.setDuration(1000);
+
+        notification.setAnimation(slide);
 
     }
 
@@ -127,15 +181,17 @@ public class Dashboard extends AppCompatActivity {
 
                 if (s.equalsIgnoreCase("")) {
 
-                    Toast.makeText(Dashboard.this, "Please Try Again Later!", Toast.LENGTH_LONG).show();
+                    Toast.makeText(Dashboard.this, "One Moment, Please Be Patient.", Toast.LENGTH_LONG).show();
 
-                }
+                    makeuserprofile(registration);
 
-                else {
+                } else {
 
                     String fullname = s;
 
                     session.createUserProfile(fullname);
+
+                    Toast.makeText(Dashboard.this, "Welcome To Huddle, " + fullname + "!", Toast.LENGTH_LONG).show();
 
                 }
 
@@ -143,7 +199,7 @@ public class Dashboard extends AppCompatActivity {
             }
 
             @Override
-            protected String doInBackground (String...params){
+            protected String doInBackground(String... params) {
 
                 HashMap<String, String> data = new HashMap<String, String>();
 
@@ -155,13 +211,11 @@ public class Dashboard extends AppCompatActivity {
             }
         }
 
-    RegisterUser ru = new RegisterUser();
+        RegisterUser ru = new RegisterUser();
 
-    ru.execute(number);
+        ru.execute(number);
 
     }
-
-
 
 
     public void setUpViewPager(ViewPager set) {
@@ -282,7 +336,6 @@ public class Dashboard extends AppCompatActivity {
     }
 
 
-
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
 
@@ -311,6 +364,64 @@ public class Dashboard extends AppCompatActivity {
         return super.onCreateOptionsMenu(menu);
 
     }
+
+
+    private void showNotification(boolean isConnected) {
+
+        if (isConnected) {
+
+            slide();
+
+            notification.setVisibility(View.VISIBLE);
+
+            notification.setBackground(getResources().getDrawable(R.drawable.notificationgreen));
+
+            notification.setText(getResources().getString(R.string.connected));
+
+            final Handler handler = new Handler();
+
+            handler.postDelayed(new Runnable() {
+
+                @Override
+                public void run() {
+
+                    notification.setVisibility(View.GONE);
+
+                }
+
+            }, 3000);
+
+        } else {
+
+            slide();
+
+            notification.setVisibility(View.VISIBLE);
+
+            notification.setBackground(getResources().getDrawable(R.drawable.notificationred));
+
+            notification.setText(getResources().getString(R.string.notconnected));
+
+        }
+
+    }
+
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+
+        AppController.getInstance().setConnectivityListener(this);
+
+    }
+
+
+    @Override
+    public void onNetworkConnectionChanged(boolean isConnected) {
+
+        showNotification(isConnected);
+
+    }
+
 
 }
 
