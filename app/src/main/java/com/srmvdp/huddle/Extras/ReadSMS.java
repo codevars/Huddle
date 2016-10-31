@@ -5,7 +5,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.telephony.SmsMessage;
-import com.srmvdp.huddle.OTP;
+import com.srmvdp.huddle.Authentication.OTP;
 
 public class ReadSMS extends BroadcastReceiver
 {

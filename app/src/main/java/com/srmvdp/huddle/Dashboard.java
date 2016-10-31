@@ -42,6 +42,8 @@ public class Dashboard extends AppCompatActivity implements ConnectivityReceiver
 
     private static final String REQUEST_PROFILE = "http://codevars.esy.es/userinfo.php";
 
+    private String fullname;
+
     private Button notification;
 
     private Animation slide;
@@ -93,8 +95,6 @@ public class Dashboard extends AppCompatActivity implements ConnectivityReceiver
 
         tab.select();
 
-        userprofilecheck();
-
         drawerLayout = (DrawerLayout) findViewById(R.id.drawer);
 
         NavigationDrawer();
@@ -127,6 +127,14 @@ public class Dashboard extends AppCompatActivity implements ConnectivityReceiver
 
             notification.setText(getResources().getString(R.string.notconnected));
 
+            return;
+
+        }
+
+        else {
+
+            userprofilecheck();
+
         }
 
     }
@@ -156,6 +164,58 @@ public class Dashboard extends AppCompatActivity implements ConnectivityReceiver
     }
 
 
+
+    private void generateProfile(String status) {
+
+        if (status.equalsIgnoreCase("initialised")) {
+
+            slide();
+
+            notification.setVisibility(View.VISIBLE);
+
+            notification.setBackground(getResources().getDrawable(R.drawable.notificationgreen));
+
+            notification.setText(getResources().getString(R.string.generate));
+
+            return;
+
+        }
+
+
+        if (status.equalsIgnoreCase("processing")) {
+
+            slide();
+
+            notification.setVisibility(View.VISIBLE);
+
+            notification.setBackground(getResources().getDrawable(R.drawable.notificationred));
+
+            notification.setText(getResources().getString(R.string.processing));
+
+            return;
+
+        }
+
+
+        if (status.equalsIgnoreCase("done")) {
+
+            slide();
+
+            notification.setVisibility(View.VISIBLE);
+
+            notification.setBackground(getResources().getDrawable(R.drawable.notificationgreen));
+
+            notification.setText(getResources().getString(R.string.welcome) + " " + fullname + "!");
+
+            return;
+
+        }
+
+
+    }
+
+
+
     public void makeuserprofile(final String number) {
         class RegisterUser extends AsyncTask<String, Void, String> {
             RegisterUserClass ruc = new RegisterUserClass();
@@ -165,7 +225,7 @@ public class Dashboard extends AppCompatActivity implements ConnectivityReceiver
             protected void onPreExecute() {
                 super.onPreExecute();
 
-                Toast.makeText(Dashboard.this, "Generating Your Profile!", Toast.LENGTH_LONG).show();
+                generateProfile("initialised");
 
                 loading = new ProgressDialog(Dashboard.this, R.style.MyTheme);
                 loading.setCancelable(false);
@@ -181,17 +241,17 @@ public class Dashboard extends AppCompatActivity implements ConnectivityReceiver
 
                 if (s.equalsIgnoreCase("")) {
 
-                    Toast.makeText(Dashboard.this, "One Moment, Please Be Patient.", Toast.LENGTH_LONG).show();
+                    generateProfile("processing");
 
                     makeuserprofile(registration);
 
                 } else {
 
-                    String fullname = s;
+                    fullname = s;
 
                     session.createUserProfile(fullname);
 
-                    Toast.makeText(Dashboard.this, "Welcome To Huddle, " + fullname + "!", Toast.LENGTH_LONG).show();
+                    generateProfile("done");
 
                 }
 
@@ -300,7 +360,7 @@ public class Dashboard extends AppCompatActivity implements ConnectivityReceiver
 
                     case R.id.exit:
 
-                        finish();
+                        session.logoutUser();
 
                 }
 

@@ -54,6 +54,12 @@
 
     <string name="notconnected">No Internet Connection</string>
 
+    <string name="generate">Generating Your Profile!</string>
+
+    <string name="processing">One Moment, Please Be Patient.</string>
+
+    <string name="welcome">Welcome To Huddle, </string>
+
     <string name="url"> URL (Optional)</string>
 
     <string name="settings">Settings</string>

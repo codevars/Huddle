@@ -8,7 +8,7 @@
     android:paddingLeft="10sp"
     android:paddingRight="10sp"
     android:paddingTop="10sp"
-    tools:context="com.srmvdp.huddle.PhoneNumber">
+    tools:context="com.srmvdp.huddle.Authentication.PhoneNumber">
 
 
     <LinearLayout

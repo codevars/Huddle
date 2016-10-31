@@ -45,7 +45,8 @@
                 android:text="@string/introtwoheader"
                 android:textColor="#fff"
                 android:textSize="15sp"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                android:layout_marginTop="-40sp" />
 
 
         </LinearLayout>
@@ -76,7 +77,8 @@
                 android:text="@string/introthreeheader"
                 android:textColor="#fff"
                 android:textSize="15sp"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                android:layout_marginTop="-40sp"/>
 
 
         </LinearLayout>
@@ -118,7 +120,8 @@
                 android:text="@string/introfourheader"
                 android:textColor="#fff"
                 android:textSize="15sp"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                android:layout_marginTop="-40sp"/>
 
 
         </LinearLayout>
@@ -149,7 +152,8 @@
                 android:text="@string/introfiveheader"
                 android:textColor="#fff"
                 android:textSize="15sp"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                android:layout_marginTop="-40sp"/>
 
 
         </LinearLayout>

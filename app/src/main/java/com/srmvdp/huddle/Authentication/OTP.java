@@ -1,10 +1,9 @@
-package com.srmvdp.huddle;
+package com.srmvdp.huddle.Authentication;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.AsyncTask;
-import android.os.Build;
 import android.os.CountDownTimer;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
@@ -13,7 +12,6 @@ import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.Window;
 import android.view.animation.Animation;
 import android.view.animation.TranslateAnimation;
 import android.widget.Button;
@@ -22,7 +20,9 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.srmvdp.huddle.Dashboard;
 import com.srmvdp.huddle.LocalStorage.SessionManagement;
+import com.srmvdp.huddle.R;
 import com.srmvdp.huddle.Server.RegisterUserClass;
 
 import java.util.HashMap;

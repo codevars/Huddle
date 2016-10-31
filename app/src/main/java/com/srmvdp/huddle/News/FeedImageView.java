@@ -10,6 +10,7 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.ImageLoader;
 import com.android.volley.toolbox.ImageLoader.ImageContainer;
 import com.android.volley.toolbox.ImageLoader.ImageListener;
+import com.srmvdp.huddle.R;
 
 public class FeedImageView extends ImageView {
 
@@ -155,6 +156,7 @@ public class FeedImageView extends ImageView {
 				new ImageListener() {
 					@Override
 					public void onErrorResponse(VolleyError error) {
+
 						if (mErrorImageId != 0) {
 							setImageResource(mErrorImageId);
 						}
@@ -174,6 +176,7 @@ public class FeedImageView extends ImageView {
 						// inside of a layout. Instead, defer setting the image
 						// by posting back to
 						// the main thread.
+
 						if (isImmediate && isInLayoutPass) {
 							post(new Runnable() {
 								@Override

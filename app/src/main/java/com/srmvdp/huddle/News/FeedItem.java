@@ -1,77 +1,79 @@
 package com.srmvdp.huddle.News;
 
 public class FeedItem {
-	private int id;
-	private String name, status, image, profilePic, uploadtime, url;
+    private int id;
+    private String name, status, image, profilePic, uploadtime, url;
 
-	public FeedItem() {
-	}
+    public FeedItem() {
+    }
 
-	public FeedItem(int id, String name, String image, String status,
-			String profilePic, String time, String url) {
-		super();
-		this.id = id;
-		this.name = name;
-		this.image = image;
-		this.status = status;
-		this.profilePic = profilePic;
-		this.uploadtime = uploadtime;
-		this.url = url;
-	}
+    public FeedItem(int id, String name, String image, String status,
+                    String profilePic, String uploadtime, String url) {
+        super();
+        this.id = id;
+        this.name = name;
+        this.image = image;
+        this.status = status;
+        this.profilePic = profilePic;
+        this.uploadtime = uploadtime;
+        this.url = url;
+    }
 
-	public int getId() {
-		return id;
-	}
+    public int getId() {
+        return id;
+    }
 
-	public void setId(int id) {
-		this.id = id;
-	}
+    public void setId(int id) {
+        this.id = id;
+    }
 
-	public String getName() {
-		return name;
-	}
+    public String getName() {
+        return name;
+    }
 
-	public void setName(String name) {
-		this.name = name;
-	}
+    public void setName(String name) {
+        this.name = name;
+    }
 
-	public String getImge() {
-		return image;
-	}
+    public String getImge() {
+        return image;
+    }
 
-	public void setImge(String image) {
-		this.image = image;
-	}
+    public void setImge(String image) {
 
-	public String getStatus() {
-		return status;
-	}
+        this.image = image;
 
-	public void setStatus(String status) {
-		this.status = status;
-	}
+    }
 
-	public String getProfilePic() {
-		return profilePic;
-	}
+    public String getStatus() {
+        return status;
+    }
 
-	public void setProfilePic(String profilePic) {
-		this.profilePic = profilePic;
-	}
+    public void setStatus(String status) {
+        this.status = status;
+    }
 
-	public String getTime() {
-		return uploadtime;
-	}
+    public String getProfilePic() {
+        return profilePic;
+    }
 
-	public void setTime(String uploadtime) {
-		this.uploadtime = uploadtime;
-	}
+    public void setProfilePic(String profilePic) {
+        this.profilePic = profilePic;
+    }
 
-	public String getUrl() {
-		return url;
-	}
+    public String getTime() {
+        return uploadtime;
+    }
 
-	public void setUrl(String url) {
-		this.url = url;
-	}
+    public void setTime(String uploadtime) {
+        this.uploadtime = uploadtime;
+    }
+
+    public String getUrl() {
+        return url;
+    }
+
+    public void setUrl(String url) {
+        this.url = url;
+    }
 }

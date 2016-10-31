@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#E8E8EE"
-    tools:context="com.srmvdp.huddle.OTP">
+    tools:context="com.srmvdp.huddle.Authentication.OTP">
 
 
     <LinearLayout

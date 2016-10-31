@@ -1,4 +1,4 @@
-package com.srmvdp.huddle.Fragments;
+package com.srmvdp.huddle.Authentication;
 
 import android.app.ProgressDialog;
 import android.content.Context;
@@ -20,12 +20,8 @@ import android.widget.SeekBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.google.firebase.iid.FirebaseInstanceId;
-import com.google.firebase.iid.FirebaseInstanceIdService;
 import com.srmvdp.huddle.Dashboard;
-import com.srmvdp.huddle.Firebase.MyFirebaseInstanceIDService;
 import com.srmvdp.huddle.LocalStorage.SessionManagement;
-import com.srmvdp.huddle.PhoneNumber;
 import com.srmvdp.huddle.R;
 import com.srmvdp.huddle.Server.RegisterUserClass;
 import java.util.HashMap;
@@ -35,6 +31,8 @@ public class LoginFragment extends Fragment {
     private static final String LOGIN_URL = "http://codevars.esy.es/login.php";
 
     private View view;
+
+    private String token;
 
     private EditText registrationnumber;
 
@@ -65,6 +63,10 @@ public class LoginFragment extends Fragment {
         Typeface one = Typeface.createFromAsset(getActivity().getAssets(), "fonts/Quando-Regular.ttf");
 
         session = new SessionManagement(getContext());
+
+        HashMap<String, String> fire = session.getFirebaseTokenDetails();
+
+        token = fire.get(SessionManagement.TOKEN);
 
         registrationnumber = (EditText) view.findViewById(R.id.registrationnumber);
 
@@ -207,11 +209,12 @@ public class LoginFragment extends Fragment {
 
         String pass  = password.getText().toString().trim();
 
-        userLogin(username,pass);
+        userLogin(username,pass,token);
+
     }
 
 
-    private void userLogin(final String username, final String password){
+    private void userLogin(final String username, final String password, final String token){
 
         class UserLoginClass extends AsyncTask<String,Void,String> {
             ProgressDialog loading;
@@ -378,7 +381,7 @@ public class LoginFragment extends Fragment {
 
                 if(s.equalsIgnoreCase("")){
 
-                    Snackbar snackbar = Snackbar.make(getView(), "Loading... Try Again!", Snackbar.LENGTH_SHORT);
+                    Snackbar snackbar = Snackbar.make(getView(), "Loading! Try Again.", Snackbar.LENGTH_SHORT);
 
                     snackbar.show();
 
@@ -411,6 +414,7 @@ public class LoginFragment extends Fragment {
                 HashMap<String,String> data = new HashMap<>();
                 data.put("registrationnumber",params[0]);
                 data.put("password",params[1]);
+                data.put("token", params[2]);
 
                 RegisterUserClass ruc = new RegisterUserClass();
 
@@ -420,7 +424,7 @@ public class LoginFragment extends Fragment {
             }
         }
         UserLoginClass ulc = new UserLoginClass();
-        ulc.execute(username,password);
+        ulc.execute(username,password,token);
 
     }
 

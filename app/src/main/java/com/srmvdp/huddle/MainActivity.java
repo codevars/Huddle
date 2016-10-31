@@ -11,6 +11,8 @@ import org.json.JSONException;
 import org.json.JSONObject;
 import android.annotation.SuppressLint;
 import android.app.Activity;
+import android.app.ActivityManager;
+import android.content.Context;
 import android.os.Bundle;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.view.Menu;
@@ -52,7 +54,6 @@ public class MainActivity extends Activity implements SwipeRefreshLayout.OnRefre
 
 		listView.setAdapter(listAdapter);
 
-
         refresh = (SwipeRefreshLayout) findViewById(R.id.newsrefresh);
 
         refresh.setOnRefreshListener(this);
@@ -66,7 +67,7 @@ public class MainActivity extends Activity implements SwipeRefreshLayout.OnRefre
 			try {
 				String data = new String(entry.data, "UTF-8");
 				try {
-					parseJsonFeedInitial(new JSONObject(data));
+					parseJsonFeedRefresh(new JSONObject(data));
 				} catch (JSONException e) {
 					e.printStackTrace();
 				}
@@ -77,7 +78,7 @@ public class MainActivity extends Activity implements SwipeRefreshLayout.OnRefre
 		} else {
 			// making fresh volley request and getting json
 
-            refreshResults();
+            onRefresh();
 
 		}
 
@@ -112,50 +113,6 @@ public class MainActivity extends Activity implements SwipeRefreshLayout.OnRefre
 
 
 
-    private void parseJsonFeedInitial(JSONObject response) {
-        try {
-            JSONArray feedArray = response.getJSONArray("feed");
-
-            for (int i = 0; i < feedArray.length(); i++) {
-                JSONObject feedObj = (JSONObject) feedArray.get(i);
-
-                final FeedItem item = new FeedItem();
-                item.setId(feedObj.getInt("id"));
-                item.setName(feedObj.getString("name"));
-
-                // Image might be null sometimes
-                String image = feedObj.isNull("image") ? null : feedObj
-                        .getString("image");
-                item.setImge(image);
-                item.setStatus(feedObj.getString("status"));
-                item.setProfilePic(feedObj.getString("profilePic"));
-                item.setTime(feedObj.getString("uploadtime"));
-
-                // url might be null sometimes
-                String feedUrl = feedObj.isNull("url") ? null : feedObj
-                        .getString("url");
-                item.setUrl(feedUrl);
-
-                listView.post(new Runnable() {
-                    @Override
-                    public void run() {
-                        feedItems.add(0, item);
-                        listAdapter.notifyDataSetChanged();
-                        listView.smoothScrollToPosition(0);
-                    }
-                });
-            }
-
-            // notify data changes to list adapater
-            listAdapter.notifyDataSetChanged();
-
-        } catch (JSONException e) {
-            e.printStackTrace();
-        }
-    }
-
-
-
 	private void parseJsonFeedRefresh(JSONObject response) {
 		try {
 			JSONArray feedArray = response.getJSONArray("feed");
@@ -168,16 +125,14 @@ public class MainActivity extends Activity implements SwipeRefreshLayout.OnRefre
 				item.setName(feedObj.getString("name"));
 
 				// Image might be null sometimes
-				String image = feedObj.isNull("image") ? null : feedObj
-						.getString("image");
+				String image = feedObj.isNull("image") ? null : feedObj.getString("image");
 				item.setImge(image);
 				item.setStatus(feedObj.getString("status"));
 				item.setProfilePic(feedObj.getString("profilePic"));
 				item.setTime(feedObj.getString("uploadtime"));
 
 				// url might be null sometimes
-				String feedUrl = feedObj.isNull("url") ? null : feedObj
-						.getString("url");
+				String feedUrl = feedObj.isNull("url") ? null : feedObj.getString("url");
 				item.setUrl(feedUrl);
 
                 listView.post(new Runnable() {
@@ -222,8 +177,6 @@ public class MainActivity extends Activity implements SwipeRefreshLayout.OnRefre
             refreshResults();
 
         }
-
-
 
 
     }

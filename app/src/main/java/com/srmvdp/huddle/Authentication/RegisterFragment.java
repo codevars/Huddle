@@ -1,4 +1,4 @@
-package com.srmvdp.huddle.Fragments;
+package com.srmvdp.huddle.Authentication;
 
 import android.app.ProgressDialog;
 import android.content.Context;

@@ -10,8 +10,7 @@ import android.support.v4.app.NotificationCompat;
 import android.util.Log;
 import com.google.firebase.messaging.FirebaseMessagingService;
 import com.google.firebase.messaging.RemoteMessage;
-import com.srmvdp.huddle.Extras.Splash;
-import com.srmvdp.huddle.Fragments.LoginFragment;
+import com.srmvdp.huddle.Authentication.LoginFragment;
 import com.srmvdp.huddle.R;
 
 public class MyFirebaseMessagingService extends FirebaseMessagingService {

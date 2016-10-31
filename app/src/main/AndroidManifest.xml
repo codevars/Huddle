@@ -10,6 +10,7 @@
     <uses-permission android:name="android.permission.SEND_SMS" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.CLEAR_APP_CACHE"/>
 
     <application
         android:name=".News.AppController"
@@ -51,12 +52,12 @@
             android:screenOrientation="portrait"
             android:theme="@style/AppThemeNoActionBar" />
         <activity
-            android:name=".PhoneNumber"
+            android:name=".Authentication.PhoneNumber"
             android:label="Verify Your Phone Number"
             android:screenOrientation="portrait"
             android:theme="@style/AppThemeLogged" />
         <activity
-            android:name=".OTP"
+            android:name=".Authentication.OTP"
             android:label="One Time Password"
             android:screenOrientation="portrait"
             android:theme="@style/AppThemeLogged" />
@@ -96,6 +97,7 @@
         <activity
             android:name=".AdminPanel.AdminPanel"
             android:label="Admin Panel"
+            android:screenOrientation="portrait"
             android:theme="@style/AppThemeLogged" />
         <activity
             android:name=".TeacherProfile"
@@ -105,10 +107,23 @@
         <activity
             android:name=".AdminPanel.AdminNews"
             android:label="Post News"
+            android:screenOrientation="portrait"
             android:theme="@style/Theme.Design.Light" />
-        <activity android:name=".AdminPanel.AdminPosts" />
-        <activity android:name=".AdminPanel.AdminNotifications" />
-        <activity android:name=".AdminPanel.AdminUsers"></activity>
+        <activity
+            android:name=".AdminPanel.AdminPosts"
+            android:label="Class Posts"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.Design.Light" />
+        <activity
+            android:name=".AdminPanel.AdminNotifications"
+            android:label="Notification Central"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.Design.Light" />
+        <activity
+            android:name=".AdminPanel.AdminUsers"
+            android:label="Manage Users"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.Design.Light" />
     </application>
 
 </manifest>

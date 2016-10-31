@@ -1,4 +1,4 @@
-package com.srmvdp.huddle;
+package com.srmvdp.huddle.Authentication;
 
 import android.app.ProgressDialog;
 import android.content.Context;
@@ -7,22 +7,20 @@ import android.graphics.Color;
 import android.graphics.Typeface;
 import android.net.ConnectivityManager;
 import android.os.AsyncTask;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.View;
-import android.view.animation.AlphaAnimation;
 import android.view.animation.Animation;
 import android.view.animation.TranslateAnimation;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.srmvdp.huddle.LocalStorage.SessionManagement;
+import com.srmvdp.huddle.R;
 import com.srmvdp.huddle.Server.RegisterUserClass;
 
 import java.util.HashMap;

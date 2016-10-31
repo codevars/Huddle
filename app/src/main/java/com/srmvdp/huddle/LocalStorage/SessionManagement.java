@@ -5,12 +5,14 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
+
+import com.google.firebase.iid.FirebaseInstanceId;
 import com.srmvdp.huddle.AdminPanel.AdminPanel;
 import com.srmvdp.huddle.Dashboard;
 import com.srmvdp.huddle.Extras.AdminPanelIntro;
 import com.srmvdp.huddle.LoginRegisterTabbed;
-import com.srmvdp.huddle.OTP;
-import com.srmvdp.huddle.PhoneNumber;
+import com.srmvdp.huddle.Authentication.OTP;
+import com.srmvdp.huddle.Authentication.PhoneNumber;
 
 public class SessionManagement {
 
@@ -236,10 +238,6 @@ public class SessionManagement {
 
             Intent i = new Intent(_context, AdminPanelIntro.class);
 
-            i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-
-            i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-
             i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
 
             _context.startActivity(i);
@@ -275,6 +273,10 @@ public class SessionManagement {
 
         editor.clear();
 
+        String refreshedToken = FirebaseInstanceId.getInstance().getToken();
+
+        firebaseToken(refreshedToken);
+
         editor.commit();
 
         Intent i = new Intent(_context, LoginRegisterTabbed.class);
@@ -286,6 +288,8 @@ public class SessionManagement {
         i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
 
         _context.startActivity(i);
+
+
 
     }
 
