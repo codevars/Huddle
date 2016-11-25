@@ -48,17 +48,19 @@ import java.util.Map;
 
 public class AdminNews extends AppCompatActivity implements View.OnClickListener, ConnectivityReceiver.ConnectivityReceiverListener {
 
-    private final String UPLOAD_URL ="http://codevars.esy.es/upload.php";
+    private final String UPLOAD_URL = "http://codevars.esy.es/upload.php";
 
     private ActionBar bar;
 
     private AlertDialog.Builder warning;
 
     private Animation slide;
-    
+
     private LinearLayout previewcontainer;
 
     private TextInputLayout statusparent;
+
+    private EditText titletext;
 
     private EditText statustext;
 
@@ -71,6 +73,8 @@ public class AdminNews extends AppCompatActivity implements View.OnClickListener
     private Button post;
 
     private ImageView preview;
+
+    private String title;
 
     private String name;
 
@@ -121,6 +125,8 @@ public class AdminNews extends AppCompatActivity implements View.OnClickListener
 
         urltext = (EditText) findViewById(R.id.url);
 
+        titletext = (EditText) findViewById(R.id.title2);
+
         select = (Button) findViewById(R.id.selectImages);
 
         post = (Button) findViewById(R.id.buttonpost);
@@ -145,8 +151,6 @@ public class AdminNews extends AppCompatActivity implements View.OnClickListener
 
 
     }
-
-
 
 
     public boolean isOnline() {
@@ -175,7 +179,6 @@ public class AdminNews extends AppCompatActivity implements View.OnClickListener
     }
 
 
-
     private void slide() {
 
         slide = new TranslateAnimation(0, 0, 500, 0);
@@ -187,19 +190,17 @@ public class AdminNews extends AppCompatActivity implements View.OnClickListener
     }
 
 
-
     private void currentTimeStamp() {
 
         String timestampprefix = "930";
 
-        Long time = System.currentTimeMillis()/1000;
+        Long time = System.currentTimeMillis() / 1000;
 
         String current = time.toString();
 
         timestamp = current + timestampprefix;
 
     }
-
 
 
     private void showFileChooser() {
@@ -215,7 +216,6 @@ public class AdminNews extends AppCompatActivity implements View.OnClickListener
     }
 
 
-
     private void validation() {
 
         if (statustext.getText().toString().trim().isEmpty()) {
@@ -224,9 +224,7 @@ public class AdminNews extends AppCompatActivity implements View.OnClickListener
 
             return;
 
-        }
-
-        else {
+        } else {
 
             statusparent.setErrorEnabled(false);
 
@@ -254,14 +252,13 @@ public class AdminNews extends AppCompatActivity implements View.OnClickListener
     }
 
 
-
     private void alert(String trigger) {
 
         DialogInterface.OnClickListener url = new DialogInterface.OnClickListener() {
 
             @Override
             public void onClick(DialogInterface dialog, int which) {
-                switch (which){
+                switch (which) {
 
                     case DialogInterface.BUTTON_POSITIVE:
 
@@ -269,9 +266,7 @@ public class AdminNews extends AppCompatActivity implements View.OnClickListener
 
                             alert("noimage");
 
-                        }
-
-                        else {
+                        } else {
 
                             uploadImage();
 
@@ -295,7 +290,7 @@ public class AdminNews extends AppCompatActivity implements View.OnClickListener
 
             @Override
             public void onClick(DialogInterface dialog, int which) {
-                switch (which){
+                switch (which) {
 
                     case DialogInterface.BUTTON_POSITIVE:
 
@@ -336,7 +331,6 @@ public class AdminNews extends AppCompatActivity implements View.OnClickListener
     }
 
 
-
     public String getStringImage(Bitmap bmp) {
 
         ByteArrayOutputStream baos = new ByteArrayOutputStream();
@@ -352,7 +346,6 @@ public class AdminNews extends AppCompatActivity implements View.OnClickListener
     }
 
 
-
     public void retrieveData() {
 
         if (!session.hasProfilePic()) {
@@ -361,6 +354,8 @@ public class AdminNews extends AppCompatActivity implements View.OnClickListener
 
         }
 
+        title = titletext.getText().toString();
+
         status = statustext.getText().toString();
 
         url = urltext.getText().toString();
@@ -368,10 +363,9 @@ public class AdminNews extends AppCompatActivity implements View.OnClickListener
     }
 
 
+    private void uploadImage() {
 
-    private void uploadImage(){
-
-        final ProgressDialog loading = ProgressDialog.show(this,"Uploading...","Please wait...",false,false);
+        final ProgressDialog loading = ProgressDialog.show(this, "Uploading...", "Please wait...", false, false);
 
         StringRequest stringRequest = new StringRequest(Request.Method.POST, UPLOAD_URL,
 
@@ -382,7 +376,7 @@ public class AdminNews extends AppCompatActivity implements View.OnClickListener
 
                         loading.dismiss();
 
-                        Toast.makeText(AdminNews.this, s , Toast.LENGTH_LONG).show();
+                        Toast.makeText(AdminNews.this, s, Toast.LENGTH_LONG).show();
 
                     }
 
@@ -400,7 +394,7 @@ public class AdminNews extends AppCompatActivity implements View.OnClickListener
                         Toast.makeText(AdminNews.this, "Unstable Internet Connection!", Toast.LENGTH_LONG).show();
                     }
 
-                }){
+                }) {
 
             @Override
             protected Map<String, String> getParams() throws AuthFailureError {
@@ -415,7 +409,7 @@ public class AdminNews extends AppCompatActivity implements View.OnClickListener
 
                 name = profile.get(SessionManagement.FULLNAME);
 
-                Map<String,String> params = new Hashtable<String, String>();
+                Map<String, String> params = new Hashtable<String, String>();
 
                 params.put(KEY_NAME, name);
 
@@ -447,10 +441,9 @@ public class AdminNews extends AppCompatActivity implements View.OnClickListener
     }
 
 
+    private void uploadData() {
 
-    private void uploadData(){
-
-        final ProgressDialog loading = ProgressDialog.show(this,"Uploading...","Please wait...",false,false);
+        final ProgressDialog loading = ProgressDialog.show(this, "Uploading...", "Please wait...", false, false);
 
         StringRequest stringRequest = new StringRequest(Request.Method.POST, UPLOAD_URL,
 
@@ -461,7 +454,7 @@ public class AdminNews extends AppCompatActivity implements View.OnClickListener
 
                         loading.dismiss();
 
-                        Toast.makeText(AdminNews.this, s , Toast.LENGTH_LONG).show();
+                        Toast.makeText(AdminNews.this, s, Toast.LENGTH_LONG).show();
 
                     }
 
@@ -479,7 +472,7 @@ public class AdminNews extends AppCompatActivity implements View.OnClickListener
                         Toast.makeText(AdminNews.this, "Unstable Internet Connection!", Toast.LENGTH_LONG).show();
                     }
 
-                }){
+                }) {
 
             @Override
             protected Map<String, String> getParams() throws AuthFailureError {
@@ -492,7 +485,7 @@ public class AdminNews extends AppCompatActivity implements View.OnClickListener
 
                 name = profile.get(SessionManagement.FULLNAME);
 
-                Map<String,String> params = new Hashtable<String, String>();
+                Map<String, String> params = new Hashtable<String, String>();
 
                 params.put(KEY_NAME, name);
 
@@ -522,7 +515,6 @@ public class AdminNews extends AppCompatActivity implements View.OnClickListener
     }
 
 
-
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 
@@ -541,9 +533,7 @@ public class AdminNews extends AppCompatActivity implements View.OnClickListener
                 preview.setImageBitmap(bitmap);
 
 
-            }
-
-            catch (IOException e) {
+            } catch (IOException e) {
 
                 e.printStackTrace();
 
@@ -554,8 +544,7 @@ public class AdminNews extends AppCompatActivity implements View.OnClickListener
     }
 
 
-
-    public void onClick (View view) {
+    public void onClick(View view) {
 
         if (view == select) {
 
@@ -570,7 +559,6 @@ public class AdminNews extends AppCompatActivity implements View.OnClickListener
         }
 
     }
-
 
 
     @Override
@@ -595,7 +583,6 @@ public class AdminNews extends AppCompatActivity implements View.OnClickListener
         }
 
     }
-
 
 
     private void showNotification(boolean isConnected) {
@@ -653,7 +640,6 @@ public class AdminNews extends AppCompatActivity implements View.OnClickListener
         showNotification(isConnected);
 
     }
-
 
 
 }

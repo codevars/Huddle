@@ -60,6 +60,8 @@
 
     <string name="welcome">Welcome To Huddle, </string>
 
+    <string name="titlenews">Title</string>
+
     <string name="url"> URL (Optional)</string>
 
     <string name="settings">Settings</string>

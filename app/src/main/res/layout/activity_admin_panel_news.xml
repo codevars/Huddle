@@ -47,11 +47,29 @@
                 android:background="@drawable/dialog"
                 android:orientation="vertical">
 
+
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20sp">
+
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/titlenews"
+                        android:id="@+id/title2"
+                        />
+
+                </android.support.design.widget.TextInputLayout>
+
+
+
                 <android.support.design.widget.TextInputLayout
                     android:id="@+id/statusparent"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="20sp">
+
 
                     <EditText
                         android:id="@+id/status"

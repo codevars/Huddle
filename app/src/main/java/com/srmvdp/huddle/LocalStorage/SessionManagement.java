@@ -1,6 +1,7 @@
 package com.srmvdp.huddle.LocalStorage;
 
 import java.util.HashMap;
+
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -51,16 +52,14 @@ public class SessionManagement {
     public static final String PROFILEPIC = "PROFILEPIC";
 
 
-
-    public SessionManagement(Context context){
+    public SessionManagement(Context context) {
         this._context = context;
         pref = _context.getSharedPreferences(PREF_NAME, PRIVATE_MODE);
         editor = pref.edit();
     }
 
 
-
-    public void createLoginSession(String regnum, String privilege){
+    public void createLoginSession(String regnum, String privilege) {
 
         editor.putBoolean(PHONE, true);
 
@@ -73,8 +72,7 @@ public class SessionManagement {
     }
 
 
-
-    public void createNumberSession(String mobile, String otp){
+    public void createNumberSession(String mobile, String otp) {
 
         editor.putString(MOB_NUM, mobile);
 
@@ -89,8 +87,7 @@ public class SessionManagement {
     }
 
 
-
-    public void createDashboardSession(){
+    public void createDashboardSession() {
 
         editor.putBoolean(ONETIMEPASSWORD, false);
 
@@ -101,8 +98,7 @@ public class SessionManagement {
     }
 
 
-
-    public void createVerifiedDashboardSession(String regnum, String privilege){
+    public void createVerifiedDashboardSession(String regnum, String privilege) {
 
         editor.putBoolean(PHONE, false);
 
@@ -119,8 +115,7 @@ public class SessionManagement {
     }
 
 
-
-    public void createAdminPanelSession(){
+    public void createAdminPanelSession() {
 
         editor.putBoolean(PANEL, true);
 
@@ -129,8 +124,7 @@ public class SessionManagement {
     }
 
 
-
-    public void createUserProfileSession(){
+    public void createUserProfileSession() {
 
         editor.putBoolean(USERPROFILE, true);
 
@@ -139,8 +133,7 @@ public class SessionManagement {
     }
 
 
-
-    public void createUserProfile(String fullname){
+    public void createUserProfile(String fullname) {
 
         editor.putString(FULLNAME, fullname);
 
@@ -149,8 +142,7 @@ public class SessionManagement {
     }
 
 
-
-    public void createProfilePicSession(){
+    public void createProfilePicSession() {
 
         editor.putBoolean(PROFILEPIC, true);
 
@@ -159,10 +151,9 @@ public class SessionManagement {
     }
 
 
+    public void phone() {
 
-    public void phone(){
-
-        if(this.phoneIn()){
+        if (this.phoneIn()) {
 
             Intent i = new Intent(_context, PhoneNumber.class);
 
@@ -180,10 +171,9 @@ public class SessionManagement {
     }
 
 
+    public void otp() {
 
-    public void otp(){
-
-        if(this.otpIn()){
+        if (this.otpIn()) {
 
             Intent i = new Intent(_context, OTP.class);
 
@@ -201,10 +191,9 @@ public class SessionManagement {
     }
 
 
+    public void dashboard() {
 
-    public void dashboard(){
-
-        if(this.dashboardIn()){
+        if (this.dashboardIn()) {
 
             Intent i = new Intent(_context, Dashboard.class);
 
@@ -221,10 +210,9 @@ public class SessionManagement {
     }
 
 
+    public void adminPanel() {
 
-    public void adminPanel(){
-
-        if(this.adminpanelIn()){
+        if (this.adminpanelIn()) {
 
             Intent i = new Intent(_context, AdminPanel.class);
 
@@ -232,9 +220,7 @@ public class SessionManagement {
 
             _context.startActivity(i);
 
-        }
-
-        else {
+        } else {
 
             Intent i = new Intent(_context, AdminPanelIntro.class);
 
@@ -248,7 +234,6 @@ public class SessionManagement {
     }
 
 
-
     public void resentotpsave(String otp) {
 
         editor.putString(OTP, otp);
@@ -256,7 +241,6 @@ public class SessionManagement {
         editor.commit();
 
     }
-
 
 
     public void firebaseToken(String token) {
@@ -268,8 +252,7 @@ public class SessionManagement {
     }
 
 
-
-    public void logoutUser(){
+    public void logoutUser() {
 
         editor.clear();
 
@@ -290,12 +273,10 @@ public class SessionManagement {
         _context.startActivity(i);
 
 
-
     }
 
 
-
-    public HashMap<String, String> getRegistrationDetails(){
+    public HashMap<String, String> getRegistrationDetails() {
 
         HashMap<String, String> reg = new HashMap<String, String>();
 
@@ -306,8 +287,7 @@ public class SessionManagement {
     }
 
 
-
-    public HashMap<String, String> getMobileDetails(){
+    public HashMap<String, String> getMobileDetails() {
 
         HashMap<String, String> mobile = new HashMap<String, String>();
 
@@ -318,8 +298,7 @@ public class SessionManagement {
     }
 
 
-
-    public HashMap<String, String> getOTPDetails(){
+    public HashMap<String, String> getOTPDetails() {
 
         HashMap<String, String> otp = new HashMap<String, String>();
 
@@ -328,7 +307,6 @@ public class SessionManagement {
         return otp;
 
     }
-
 
 
     public HashMap<String, String> getFirebaseTokenDetails() {
@@ -342,7 +320,6 @@ public class SessionManagement {
     }
 
 
-
     public HashMap<String, String> getPrivilegeDetails() {
 
         HashMap<String, String> privilege = new HashMap<>();
@@ -352,7 +329,6 @@ public class SessionManagement {
         return privilege;
 
     }
-
 
 
     public HashMap<String, String> getUserProfileDetails() {
@@ -366,26 +342,27 @@ public class SessionManagement {
     }
 
 
+    public boolean phoneIn() {
+        return pref.getBoolean(PHONE, false);
+    }
 
-    public boolean phoneIn() {return pref.getBoolean(PHONE, false);}
-
-    public boolean otpIn(){
+    public boolean otpIn() {
         return pref.getBoolean(ONETIMEPASSWORD, false);
     }
 
-    public boolean dashboardIn(){
+    public boolean dashboardIn() {
         return pref.getBoolean(DASHBOARD, false);
     }
 
-    public boolean adminpanelIn(){
+    public boolean adminpanelIn() {
         return pref.getBoolean(PANEL, false);
     }
 
-    public boolean userProfileIn(){
+    public boolean userProfileIn() {
         return pref.getBoolean(USERPROFILE, false);
     }
 
-    public boolean hasProfilePic(){
+    public boolean hasProfilePic() {
         return pref.getBoolean(PROFILEPIC, false);
     }
 
