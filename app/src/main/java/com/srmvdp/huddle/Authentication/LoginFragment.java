@@ -18,17 +18,17 @@ import android.view.animation.TranslateAnimation;
 import android.widget.EditText;
 import android.widget.SeekBar;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.srmvdp.huddle.Dashboard;
 import com.srmvdp.huddle.LocalStorage.SessionManagement;
 import com.srmvdp.huddle.R;
 import com.srmvdp.huddle.Server.RegisterUserClass;
+
 import java.util.HashMap;
 
 public class LoginFragment extends Fragment {
 
-    private static final String LOGIN_URL = "http://codevars.esy.es/login.php";
+    private static final String LOGIN_URL = "http://codevars.esy.es/register.php";
 
     private View view;
 
@@ -55,8 +55,7 @@ public class LoginFragment extends Fragment {
 
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
         view = inflater.inflate(R.layout.fragment_login, container, false);
 
@@ -89,10 +88,9 @@ public class LoginFragment extends Fragment {
     }
 
 
-
     private void left() {
 
-        slide1 = new TranslateAnimation(800,0,0,0);
+        slide1 = new TranslateAnimation(800, 0, 0, 0);
 
         slide1.setDuration(800);
 
@@ -103,10 +101,9 @@ public class LoginFragment extends Fragment {
     }
 
 
-
     private void arrowslide() {
 
-        slide2 = new TranslateAnimation(0,100,0,0);
+        slide2 = new TranslateAnimation(0, 100, 0, 0);
 
         slide2.setDuration(1000);
 
@@ -121,7 +118,6 @@ public class LoginFragment extends Fragment {
     }
 
 
-
     public boolean isOnline(final Context context) {
 
         final ConnectivityManager connectivityManager = ((ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE));
@@ -131,18 +127,13 @@ public class LoginFragment extends Fragment {
     }
 
 
-
-
     public void check() {
 
-        if (isOnline(getContext()))
-        {
+        if (isOnline(getContext())) {
 
             login();
 
-        }
-
-        else {
+        } else {
 
             Snackbar snackbar = Snackbar
                     .make(getView(), "No Connection Found!", Snackbar.LENGTH_INDEFINITE)
@@ -159,7 +150,6 @@ public class LoginFragment extends Fragment {
 
 
     }
-
 
 
     private void emptycheck() {
@@ -191,9 +181,7 @@ public class LoginFragment extends Fragment {
 
             return;
 
-        }
-
-        else {
+        } else {
 
             check();
 
@@ -202,27 +190,27 @@ public class LoginFragment extends Fragment {
     }
 
 
-
-    private void login(){
+    private void login() {
 
         String username = registrationnumber.getText().toString().trim();
 
-        String pass  = password.getText().toString().trim();
+        String pass = password.getText().toString().trim();
 
-        userLogin(username,pass,token);
+        userLogin(username, pass, token);
 
     }
 
 
-    private void userLogin(final String username, final String password, final String token){
+    private void userLogin(final String username, final String password, final String token) {
 
-        class UserLoginClass extends AsyncTask<String,Void,String> {
+        class UserLoginClass extends AsyncTask<String, Void, String> {
             ProgressDialog loading;
+
             @Override
             protected void onPreExecute() {
                 super.onPreExecute();
 
-                loading = new ProgressDialog(getActivity(),R.style.MyTheme);
+                loading = new ProgressDialog(getActivity(), R.style.MyTheme);
                 loading.setCancelable(false);
                 loading.setProgressStyle(android.R.style.Widget_ProgressBar_Small);
                 loading.show();
@@ -235,7 +223,7 @@ public class LoginFragment extends Fragment {
                 loading.dismiss();
 
 
-                if(s.equals("Student")){
+                if (s.equals("Student")) {
 
                     Snackbar snackbar = Snackbar.make(getView(), "Successfully Logged In!", Snackbar.LENGTH_SHORT);
 
@@ -247,7 +235,7 @@ public class LoginFragment extends Fragment {
                         @Override
                         public void run() {
 
-                            Intent i=new Intent(getContext(), Dashboard.class);
+                            Intent i = new Intent(getContext(), Dashboard.class);
                             startActivity(i);
                             getActivity().finish();
                         }
@@ -258,8 +246,7 @@ public class LoginFragment extends Fragment {
                 }
 
 
-
-                if(s.equalsIgnoreCase("Admin")){
+                if (s.equalsIgnoreCase("Admin")) {
 
                     Snackbar snackbar = Snackbar.make(getView(), "Successfully Logged In!", Snackbar.LENGTH_SHORT);
 
@@ -271,7 +258,7 @@ public class LoginFragment extends Fragment {
                         @Override
                         public void run() {
 
-                            Intent i=new Intent(getContext(), Dashboard.class);
+                            Intent i = new Intent(getContext(), Dashboard.class);
                             startActivity(i);
                             getActivity().finish();
                         }
@@ -282,8 +269,7 @@ public class LoginFragment extends Fragment {
                 }
 
 
-
-                if(s.equalsIgnoreCase("Teacher")){
+                if (s.equalsIgnoreCase("Teacher")) {
 
                     Snackbar snackbar = Snackbar.make(getView(), "Successfully Logged In!", Snackbar.LENGTH_SHORT);
 
@@ -295,7 +281,7 @@ public class LoginFragment extends Fragment {
                         @Override
                         public void run() {
 
-                            Intent i=new Intent(getContext(), Dashboard.class);
+                            Intent i = new Intent(getContext(), Dashboard.class);
                             startActivity(i);
                             getActivity().finish();
                         }
@@ -306,8 +292,7 @@ public class LoginFragment extends Fragment {
                 }
 
 
-
-                if(s.equalsIgnoreCase("uAdmin")){
+                if (s.equalsIgnoreCase("uAdmin")) {
 
                     Snackbar snackbar = Snackbar.make(getView(), "Successfully Logged In!", Snackbar.LENGTH_SHORT);
 
@@ -319,7 +304,7 @@ public class LoginFragment extends Fragment {
                         @Override
                         public void run() {
 
-                            Intent i=new Intent(getContext(), PhoneNumber.class);
+                            Intent i = new Intent(getContext(), PhoneNumber.class);
                             startActivity(i);
                             getActivity().finish();
                         }
@@ -330,8 +315,7 @@ public class LoginFragment extends Fragment {
                 }
 
 
-
-                if(s.equalsIgnoreCase("uStudent")){
+                if (s.equalsIgnoreCase("uStudent")) {
 
                     Snackbar snackbar = Snackbar.make(getView(), "Successfully Logged In!", Snackbar.LENGTH_SHORT);
 
@@ -343,7 +327,7 @@ public class LoginFragment extends Fragment {
                         @Override
                         public void run() {
 
-                            Intent i=new Intent(getContext(), PhoneNumber.class);
+                            Intent i = new Intent(getContext(), PhoneNumber.class);
                             startActivity(i);
                             getActivity().finish();
                         }
@@ -354,8 +338,7 @@ public class LoginFragment extends Fragment {
                 }
 
 
-
-                if(s.equalsIgnoreCase("uTeacher")){
+                if (s.equalsIgnoreCase("uTeacher")) {
 
                     Snackbar snackbar = Snackbar.make(getView(), "Successfully Logged In!", Snackbar.LENGTH_SHORT);
 
@@ -367,7 +350,7 @@ public class LoginFragment extends Fragment {
                         @Override
                         public void run() {
 
-                            Intent i=new Intent(getContext(), PhoneNumber.class);
+                            Intent i = new Intent(getContext(), PhoneNumber.class);
                             startActivity(i);
                             getActivity().finish();
                         }
@@ -378,8 +361,7 @@ public class LoginFragment extends Fragment {
                 }
 
 
-
-                if(s.equalsIgnoreCase("")){
+                if (s.equalsIgnoreCase("")) {
 
                     Snackbar snackbar = Snackbar.make(getView(), "Loading! Try Again.", Snackbar.LENGTH_SHORT);
 
@@ -387,11 +369,7 @@ public class LoginFragment extends Fragment {
 
                     return;
 
-                }
-
-
-
-                else{
+                } else {
 
                     Snackbar snackbar = Snackbar.make(getView(), s, Snackbar.LENGTH_SHORT);
 
@@ -404,30 +382,28 @@ public class LoginFragment extends Fragment {
                     return;
 
 
-
                 }
 
             }
 
             @Override
             protected String doInBackground(String... params) {
-                HashMap<String,String> data = new HashMap<>();
-                data.put("registrationnumber",params[0]);
-                data.put("password",params[1]);
+                HashMap<String, String> data = new HashMap<>();
+                data.put("registrationnumber", params[0]);
+                data.put("password", params[1]);
                 data.put("token", params[2]);
 
                 RegisterUserClass ruc = new RegisterUserClass();
 
-                String result = ruc.sendPostRequest(LOGIN_URL,data);
+                String result = ruc.sendPostRequest(LOGIN_URL, data);
 
                 return result;
             }
         }
         UserLoginClass ulc = new UserLoginClass();
-        ulc.execute(username,password,token);
+        ulc.execute(username, password, token);
 
     }
-
 
 
     private void seekdetect() {
@@ -462,12 +438,10 @@ public class LoginFragment extends Fragment {
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
 
-                if(progress>95){
+                if (progress > 95) {
 
 
-                }
-
-                else {
+                } else {
 
                     swipetologin.setAnimation(slide2);
 

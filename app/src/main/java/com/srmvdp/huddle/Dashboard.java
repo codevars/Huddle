@@ -362,6 +362,8 @@ public class Dashboard extends AppCompatActivity implements ConnectivityReceiver
 
                         session.logoutUser();
 
+                        Toast.makeText(Dashboard.this, "You Have Logged Out Successfully!", Toast.LENGTH_LONG).show();
+
                 }
 
                 return true;
