@@ -17,7 +17,7 @@
     <color name="link">#0a80d1</color>
     <color name="timestamp">#a0a3a7</color>
     <color name="Transparent">#0000</color>
-    <color name="WhiteTransparent">#17ffffff</color>
+    <color name="WhiteTransparent">#40000000</color>
     <color name="introone">#2196F3</color> 
     <color name="introtwo">#00BCD4</color> 
     <color name="introthree">#FF8A65</color> 

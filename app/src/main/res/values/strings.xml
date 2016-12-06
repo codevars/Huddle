@@ -36,6 +36,14 @@
 
     <string name="useremail">vsagarofficial@gmail.com</string>
 
+    <string name="forgotpassword">Forgot Password?</string>
+
+    <string name="email">Send An Email</string>
+
+    <string name="sms">One Time Password</string>
+
+    <string name="call">Verfication Call</string>
+
     <string name="actionsettings">Settings</string>
 
     <string name="draweropen">Open</string>

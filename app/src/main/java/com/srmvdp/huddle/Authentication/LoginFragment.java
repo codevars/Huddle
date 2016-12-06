@@ -26,9 +26,9 @@ import com.srmvdp.huddle.Server.RegisterUserClass;
 
 import java.util.HashMap;
 
-public class LoginFragment extends Fragment {
+public class LoginFragment extends Fragment implements View.OnClickListener {
 
-    private static final String LOGIN_URL = "http://codevars.esy.es/register.php";
+    private static final String LOGIN_URL = "http://codevars.esy.es/login.php";
 
     private View view;
 
@@ -46,12 +46,11 @@ public class LoginFragment extends Fragment {
 
     private TextView login;
 
+    private TextView forgotpassword;
+
     private SessionManagement session;
 
-    public LoginFragment() {
-
-
-    }
+    public LoginFragment() {}
 
 
     @Override
@@ -70,6 +69,10 @@ public class LoginFragment extends Fragment {
         registrationnumber = (EditText) view.findViewById(R.id.registrationnumber);
 
         password = (EditText) view.findViewById(R.id.password);
+
+        forgotpassword = (TextView) view.findViewById(R.id.forgotpassword);
+
+        forgotpassword.setOnClickListener(this);
 
         swipetologin = (SeekBar) view.findViewById(R.id.swipetologin);
 
@@ -453,5 +456,28 @@ public class LoginFragment extends Fragment {
 
 
     }
+
+
+    @Override
+    public void onClick(View view) {
+
+        if (view == forgotpassword) {
+
+            Intent go = new Intent(getContext(), ForgotPassword.class);
+
+            go.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+
+            startActivity(go);
+
+            go.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+
+            go.setFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
+
+            go.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
+
+        }
+
+    }
+
 
 }

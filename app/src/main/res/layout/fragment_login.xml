@@ -4,7 +4,6 @@
     android:layout_height="match_parent"
     tools:context=".Authentication.LoginFragment">
 
-
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -14,7 +13,6 @@
         android:paddingTop="@dimen/activity_vertical_margin"
         tools:context="com.srmvdp.huddle">
 
-
         <LinearLayout
             android:id="@+id/credentials"
             android:layout_width="match_parent"
@@ -23,7 +21,6 @@
             android:layout_marginTop="30sp"
             android:gravity="center"
             android:orientation="vertical">
-
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -41,7 +38,6 @@
                     android:paddingStart="10dp"
                     android:src="@drawable/username" />
 
-
                 <EditText
                     android:id="@+id/registrationnumber"
                     android:layout_width="match_parent"
@@ -51,12 +47,10 @@
                     android:inputType="text"
                     android:maxLength="15"
                     android:paddingEnd="10dp"
-                    android:paddingLeft="10dp"
                     android:paddingStart="10dp"
                     android:textColor="#fff"
                     android:textColorHint="#fff"
                     android:textSize="15sp" />
-
 
             </LinearLayout>
 
@@ -66,7 +60,6 @@
                 android:background="@drawable/materialbutton"
                 android:orientation="horizontal">
 
-
                 <ImageView
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
@@ -74,10 +67,8 @@
                     android:layout_weight="1"
                     android:contentDescription="@string/icondesc"
                     android:paddingEnd="10dp"
-                    android:paddingLeft="10dp"
                     android:paddingStart="10dp"
                     android:src="@drawable/password" />
-
 
                 <EditText
                     android:id="@+id/password"
@@ -90,12 +81,26 @@
                     android:inputType="textPassword"
                     android:maxLength="16"
                     android:paddingEnd="10dp"
-                    android:paddingLeft="10dp"
                     android:paddingStart="10dp"
                     android:textColor="#fff"
                     android:textColorHint="#fff"
                     android:textSize="15sp" />
 
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="20sp">
+
+                <TextView
+                    android:id="@+id/forgotpassword"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/forgotpassword"
+                    android:gravity="center"
+                    android:textColor="@color/white"
+                    android:textStyle="bold" />
 
             </LinearLayout>
 
@@ -111,7 +116,6 @@
             android:layout_marginTop="100sp"
             android:gravity="center">
 
-
             <SeekBar
                 android:id="@+id/swipetologin"
                 android:layout_width="match_parent"
@@ -122,7 +126,6 @@
                 android:progressDrawable="@android:color/transparent"
                 android:rotation="270"
                 android:thumb="@drawable/empty" />
-
 
         </LinearLayout>
 
@@ -144,8 +147,6 @@
 
         </LinearLayout>
 
-
     </RelativeLayout>
-
 
 </FrameLayout>

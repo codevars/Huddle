@@ -4,10 +4,10 @@ import android.app.ProgressDialog;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.AsyncTask;
+import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.MenuItem;
@@ -27,7 +27,7 @@ import com.srmvdp.huddle.Server.RegisterUserClass;
 
 import java.util.HashMap;
 
-public class OTP extends AppCompatActivity  implements View.OnClickListener {
+public class OTP extends AppCompatActivity implements View.OnClickListener {
 
     private static final String REQUEST_OTP = "http://codevars.esy.es/requestotp.php";
 
@@ -143,15 +143,12 @@ public class OTP extends AppCompatActivity  implements View.OnClickListener {
     }
 
 
-
-    public void recivedSms(String message)
-    {
-        try
-        {
+    public void recivedSms(String message) {
+        try {
 
             String removeend = message.substring(45);
 
-            removeend = removeend.substring(0, removeend.length()-12);
+            removeend = removeend.substring(0, removeend.length() - 12);
 
             otpfieldone.setText(removeend.substring(0));
 
@@ -161,14 +158,11 @@ public class OTP extends AppCompatActivity  implements View.OnClickListener {
 
             otpfieldfour.setText(removeend.substring(3));
 
-        }
-
-        catch (Exception e) {
+        } catch (Exception e) {
 
         }
 
     }
-
 
 
     public void countdown() {
@@ -199,17 +193,15 @@ public class OTP extends AppCompatActivity  implements View.OnClickListener {
     }
 
 
-
     private void slideup() {
 
-        buttonup = new TranslateAnimation(0,0,500,0);
+        buttonup = new TranslateAnimation(0, 0, 500, 0);
 
         buttonup.setDuration(1000);
 
         submit.setAnimation(buttonup);
 
     }
-
 
 
     private void verification() {
@@ -224,7 +216,7 @@ public class OTP extends AppCompatActivity  implements View.OnClickListener {
 
         third = otpfieldthree.getText().toString();
 
-        otp = first+second+third+four;
+        otp = first + second + third + four;
 
         if (otp.equals(onetimepassword)) {
 
@@ -238,9 +230,7 @@ public class OTP extends AppCompatActivity  implements View.OnClickListener {
 
             startActivity(back);
 
-        }
-
-        else {
+        } else {
 
             Toast.makeText(this, onetimepassword, Toast.LENGTH_SHORT).show();
 
@@ -251,18 +241,19 @@ public class OTP extends AppCompatActivity  implements View.OnClickListener {
     }
 
 
-
     private void textWatcher() {
 
         otpfieldone.addTextChangedListener(new TextWatcher() {
 
-            public void onTextChanged(CharSequence s, int start,int before, int count) {}
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+            }
 
-            public void beforeTextChanged(CharSequence s, int start, int count, int after) {}
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+            }
 
             public void afterTextChanged(Editable s) {
 
-                if(otpfieldone.getText().toString().length()==2) {
+                if (otpfieldone.getText().toString().length() == 2) {
 
                     String o = otpfieldone.getText().toString();
 
@@ -286,13 +277,15 @@ public class OTP extends AppCompatActivity  implements View.OnClickListener {
 
         otpfieldtwo.addTextChangedListener(new TextWatcher() {
 
-            public void onTextChanged(CharSequence s, int start,int before, int count) {}
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+            }
 
-            public void beforeTextChanged(CharSequence s, int start, int count, int after) {}
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+            }
 
             public void afterTextChanged(Editable s) {
 
-                if(otpfieldtwo.getText().toString().length()==0) {
+                if (otpfieldtwo.getText().toString().length() == 0) {
 
                     otpfieldone.setSelection(otpfieldone.getText().length());
 
@@ -302,7 +295,7 @@ public class OTP extends AppCompatActivity  implements View.OnClickListener {
 
                 }
 
-                if(otpfieldtwo.getText().toString().length()==2) {
+                if (otpfieldtwo.getText().toString().length() == 2) {
 
                     String t = otpfieldtwo.getText().toString();
 
@@ -326,13 +319,15 @@ public class OTP extends AppCompatActivity  implements View.OnClickListener {
 
         otpfieldthree.addTextChangedListener(new TextWatcher() {
 
-            public void onTextChanged(CharSequence s, int start,int before, int count) {}
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+            }
 
-            public void beforeTextChanged(CharSequence s, int start, int count, int after) {}
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+            }
 
             public void afterTextChanged(Editable s) {
 
-                if(otpfieldthree.getText().toString().length()==0) {
+                if (otpfieldthree.getText().toString().length() == 0) {
 
                     otpfieldtwo.setSelection(otpfieldtwo.getText().length());
 
@@ -342,7 +337,7 @@ public class OTP extends AppCompatActivity  implements View.OnClickListener {
 
                 }
 
-                if(otpfieldthree.getText().toString().length()==2) {
+                if (otpfieldthree.getText().toString().length() == 2) {
 
                     String t = otpfieldthree.getText().toString();
 
@@ -366,17 +361,18 @@ public class OTP extends AppCompatActivity  implements View.OnClickListener {
 
         otpfieldfour.addTextChangedListener(new TextWatcher() {
 
-            public void onTextChanged(CharSequence s, int start,int before, int count) {
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
 
                 four = otpfieldfour.getText().toString();
 
             }
 
-            public void beforeTextChanged(CharSequence s, int start, int count, int after) {}
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+            }
 
             public void afterTextChanged(Editable s) {
 
-                if(otpfieldfour.getText().toString().length()==0) {
+                if (otpfieldfour.getText().toString().length() == 0) {
 
                     otpfieldthree.setSelection(otpfieldthree.getText().length());
 
@@ -390,7 +386,7 @@ public class OTP extends AppCompatActivity  implements View.OnClickListener {
 
                 }
 
-                if(otpfieldfour.getText().toString().length()==1) {
+                if (otpfieldfour.getText().toString().length() == 1) {
 
                     submit.setEnabled(true);
 
@@ -403,9 +399,6 @@ public class OTP extends AppCompatActivity  implements View.OnClickListener {
         });
 
     }
-
-
-
 
 
     public void requestparamater() {
@@ -423,7 +416,6 @@ public class OTP extends AppCompatActivity  implements View.OnClickListener {
     }
 
 
-
     private void requestotp(final String mobile, String reg, String phone) {
         class RegisterUser extends AsyncTask<String, Void, String> {
             RegisterUserClass ruc = new RegisterUserClass();
@@ -433,7 +425,7 @@ public class OTP extends AppCompatActivity  implements View.OnClickListener {
             protected void onPreExecute() {
                 super.onPreExecute();
 
-                loading = new ProgressDialog(OTP.this,R.style.MyTheme);
+                loading = new ProgressDialog(OTP.this, R.style.MyTheme);
                 loading.setCancelable(false);
                 loading.setProgressStyle(android.R.style.Widget_ProgressBar_Small);
                 loading.show();
@@ -445,14 +437,11 @@ public class OTP extends AppCompatActivity  implements View.OnClickListener {
                 super.onPostExecute(s);
                 loading.dismiss();
 
-                if(s.equalsIgnoreCase("")){
+                if (s.equalsIgnoreCase("")) {
 
                     Toast.makeText(OTP.this, "Please Try Again Later!", Toast.LENGTH_LONG).show();
 
-                }
-
-
-                else {
+                } else {
 
                     if (s.length() == 4) {
 
@@ -472,9 +461,7 @@ public class OTP extends AppCompatActivity  implements View.OnClickListener {
 
                         resend.setVisibility(View.GONE);
 
-                    }
-
-                    else {
+                    } else {
 
                         Toast.makeText(OTP.this, "OTP Sent!", Toast.LENGTH_LONG).show();
 
@@ -489,15 +476,15 @@ public class OTP extends AppCompatActivity  implements View.OnClickListener {
             @Override
             protected String doInBackground(String... params) {
 
-                HashMap<String, String> data = new HashMap<String,String>();
-                data.put("mobile",params[0]);
-                data.put("reg",params[1]);
-                data.put("phone",params[2]);
+                HashMap<String, String> data = new HashMap<String, String>();
+                data.put("mobile", params[0]);
+                data.put("reg", params[1]);
+                data.put("phone", params[2]);
 
 
-                String result = ruc.sendPostRequest(REQUEST_OTP,data);
+                String result = ruc.sendPostRequest(REQUEST_OTP, data);
 
-                return  result;
+                return result;
             }
         }
 
@@ -523,7 +510,6 @@ public class OTP extends AppCompatActivity  implements View.OnClickListener {
         }
 
     }
-
 
 
     @Override
