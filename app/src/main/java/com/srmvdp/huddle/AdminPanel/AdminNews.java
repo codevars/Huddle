@@ -319,6 +319,7 @@ public class AdminNews extends AppCompatActivity implements View.OnClickListener
         }
 
 
+
         if (trigger.equalsIgnoreCase("noimage")) {
 
             warning = new AlertDialog.Builder(this);

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    android:layout_height="match_parent">
 
     <android.support.design.widget.AppBarLayout
         android:id="@+id/appbar"
@@ -15,10 +15,10 @@
             android:id="@+id/notification"
             android:layout_width="match_parent"
             android:layout_height="35sp"
-            android:textSize="15sp"
-
             android:background="@drawable/notificationgreen"
-            android:gravity="center" />
+
+            android:gravity="center"
+            android:textSize="15sp" />
 
 
     </android.support.design.widget.AppBarLayout>
@@ -54,14 +54,12 @@
                     android:layout_marginTop="20sp">
 
                     <EditText
+                        android:id="@+id/title2"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:hint="@string/titlenews"
-                        android:id="@+id/title2"
-                        />
+                        android:hint="@string/titlenews" />
 
                 </android.support.design.widget.TextInputLayout>
-
 
 
                 <android.support.design.widget.TextInputLayout
@@ -95,6 +93,12 @@
                         android:inputType="textUri" />
 
                 </android.support.design.widget.TextInputLayout>
+
+                <Spinner
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:entries="@array/subjects"
+                    android:padding="15sp"/>
 
             </LinearLayout>
 

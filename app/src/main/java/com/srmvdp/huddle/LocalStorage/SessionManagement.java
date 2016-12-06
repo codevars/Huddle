@@ -142,7 +142,7 @@ public class SessionManagement {
     }
 
 
-    public void createProfilePicSession() {
+    public void  createProfilePicSession() {
 
         editor.putBoolean(PROFILEPIC, true);
 
@@ -338,6 +338,7 @@ public class SessionManagement {
         profile.put(FULLNAME, pref.getString(FULLNAME, null));
 
         return profile;
+
 
     }
 

@@ -10,7 +10,7 @@
     <uses-permission android:name="android.permission.SEND_SMS" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.CLEAR_APP_CACHE"/>
+    <uses-permission android:name="android.permission.CLEAR_APP_CACHE" />
 
     <application
         android:name=".News.AppController"
@@ -33,7 +33,6 @@
                 <action android:name="android.provider.Telephony.SMS_RECEIVED" />
             </intent-filter>
         </receiver>
-
         <receiver
             android:name=".Extras.ConnectivityReceiver"
             android:enabled="true">
@@ -124,6 +123,18 @@
             android:label="Manage Users"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.Design.Light" />
+        <activity
+            android:name=".teachersList"
+            android:label="Teachers"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.Design.Light" />
+        <activity
+            android:name=".ClassPosts"
+            android:label="Post"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.Design.Light">
+
+        </activity>
     </application>
 
 </manifest>

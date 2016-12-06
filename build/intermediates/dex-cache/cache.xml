@@ -84,21 +84,21 @@
     </item>
     <item
         is-multidex="false"
-        jar="Z:\GitHub Projects\Huddle2\app\build\intermediates\exploded-aar\com.android.support\support-media-compat\24.2.1\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="24.0.3"
-        sha1="09b462bbcb77650284bd6614f1a32f360ef369f8">
-        <dex dex="Z:\GitHub Projects\Huddle2\app\build\intermediates\pre-dexed\debug\com.android.support-support-media-compat-24.2.1_1349da7d23aec50efc11d8bd9ba4046eeb621ea5.jar" />
-    </item>
-    <item
-        is-multidex="false"
         jar="Z:\GitHub Projects\Huddle2\app\build\intermediates\exploded-aar\com.android.support\support-v4\24.2.1\jars\classes.jar"
         jumboMode="false"
         optimize="true"
         revision="24.0.3"
         sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
         <dex dex="Z:\GitHub Projects\Huddle2\app\build\intermediates\pre-dexed\debug\com.android.support-support-v4-24.2.1_4aab3e6599f33bfb7d34eade9fccff81af91a312.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="Z:\GitHub Projects\Huddle2\app\build\intermediates\exploded-aar\com.android.support\support-media-compat\24.2.1\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.3"
+        sha1="09b462bbcb77650284bd6614f1a32f360ef369f8">
+        <dex dex="Z:\GitHub Projects\Huddle2\app\build\intermediates\pre-dexed\debug\com.android.support-support-media-compat-24.2.1_1349da7d23aec50efc11d8bd9ba4046eeb621ea5.jar" />
     </item>
     <item
         is-multidex="false"

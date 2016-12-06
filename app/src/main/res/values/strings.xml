@@ -16,6 +16,8 @@
 
     <string name="icondesc">Image</string>
 
+    <string name="searchT">Enter the teacher\'s name</string>
+
     <string name="login">LOGIN</string>
 
     <string name="register">REGISTER</string>
@@ -49,7 +51,7 @@
     <string name="image">Image</string>
 
     <string name="exit">Exit</string>
-    
+
     <string name="connected">Connected</string>
 
     <string name="notconnected">No Internet Connection</string>
@@ -111,5 +113,15 @@
     <string name="introfiveheader">NOTIFICATIONS</string>
 
     <string name="introfivemain">Send notifications easily, efficiently and hassle freely to any user across Huddle with our Notification Central!</string>
+
+    <string-array name="subjects">
+
+        <item>Basic Mechanical Engeneering</item>
+        <item>Basic Electrical Engeneering</item>
+        <item>SCILAB</item>
+        <item>Chemistry</item>
+        <item>etc</item>
+
+    </string-array>
 
 </resources>

@@ -350,7 +350,7 @@ public class Dashboard extends AppCompatActivity implements ConnectivityReceiver
 
                         Toast.makeText(getApplicationContext(), "Teacher List", Toast.LENGTH_SHORT).show();
 
-                        Intent intent = new Intent(Dashboard.this, TeacherProfile.class);
+                        Intent intent = new Intent(Dashboard.this, teachersList.class);
                         startActivity(intent);
 
                         drawerLayout.closeDrawers();
@@ -405,7 +405,7 @@ public class Dashboard extends AppCompatActivity implements ConnectivityReceiver
 
             case R.id.action_add:
 
-                startActivity(new Intent(Dashboard.this, AdminPosts.class));
+                startActivity(new Intent(Dashboard.this, ClassPosts.class));
 
             default:
 
