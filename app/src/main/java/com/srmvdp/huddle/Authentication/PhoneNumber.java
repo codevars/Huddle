@@ -157,7 +157,32 @@ public class PhoneNumber extends AppCompatActivity implements  View.OnClickListe
     }
 
 
+    public boolean isOnline(final Context context) {
 
+        final ConnectivityManager connectivityManager = ((ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE));
+
+        return connectivityManager.getActiveNetworkInfo() != null && connectivityManager.getActiveNetworkInfo().isConnected();
+
+    }
+
+
+    public void check() {
+
+        if (isOnline(this))
+        {
+
+            send();
+
+        }
+
+        else {
+
+            Toast.makeText(this, "No Connection Found!", Toast.LENGTH_SHORT).show();
+
+        }
+
+
+    }
 
 
     private void textWatcher() {
@@ -579,38 +604,6 @@ public class PhoneNumber extends AppCompatActivity implements  View.OnClickListe
     }
 
 
-
-    public boolean isOnline(final Context context) {
-
-        final ConnectivityManager connectivityManager = ((ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE));
-
-        return connectivityManager.getActiveNetworkInfo() != null && connectivityManager.getActiveNetworkInfo().isConnected();
-
-    }
-
-
-
-    public void check() {
-
-        if (isOnline(this))
-        {
-
-            send();
-
-        }
-
-        else {
-
-            Toast.makeText(this, "No Connection Found!", Toast.LENGTH_SHORT).show();
-
-        }
-
-
-    }
-
-
-
-
     private void slideup() {
 
         buttonup = new TranslateAnimation(0,0,500,0);
@@ -622,7 +615,6 @@ public class PhoneNumber extends AppCompatActivity implements  View.OnClickListe
     }
 
 
-
     private void send() {
 
         countrycode = "91";
@@ -632,7 +624,6 @@ public class PhoneNumber extends AppCompatActivity implements  View.OnClickListe
         requestparamater();
 
     }
-
 
 
     public void requestparamater() {
@@ -725,7 +716,6 @@ public class PhoneNumber extends AppCompatActivity implements  View.OnClickListe
         RegisterUser ru = new RegisterUser();
         ru.execute(mobile, reg, phone);
     }
-
 
 
     @Override

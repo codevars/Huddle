@@ -1,8 +1,10 @@
-package com.srmvdp.huddle;
+package com.srmvdp.huddle.Teachers;
 
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+
+import com.srmvdp.huddle.R;
 
 public class ClassPosts extends AppCompatActivity {
 

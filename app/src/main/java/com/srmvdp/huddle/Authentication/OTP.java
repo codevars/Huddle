@@ -1,8 +1,10 @@
 package com.srmvdp.huddle.Authentication;
 
 import android.app.ProgressDialog;
+import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
+import android.net.ConnectivityManager;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.CountDownTimer;
@@ -31,11 +33,15 @@ public class OTP extends AppCompatActivity implements View.OnClickListener {
 
     private static final String REQUEST_OTP = "http://codevars.esy.es/requestotp.php";
 
+    private static final String REQUEST_VERIFIED = "http://codevars.esy.es/verified.php";
+
     private String countrycode;
 
     private String registrationnumber;
 
     private String mobile;
+
+    private String firebase;
 
     private String onetimepassword;
 
@@ -80,9 +86,11 @@ public class OTP extends AppCompatActivity implements View.OnClickListener {
 
         session = new SessionManagement(getApplicationContext());
 
+        HashMap<String, String> mob = session.getMobileDetails();
+
         HashMap<String, String> reg = session.getRegistrationDetails();
 
-        HashMap<String, String> mob = session.getMobileDetails();
+        HashMap<String, String> token = session.getFirebaseTokenDetails();
 
         HashMap<String, String> rotp = session.getOTPDetails();
 
@@ -92,9 +100,11 @@ public class OTP extends AppCompatActivity implements View.OnClickListener {
 
         bar.setDisplayHomeAsUpEnabled(true);
 
+        mobile = mob.get(SessionManagement.MOB_NUM);
+
         registrationnumber = reg.get(SessionManagement.REG_NUM);
 
-        mobile = mob.get(SessionManagement.MOB_NUM);
+        firebase = token.get(SessionManagement.TOKEN);
 
         onetimepassword = rotp.get(SessionManagement.OTP);
 
@@ -139,6 +149,41 @@ public class OTP extends AppCompatActivity implements View.OnClickListener {
         slideup();
 
         textWatcher();
+
+    }
+
+
+    public boolean isOnline(final Context context) {
+
+        final ConnectivityManager connectivityManager = ((ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE));
+
+        return connectivityManager.getActiveNetworkInfo() != null && connectivityManager.getActiveNetworkInfo().isConnected();
+
+    }
+
+
+    public void check(String prompt) {
+
+        if (isOnline(this)) {
+
+            if (prompt.equalsIgnoreCase("submit")) {
+
+                verification();
+
+            }
+
+            else if (prompt.equalsIgnoreCase("resend")) {
+
+                requestparamater();
+
+            }
+
+        } else {
+
+            Toast.makeText(this, "No Connection Found!", Toast.LENGTH_SHORT).show();
+
+        }
+
 
     }
 
@@ -189,7 +234,6 @@ public class OTP extends AppCompatActivity implements View.OnClickListener {
 
         }.start();
 
-
     }
 
 
@@ -220,15 +264,7 @@ public class OTP extends AppCompatActivity implements View.OnClickListener {
 
         if (otp.equals(onetimepassword)) {
 
-            Toast.makeText(this, "Verified!", Toast.LENGTH_SHORT).show();
-
-            session.createDashboardSession();
-
-            Intent back = new Intent(this, Dashboard.class);
-
-            finish();
-
-            startActivity(back);
+            verified(mobile, registrationnumber, firebase);
 
         } else {
 
@@ -237,6 +273,21 @@ public class OTP extends AppCompatActivity implements View.OnClickListener {
             Toast.makeText(this, "Incorrect OTP!", Toast.LENGTH_SHORT).show();
 
         }
+
+    }
+
+
+    public void requestparamater() {
+
+        String countrycode = "91";
+
+        String cmob = countrycode + mobile;
+
+        String reg = registrationnumber;
+
+        String phone = mobile;
+
+        requestotp(cmob, reg, phone);
 
     }
 
@@ -401,21 +452,6 @@ public class OTP extends AppCompatActivity implements View.OnClickListener {
     }
 
 
-    public void requestparamater() {
-
-        String countrycode = "91";
-
-        String cmob = countrycode + mobile;
-
-        String reg = registrationnumber;
-
-        String phone = mobile;
-
-        requestotp(cmob, reg, phone);
-
-    }
-
-
     private void requestotp(final String mobile, String reg, String phone) {
         class RegisterUser extends AsyncTask<String, Void, String> {
             RegisterUserClass ruc = new RegisterUserClass();
@@ -493,19 +529,94 @@ public class OTP extends AppCompatActivity implements View.OnClickListener {
     }
 
 
+    private void verified(final String mobile, final String registrationnumber, final String firebase) {
+        class RegisterUser extends AsyncTask<String, Void, String> {
+            RegisterUserClass ruc = new RegisterUserClass();
+            ProgressDialog loading;
+
+            @Override
+            protected void onPreExecute() {
+                super.onPreExecute();
+
+                loading = new ProgressDialog(OTP.this, R.style.MyTheme);
+                loading.setCancelable(false);
+                loading.setProgressStyle(android.R.style.Widget_ProgressBar_Small);
+                loading.show();
+
+            }
+
+            @Override
+            protected void onPostExecute(String s) {
+                super.onPostExecute(s);
+                loading.dismiss();
+
+                if (s.equalsIgnoreCase("")) {
+
+                    Toast.makeText(OTP.this, "Network Overload. Try Again Later!", Toast.LENGTH_LONG).show();
+
+                    return;
+
+                }
+
+                if (s.contains("Mobile Verified Successfully!")) {
+
+                    Toast.makeText(OTP.this, "Mobile Verified Successfully!", Toast.LENGTH_LONG).show();
+
+                    session.createDashboardSession();
+
+                    Intent back = new Intent(OTP.this, Dashboard.class);
+
+                    finish();
+
+                    startActivity(back);
+
+                    return;
+
+                } else {
+
+                    Toast.makeText(OTP.this, s, Toast.LENGTH_LONG).show();
+
+                    return;
+
+                }
+
+            }
+
+
+            @Override
+            protected String doInBackground(String... params) {
+
+                HashMap<String, String> data = new HashMap<String, String>();
+                data.put("mobile", params[0]);
+                data.put("registrationnumber", params[1]);
+                data.put("firebase", params[2]);
+
+                String result = ruc.sendPostRequest(REQUEST_VERIFIED, data);
+
+                return result;
+            }
+        }
+
+        RegisterUser ru = new RegisterUser();
+
+        ru.execute(mobile, registrationnumber, firebase);
+
+    }
+
+
     @Override
 
     public void onClick(View go) {
 
         if (go == submit) {
 
-            verification();
+            check("submit");
 
         }
 
         if (go == resend) {
 
-            requestparamater();
+            check("resend");
 
         }
 

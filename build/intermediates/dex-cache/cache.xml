@@ -7,7 +7,7 @@
         jumboMode="true"
         optimize="true"
         revision="24.0.3"
-        sha1="f30f2a31cc01cab68585234badc9d75941ed8259">
+        sha1="b2f5c279d12adffe1b15feb0c6322cccaa50293a">
         <dex dex="/Users/Cheesetouch/Desktop/Android Studio/Huddle2/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_b1ca303090e3f839817657a65de71516bed7bd57/classes.dex" />
     </item>
     <item
@@ -83,24 +83,6 @@
         <dex dex="/Users/Cheesetouch/Desktop/Android Studio/Huddle2/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.github.paolorotolo-appintro-4.1.0_a4dba264da8b6c3e5b04a4c98a28cafb918b0294/classes.dex" />
     </item>
     <item
-<<<<<<< Updated upstream
-        is-multidex="false"
-        jar="Z:\GitHub Projects\Huddle2\app\build\intermediates\exploded-aar\com.android.support\support-v4\24.2.1\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="24.0.3"
-        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
-        <dex dex="Z:\GitHub Projects\Huddle2\app\build\intermediates\pre-dexed\debug\com.android.support-support-v4-24.2.1_4aab3e6599f33bfb7d34eade9fccff81af91a312.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="Z:\GitHub Projects\Huddle2\app\build\intermediates\exploded-aar\com.android.support\support-media-compat\24.2.1\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="24.0.3"
-        sha1="09b462bbcb77650284bd6614f1a32f360ef369f8">
-        <dex dex="Z:\GitHub Projects\Huddle2\app\build\intermediates\pre-dexed\debug\com.android.support-support-media-compat-24.2.1_1349da7d23aec50efc11d8bd9ba4046eeb621ea5.jar" />
-=======
         is-multidex="true"
         jar="/Users/Cheesetouch/Desktop/Android Studio/Huddle2/app/build/intermediates/exploded-aar/com.android.support/support-fragment/24.2.1/jars/classes.jar"
         jumboMode="true"
@@ -117,7 +99,6 @@
         revision="24.0.3"
         sha1="7e4389bd133359a2ff88623ff1e4ff93d6e6f780">
         <dex dex="/Users/Cheesetouch/Desktop/Android Studio/Huddle2/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-24.2.1_31af88f9a99b28d824df5287cc3815a9b96bbf75/classes.dex" />
->>>>>>> Stashed changes
     </item>
     <item
         is-multidex="true"
@@ -202,21 +183,21 @@
     </item>
     <item
         is-multidex="true"
-        jar="/Users/Cheesetouch/Desktop/Android Studio/Huddle2/app/build/intermediates/exploded-aar/com.android.support/support-vector-drawable/24.2.1/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.3"
-        sha1="d5c731fc64c03dfe04d51134955b483551c35849">
-        <dex dex="/Users/Cheesetouch/Desktop/Android Studio/Huddle2/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-vector-drawable-24.2.1_aea87f7b6e74e7465f10fe0098f4042b7c968a1a/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
         jar="/Users/Cheesetouch/Desktop/Android Studio/Huddle2/app/build/intermediates/exploded-aar/com.android.support/support-media-compat/24.2.1/jars/libs/internal_impl-24.2.1.jar"
         jumboMode="true"
         optimize="true"
         revision="24.0.3"
         sha1="fbf8da429efd5ad21e02e3e5ecaa1efc4167878d">
         <dex dex="/Users/Cheesetouch/Desktop/Android Studio/Huddle2/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-24.2.1_01e323ba37f2985c5871ccd6ccb54f3e59afbc42/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/Cheesetouch/Desktop/Android Studio/Huddle2/app/build/intermediates/exploded-aar/com.android.support/support-vector-drawable/24.2.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="d5c731fc64c03dfe04d51134955b483551c35849">
+        <dex dex="/Users/Cheesetouch/Desktop/Android Studio/Huddle2/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-vector-drawable-24.2.1_aea87f7b6e74e7465f10fe0098f4042b7c968a1a/classes.dex" />
     </item>
     <item
         is-multidex="true"
@@ -238,21 +219,21 @@
     </item>
     <item
         is-multidex="true"
-        jar="/Users/Cheesetouch/Desktop/Android Studio/Huddle2/app/build/intermediates/exploded-aar/com.google.firebase/firebase-auth-common/9.2.0/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.3"
-        sha1="44120508d7240c3e34a05957981a5c3c9b9f61aa">
-        <dex dex="/Users/Cheesetouch/Desktop/Android Studio/Huddle2/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.firebase-firebase-auth-common-9.2.0_932d07530d28618a8b64662d785e2d032e612222/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
         jar="/Users/Cheesetouch/Desktop/Android Studio/Huddle2/app/build/intermediates/exploded-aar/com.android.support/support-v4/24.2.1/jars/classes.jar"
         jumboMode="true"
         optimize="true"
         revision="24.0.3"
         sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
         <dex dex="/Users/Cheesetouch/Desktop/Android Studio/Huddle2/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-v4-24.2.1_40b3cce3406a7a1361e93f5e51c55f4b7f298612/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/Cheesetouch/Desktop/Android Studio/Huddle2/app/build/intermediates/exploded-aar/com.google.firebase/firebase-auth-common/9.2.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="44120508d7240c3e34a05957981a5c3c9b9f61aa">
+        <dex dex="/Users/Cheesetouch/Desktop/Android Studio/Huddle2/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.firebase-firebase-auth-common-9.2.0_932d07530d28618a8b64662d785e2d032e612222/classes.dex" />
     </item>
     <item
         is-multidex="true"
@@ -332,7 +313,7 @@
         jumboMode="true"
         optimize="true"
         revision="24.0.3"
-        sha1="08a5f4cc63cc011b5cea24737ed2ee0d9b371763">
+        sha1="b7aaab4c4d3b1892bf051d5ac962c685e425268a">
         <dex dex="/Users/Cheesetouch/Desktop/Android Studio/Huddle2/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_b86b0c294b58ac7d986560c1928e60223d40481a/classes.dex" />
     </item>
     <item

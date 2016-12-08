@@ -47,7 +47,7 @@
             android:screenOrientation="portrait"
             android:theme="@style/AppThemeLogged" />
         <activity
-            android:name=".LoginRegisterTabbed"
+            android:name=".Authentication.LoginRegisterTabbed"
             android:screenOrientation="portrait"
             android:theme="@style/AppThemeNoActionBar" />
         <activity
@@ -63,7 +63,12 @@
         <activity
             android:name=".Authentication.ForgotPassword"
             android:label="Reset Your Password"
-            android:theme="@style/AppThemeLogged"/>
+            android:screenOrientation="portrait"
+            android:theme="@style/AppThemeNoActionBar" />
+        <activity
+            android:name=".Authentication.ForgotOTP"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppThemeNoActionBar"/>
         <activity
             android:name=".Dashboard"
             android:label="Dashboard"
@@ -85,12 +90,12 @@
         </service>
 
         <activity
-            android:name=".BioPage"
+            android:name=".Profile.BioPage"
             android:label="Student Profile"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.Design.Light" />
         <activity
-            android:name=".SelfProfile"
+            android:name=".Profile.SelfProfile"
             android:label="Edit Your Profile"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.Design.Light" />
@@ -103,7 +108,7 @@
             android:screenOrientation="portrait"
             android:theme="@style/AppThemeLogged" />
         <activity
-            android:name=".TeacherProfile"
+            android:name=".Teachers.TeacherProfile"
             android:label="Teachers"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.Design.Light" />
@@ -128,17 +133,15 @@
             android:screenOrientation="portrait"
             android:theme="@style/Theme.Design.Light" />
         <activity
-            android:name=".teachersList"
+            android:name=".Teachers.TeacherList"
             android:label="Teachers"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.Design.Light" />
         <activity
-            android:name=".ClassPosts"
+            android:name=".Teachers.ClassPosts"
             android:label="Post"
             android:screenOrientation="portrait"
-            android:theme="@style/Theme.Design.Light">
-
-        </activity>
+            android:theme="@style/Theme.Design.Light" />
     </application>
 
 </manifest>

@@ -1,4 +1,4 @@
-package com.srmvdp.huddle;
+package com.srmvdp.huddle.Teachers;
 
 import android.content.Intent;
 import android.support.v7.app.ActionBar;
@@ -6,10 +6,10 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.MenuItem;
 
-import com.srmvdp.huddle.AdminPanel.AdminPanel;
+import com.srmvdp.huddle.Dashboard;
 import com.srmvdp.huddle.R;
 
-public class teachersList extends AppCompatActivity {
+public class TeacherList extends AppCompatActivity {
 
 
     private ActionBar bar;
@@ -36,7 +36,7 @@ public class teachersList extends AppCompatActivity {
 
             case android.R.id.home:
 
-                Intent back = new Intent(teachersList.this, Dashboard.class);
+                Intent back = new Intent(TeacherList.this, Dashboard.class);
 
                 finish();
 

@@ -16,7 +16,7 @@
 
     <string name="icondesc">Image</string>
 
-    <string name="searchT">Enter the teacher\'s name</string>
+    <string name="searchT">Enter The Teacher\'s Name</string>
 
     <string name="login">LOGIN</string>
 
@@ -124,11 +124,19 @@
 
     <string-array name="subjects">
 
-        <item>Basic Mechanical Engeneering</item>
-        <item>Basic Electrical Engeneering</item>
+        <item>Basic Mechanical Engineering</item>
+
+        <item>Basic Electrical Engineering</item>
+
+        <item>Basic Civil Engineering</item>
+
         <item>SCILAB</item>
+
+        <item>Physics</item>
+
         <item>Chemistry</item>
-        <item>etc</item>
+
+        <item>Mathematics</item>
 
     </string-array>
 

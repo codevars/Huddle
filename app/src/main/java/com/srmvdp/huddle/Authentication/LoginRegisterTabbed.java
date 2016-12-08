@@ -1,4 +1,4 @@
-package com.srmvdp.huddle;
+package com.srmvdp.huddle.Authentication;
 
 import android.os.Build;
 import android.support.design.widget.TabLayout;
@@ -11,6 +11,7 @@ import android.view.WindowManager;
 import com.srmvdp.huddle.Adapters.ViewPagerAdapter;
 import com.srmvdp.huddle.Authentication.LoginFragment;
 import com.srmvdp.huddle.Authentication.RegisterFragment;
+import com.srmvdp.huddle.R;
 
 public class LoginRegisterTabbed extends AppCompatActivity {
 

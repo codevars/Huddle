@@ -57,8 +57,6 @@ public class RegisterFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
-        final FirebaseAuth auth;
-
         View view =  inflater.inflate(R.layout.fragment_register, container, false);
 
         Typeface one = Typeface.createFromAsset(getActivity().getAssets(), "fonts/Quando-Regular.ttf");
@@ -288,6 +286,10 @@ public class RegisterFragment extends Fragment {
                 super.onPostExecute(s);
                 loading.dismiss();
 
+                char c = s.charAt(24);
+
+                String f = String.valueOf(c);
+
 
                 if(s.equalsIgnoreCase("")){
 
@@ -297,9 +299,9 @@ public class RegisterFragment extends Fragment {
 
                 }
 
-                if(s.equalsIgnoreCase("Successfully Registered!")){
+                if(f.equals("{")){
 
-                    Snackbar snackbar = Snackbar.make(getView(), s, Snackbar.LENGTH_SHORT);
+                    Snackbar snackbar = Snackbar.make(getView(), "Successfully Registered!", Snackbar.LENGTH_SHORT);
 
                     snackbar.show();
 

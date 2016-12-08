@@ -27,14 +27,16 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.srmvdp.huddle.Adapters.ViewPagerAdapter;
-import com.srmvdp.huddle.AdminPanel.AdminPosts;
 import com.srmvdp.huddle.Extras.ConnectivityReceiver;
 import com.srmvdp.huddle.Fragments.NewsFragment;
 import com.srmvdp.huddle.Fragments.ShelfFragment;
 import com.srmvdp.huddle.Fragments.SubjectsFragment;
 import com.srmvdp.huddle.LocalStorage.SessionManagement;
 import com.srmvdp.huddle.News.AppController;
+import com.srmvdp.huddle.Profile.BioPage;
 import com.srmvdp.huddle.Server.RegisterUserClass;
+import com.srmvdp.huddle.Teachers.ClassPosts;
+import com.srmvdp.huddle.Teachers.TeacherList;
 
 import java.util.HashMap;
 
@@ -350,7 +352,7 @@ public class Dashboard extends AppCompatActivity implements ConnectivityReceiver
 
                         Toast.makeText(getApplicationContext(), "Teacher List", Toast.LENGTH_SHORT).show();
 
-                        Intent intent = new Intent(Dashboard.this, teachersList.class);
+                        Intent intent = new Intent(Dashboard.this, TeacherList.class);
                         startActivity(intent);
 
                         drawerLayout.closeDrawers();

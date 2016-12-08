@@ -9,9 +9,11 @@ import android.content.SharedPreferences.Editor;
 
 import com.google.firebase.iid.FirebaseInstanceId;
 import com.srmvdp.huddle.AdminPanel.AdminPanel;
+import com.srmvdp.huddle.Authentication.ForgotOTP;
+import com.srmvdp.huddle.Authentication.ForgotPassword;
 import com.srmvdp.huddle.Dashboard;
 import com.srmvdp.huddle.Extras.AdminPanelIntro;
-import com.srmvdp.huddle.LoginRegisterTabbed;
+import com.srmvdp.huddle.Authentication.LoginRegisterTabbed;
 import com.srmvdp.huddle.Authentication.OTP;
 import com.srmvdp.huddle.Authentication.PhoneNumber;
 
@@ -25,9 +27,11 @@ public class SessionManagement {
 
     int PRIVATE_MODE = 0;
 
-    private static final String PREF_NAME = "CodeVarsPref";
+    public static final String PREF_NAME = "CodeVarsPref";
 
     public static final String PHONE = "New";
+
+    public static final String FORGOTPASSWORD = "Forgot";
 
     public static final String ONETIMEPASSWORD = "No";
 
@@ -42,6 +46,8 @@ public class SessionManagement {
     public static final String MOB_NUM = "mobnum";
 
     public static final String OTP = "OTP";
+
+    public static final String OTP_HEADER = "Otp Header";
 
     public static final String TOKEN = "TOKEN";
 
@@ -66,6 +72,27 @@ public class SessionManagement {
         editor.putString(REG_NUM, regnum);
 
         editor.putString(PRIVILEGE, privilege);
+
+        editor.commit();
+
+    }
+
+    public void createForgotSession(String regnum, String otp ) {
+
+        editor.putString(REG_NUM, regnum);
+
+        editor.putString(OTP, otp);
+
+        editor.putBoolean(FORGOTPASSWORD, true);
+
+        editor.commit();
+        
+    }
+
+
+    public void createOTPHeaderSession(String header) {
+
+        editor.putString(OTP_HEADER, header);
 
         editor.commit();
 
@@ -156,6 +183,26 @@ public class SessionManagement {
         if (this.phoneIn()) {
 
             Intent i = new Intent(_context, PhoneNumber.class);
+
+            i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+
+            i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+
+            i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
+
+            _context.startActivity(i);
+
+        }
+
+
+    }
+
+
+    public void forgotpassword() {
+
+        if (this.forgotIn()) {
+
+            Intent i = new Intent(_context, ForgotOTP.class);
 
             i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
 
@@ -342,6 +389,9 @@ public class SessionManagement {
 
     }
 
+    public boolean forgotIn() {
+        return pref.getBoolean(FORGOTPASSWORD, false);
+    }
 
     public boolean phoneIn() {
         return pref.getBoolean(PHONE, false);

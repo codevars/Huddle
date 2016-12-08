@@ -1,36 +1,31 @@
-package com.srmvdp.huddle;
+package com.srmvdp.huddle.Teachers;
 
 import android.content.Intent;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
-import android.view.View;
-import android.widget.Button;
 
-public class BioPage extends AppCompatActivity implements View.OnClickListener {
+import com.srmvdp.huddle.Dashboard;
+import com.srmvdp.huddle.R;
 
-    private Button button;
+public class TeacherProfile extends AppCompatActivity {
 
     private ActionBar bar;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_bio);
+        setContentView(R.layout.activity_teacher_profile);
 
-        button = (Button) findViewById(R.id.editbutton);
-
-        button.setOnClickListener(this);
 
         bar = getSupportActionBar();
 
         bar.setDisplayHomeAsUpEnabled(true);
 
+
     }
-
-
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
@@ -50,23 +45,6 @@ public class BioPage extends AppCompatActivity implements View.OnClickListener {
             default:
 
                 return super.onOptionsItemSelected(item);
-
-        }
-
-    }
-
-
-
-    @Override
-    public void onClick(View view) {
-
-        if (view == button) {
-
-            Intent go = new Intent(BioPage.this, SelfProfile.class);
-
-            finish();
-
-            startActivity(go);
 
         }
 

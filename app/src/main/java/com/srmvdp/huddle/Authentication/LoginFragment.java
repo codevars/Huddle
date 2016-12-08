@@ -444,7 +444,9 @@ public class LoginFragment extends Fragment implements View.OnClickListener {
                 if (progress > 95) {
 
 
-                } else {
+                }
+
+                else {
 
                     swipetologin.setAnimation(slide2);
 
@@ -465,15 +467,7 @@ public class LoginFragment extends Fragment implements View.OnClickListener {
 
             Intent go = new Intent(getContext(), ForgotPassword.class);
 
-            go.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-
             startActivity(go);
-
-            go.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-
-            go.setFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
-
-            go.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
 
         }
 

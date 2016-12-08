@@ -4,7 +4,7 @@
     android:id="@+id/activity_class_posts"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.srmvdp.huddle.ClassPosts">
+    tools:context="com.srmvdp.huddle.Teachers.ClassPosts">
 
     <android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -22,7 +22,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="35sp"
                 android:background="@drawable/notificationgreen"
-
                 android:gravity="center"
                 android:textSize="15sp" />
 
@@ -104,9 +103,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:entries="@array/subjects"
-                        android:spinnerMode="dialog"
-                        android:padding="15sp">
-
+                        android:padding="15sp"
+                        android:spinnerMode="dialog">
 
 
                     </Spinner>

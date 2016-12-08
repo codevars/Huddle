@@ -5,7 +5,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 
 import com.srmvdp.huddle.LocalStorage.SessionManagement;
-import com.srmvdp.huddle.LoginRegisterTabbed;
+import com.srmvdp.huddle.Authentication.LoginRegisterTabbed;
 
 public class Splash extends AppCompatActivity {
 
@@ -18,7 +18,7 @@ public class Splash extends AppCompatActivity {
 
         super.onCreate(savedInstanceState);
 
-        if (!session.phoneIn() & !session.otpIn() & !session.dashboardIn()) {
+        if (!session.forgotIn() & !session.phoneIn() & !session.otpIn() & !session.dashboardIn()) {
 
             Intent go = new Intent(Splash.this, LoginRegisterTabbed.class);
 
@@ -29,6 +29,8 @@ public class Splash extends AppCompatActivity {
         }
 
         else {
+
+            session.forgotpassword();
 
             session.phone();
 
