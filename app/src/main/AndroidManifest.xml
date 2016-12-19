@@ -44,11 +44,6 @@
         </receiver>
 
         <activity
-            android:name=".MainActivity"
-            android:label="News"
-            android:screenOrientation="portrait"
-            android:theme="@style/AppThemeLogged" />
-        <activity
             android:name=".Authentication.LoginRegisterTabbed"
             android:screenOrientation="portrait"
             android:theme="@style/AppThemeNoActionBar" />

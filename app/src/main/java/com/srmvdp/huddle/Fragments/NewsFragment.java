@@ -1,48 +1,175 @@
 package com.srmvdp.huddle.Fragments;
 
-import android.content.Intent;
-import android.support.v4.app.Fragment;
+import android.annotation.SuppressLint;
 import android.os.Bundle;
+import android.support.v4.app.Fragment;
+import android.support.v4.widget.SwipeRefreshLayout;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
+import android.widget.ListView;
+import android.widget.Toast;
 
-import com.srmvdp.huddle.MainActivity;
+import com.android.volley.Cache;
+import com.android.volley.Request;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.VolleyLog;
+import com.android.volley.toolbox.JsonObjectRequest;
+import com.srmvdp.huddle.Adapters.FeedListAdapter;
+import com.srmvdp.huddle.News.AppController;
+import com.srmvdp.huddle.News.FeedItem;
 import com.srmvdp.huddle.R;
 
-public class NewsFragment extends Fragment implements View.OnClickListener{
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.io.UnsupportedEncodingException;
+import java.util.ArrayList;
+import java.util.List;
+
+public class NewsFragment extends Fragment implements SwipeRefreshLayout.OnRefreshListener {
 
 
     public NewsFragment() {
-
     }
 
-    private Button news;
+    private static final String TAG = NewsFragment.class.getSimpleName();
 
+    private ListView listView;
 
+    private FeedListAdapter listAdapter;
+
+    private List<FeedItem> feedItems;
+
+    private SwipeRefreshLayout refresh;
+
+    private String URL_FEED = "http://codevars.esy.es/results.json";
+
+    @SuppressLint("NewApi")
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
         View view = inflater.inflate(R.layout.fragment_news, container, false);
 
-        news = (Button) view.findViewById(R.id.newsget);
+        listView = (ListView) view.findViewById(R.id.list);
 
-        news.setOnClickListener(this);
+        feedItems = new ArrayList<FeedItem>();
+
+        listAdapter = new FeedListAdapter(getActivity(), feedItems);
+
+        listView.setAdapter(listAdapter);
+
+        refresh = (SwipeRefreshLayout) view.findViewById(R.id.newsrefresh);
+
+        refresh.setOnRefreshListener(this);
+
+        Cache cache = AppController.getInstance().getRequestQueue().getCache();
+
+        Cache.Entry entry = cache.get(URL_FEED);
+
+        if (entry != null) {
+            try {
+                String data = new String(entry.data, "UTF-8");
+                try {
+                    parseJsonFeedRefresh(new JSONObject(data));
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+            } catch (UnsupportedEncodingException e) {
+                e.printStackTrace();
+            }
+
+        } else {
+
+            onRefresh();
+
+        }
 
         return view;
 
     }
 
+
+    private void refreshResults() {
+
+        JsonObjectRequest jsonReq = new JsonObjectRequest(Request.Method.GET,
+                URL_FEED, null, new Response.Listener<JSONObject>() {
+
+            @Override
+            public void onResponse(JSONObject response) {
+                VolleyLog.d(TAG, "Response: " + response.toString());
+                if (response != null) {
+                    parseJsonFeedRefresh(response);
+                }
+            }
+        }, new Response.ErrorListener() {
+
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                VolleyLog.d(TAG, "Error: " + error.getMessage());
+            }
+        });
+
+        AppController.getInstance().addToRequestQueue(jsonReq);
+
+    }
+
+
+    private void parseJsonFeedRefresh(JSONObject response) {
+        try {
+            JSONArray feedArray = response.getJSONArray("feed");
+
+            for (int i = 0; i < feedArray.length(); i++) {
+                JSONObject feedObj = (JSONObject) feedArray.get(i);
+
+                final FeedItem item = new FeedItem();
+                item.setId(feedObj.getInt("id"));
+                item.setName(feedObj.getString("name"));
+
+                // Image might be null sometimes
+                String image = feedObj.isNull("image") ? null : feedObj.getString("image");
+                item.setImge(image);
+                item.setStatus(feedObj.getString("status"));
+                item.setProfilePic(feedObj.getString("profilePic"));
+                item.setTime(feedObj.getString("uploadtime"));
+
+                // url might be null sometimes
+                String feedUrl = feedObj.isNull("url") ? null : feedObj.getString("url");
+                item.setUrl(feedUrl);
+
+                listView.post(new Runnable() {
+                    @Override
+                    public void run() {
+                        feedItems.add(0, item);
+                        listAdapter.notifyDataSetChanged();
+                        listView.smoothScrollToPosition(0);
+                    }
+                });
+            }
+
+            // notify data changes to list adapater
+            listAdapter.notifyDataSetChanged();
+
+            refresh.setRefreshing(false);
+
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+    }
+
+
     @Override
-    public void onClick(View view) {
+    public void onRefresh() {
 
-        if (view == news) {
+        Toast.makeText(getContext(), "Crunching Latest News...", Toast.LENGTH_SHORT).show();
 
-            Intent go = new Intent(getContext(), MainActivity.class);
+        if (feedItems != null) {
 
-            startActivity(go);
+            feedItems.clear();
+
+            refreshResults();
 
         }
 
