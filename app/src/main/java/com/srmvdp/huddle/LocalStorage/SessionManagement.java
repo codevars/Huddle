@@ -82,6 +82,18 @@ public class SessionManagement {
 
     }
 
+
+    public void createLoginCancelSession() {
+
+        editor.putBoolean(PHONE, false);
+
+        editor.putBoolean(ONETIMEPASSWORD, false);
+
+        editor.commit();
+
+    }
+
+
     public void createForgotSession(String regnum, String mobile, String otp, String header) {
 
         editor.putString(REG_NUM, regnum);

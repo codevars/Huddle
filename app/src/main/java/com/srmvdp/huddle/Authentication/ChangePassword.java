@@ -4,7 +4,6 @@ import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.net.ConnectivityManager;
-import android.net.wifi.WifiManager;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -20,7 +19,15 @@ import com.srmvdp.huddle.LocalStorage.SessionManagement;
 import com.srmvdp.huddle.R;
 import com.srmvdp.huddle.Server.RegisterUserClass;
 
-import java.math.BigInteger;
+import org.apache.http.client.HttpClient;
+import org.apache.http.client.methods.HttpGet;
+import org.apache.http.impl.client.DefaultHttpClient;
+import org.json.JSONObject;
+
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.net.HttpURLConnection;
+import java.net.URL;
 import java.util.HashMap;
 
 public class ChangePassword extends AppCompatActivity implements View.OnClickListener {
@@ -38,8 +45,6 @@ public class ChangePassword extends AppCompatActivity implements View.OnClickLis
     private String passone;
 
     private String passtwo;
-
-    private String ip;
 
     private String reg;
 
@@ -116,19 +121,13 @@ public class ChangePassword extends AppCompatActivity implements View.OnClickLis
 
         passtwo = passwordconfirm.getText().toString().trim();
 
-        WifiManager wm = (WifiManager) getSystemService(WIFI_SERVICE);
-
-        ip = BigInteger.valueOf(wm.getDhcpInfo().netmask).toString();
-
         if (passone.equals(passtwo)) {
 
             if (passone.length() >= 6) {
 
-                changePassword(reg, ip, passone);
+                changePassword(reg, passone);
 
-            }
-
-            else {
+            } else {
 
                 Toast.makeText(this, "Password Must Be More Than 6 Characters!", Toast.LENGTH_SHORT).show();
 
@@ -143,7 +142,7 @@ public class ChangePassword extends AppCompatActivity implements View.OnClickLis
     }
 
 
-    private void changePassword(final String reg, String ip, String password) {
+    private void changePassword(final String reg, String password) {
         class RegisterUser extends AsyncTask<String, Void, String> {
             RegisterUserClass ruc = new RegisterUserClass();
             ProgressDialog loading;
@@ -193,8 +192,7 @@ public class ChangePassword extends AppCompatActivity implements View.OnClickLis
 
                 HashMap<String, String> data = new HashMap<String, String>();
                 data.put("registrationnumber", params[0]);
-                data.put("ip", params[1]);
-                data.put("password", params[2]);
+                data.put("password", params[1]);
 
                 String result = ruc.sendPostRequest(REQUEST_CHANGE, data);
 
@@ -203,7 +201,7 @@ public class ChangePassword extends AppCompatActivity implements View.OnClickLis
         }
 
         RegisterUser ru = new RegisterUser();
-        ru.execute(reg, ip, passone);
+        ru.execute(reg, passone);
 
     }
 

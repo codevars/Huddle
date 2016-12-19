@@ -7,10 +7,12 @@ import android.graphics.Color;
 import android.graphics.Typeface;
 import android.net.ConnectivityManager;
 import android.os.AsyncTask;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.TranslateAnimation;
@@ -87,9 +89,14 @@ public class PhoneNumber extends AppCompatActivity implements  View.OnClickListe
 
     private Animation buttonup;
 
+    private ActionBar bar;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        Typeface one = Typeface.createFromAsset(getAssets(), "fonts/Lato-Regular.ttf");
+
         setContentView(R.layout.activity_phone_number);
 
         session = new SessionManagement(getApplicationContext());
@@ -98,7 +105,11 @@ public class PhoneNumber extends AppCompatActivity implements  View.OnClickListe
 
         registrationnumber = regnum.get(SessionManagement.REG_NUM);
 
-        Typeface one = Typeface.createFromAsset(getAssets(), "fonts/Lato-Regular.ttf");
+        bar = getSupportActionBar();
+
+        bar.setHomeButtonEnabled(true);
+
+        bar.setDisplayHomeAsUpEnabled(true);
 
         warning = (TextView) findViewById(R.id.warning);
 
@@ -724,6 +735,31 @@ public class PhoneNumber extends AppCompatActivity implements  View.OnClickListe
         if (click == submit) {
 
             check();
+
+        }
+
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+
+        switch (item.getItemId()) {
+
+            case android.R.id.home:
+
+                session.createLoginCancelSession();
+
+                Intent back = new Intent(PhoneNumber.this, LoginRegisterTabbed.class);
+
+                finish();
+
+                startActivity(back);
+
+                return true;
+
+            default:
+
+                return super.onOptionsItemSelected(item);
 
         }
 
