@@ -9,9 +9,8 @@
     <LinearLayout
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
-        android:layout_marginLeft="@dimen/feed_item_margin"
-        android:layout_marginRight="@dimen/feed_item_margin"
-        android:layout_marginTop="@dimen/feed_item_margin"
+        android:layout_marginLeft="2sp"
+        android:layout_marginRight="2sp"
         android:background="@drawable/news_dialog"
         android:orientation="vertical"
         android:paddingBottom="@dimen/feed_item_padding_top_bottom"
