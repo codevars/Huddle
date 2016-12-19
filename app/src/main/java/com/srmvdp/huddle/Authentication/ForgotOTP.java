@@ -1,22 +1,23 @@
 package com.srmvdp.huddle.Authentication;
 
 import android.content.Context;
-import android.graphics.Color;
+import android.content.Intent;
 import android.net.ConnectivityManager;
 import android.os.Build;
-import android.os.CountDownTimer;
-import android.support.v7.app.ActionBar;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.os.CountDownTimer;
+import android.support.v7.app.AppCompatActivity;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.view.animation.Animation;
+import android.view.animation.TranslateAnimation;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -27,7 +28,7 @@ import java.util.HashMap;
 
 public class ForgotOTP extends AppCompatActivity implements View.OnClickListener {
 
-    private String countrycode;
+    private String otphead;
 
     private String onetimepassword;
 
@@ -41,11 +42,17 @@ public class ForgotOTP extends AppCompatActivity implements View.OnClickListener
 
     private String otp;
 
+    private String mobile;
+
+    private LinearLayout back;
+
     private TextView number;
 
     private TextView timer;
 
     private TextView resend;
+
+    private TextView senthead;
 
     private Animation buttonup;
 
@@ -70,7 +77,17 @@ public class ForgotOTP extends AppCompatActivity implements View.OnClickListener
 
         session = new SessionManagement(getApplicationContext());
 
+        HashMap<String, String> otpheader = session.getOTPHeaderDetails();
+
+        HashMap<String, String> mob = session.getForgotMobileDetails();
+
+        otphead = otpheader.get(SessionManagement.OTP_HEADER);
+
+        mobile = mob.get(SessionManagement.FORGOT_MOBILE);
+
         timer = (TextView) findViewById(R.id.timer);
+
+        senthead = (TextView) findViewById(R.id.sent);
 
         imagetimer = (ImageView) findViewById(R.id.imagetimer);
 
@@ -78,17 +95,39 @@ public class ForgotOTP extends AppCompatActivity implements View.OnClickListener
 
         resend = (TextView) findViewById(R.id.resend);
 
+        submit = (Button) findViewById(R.id.submit);
+
+        back = (LinearLayout) findViewById(R.id.gobackcontainer);
+
+        otpfieldone = (EditText) findViewById(R.id.o1);
+
+        otpfieldtwo = (EditText) findViewById(R.id.o2);
+
+        otpfieldthree = (EditText) findViewById(R.id.o3);
+
+        otpfieldfour = (EditText) findViewById(R.id.o4);
+
+        otpfieldtwo.setEnabled(false);
+
+        otpfieldthree.setEnabled(false);
+
+        otpfieldfour.setEnabled(false);
+
         resend.setVisibility(View.GONE);
 
         resend.setOnClickListener(this);
 
-        submit = (Button) findViewById(R.id.submit);
-
         submit.setOnClickListener(this);
+
+        back.setOnClickListener(this);
 
         submit.setEnabled(false);
 
         hideStatusBar();
+
+        setHeader();
+
+        slideup();
 
         textWatcher();
 
@@ -106,6 +145,25 @@ public class ForgotOTP extends AppCompatActivity implements View.OnClickListener
     }
 
 
+    public void setHeader() {
+
+        senthead.setText(otphead);
+
+        if (mobile.contains("@")) {
+
+            number.setTextSize(20);
+
+            number.setText(mobile);
+
+        } else {
+
+            number.setText(mobile);
+
+        }
+
+    }
+
+
     public void check(String prompt) {
 
         if (isOnline(this)) {
@@ -114,11 +172,23 @@ public class ForgotOTP extends AppCompatActivity implements View.OnClickListener
 
                 verification();
 
-            }
+            } else if (prompt.equalsIgnoreCase("resend")) {
 
-            else if (prompt.equalsIgnoreCase("resend")) {
+                Intent go = new Intent(ForgotOTP.this, ForgotPassword.class);
 
-                requestparamater();
+                startActivity(go);
+
+                finish();
+
+            } else if (prompt.equalsIgnoreCase("back")) {
+
+                Intent go = new Intent(ForgotOTP.this, LoginRegisterTabbed.class);
+
+                session.createForgotCancelSession();
+
+                startActivity(go);
+
+                finish();
 
             }
 
@@ -128,6 +198,17 @@ public class ForgotOTP extends AppCompatActivity implements View.OnClickListener
 
         }
 
+
+    }
+
+
+    private void slideup() {
+
+        buttonup = new TranslateAnimation(0, 0, 500, 0);
+
+        buttonup.setDuration(1000);
+
+        submit.setAnimation(buttonup);
 
     }
 
@@ -148,30 +229,22 @@ public class ForgotOTP extends AppCompatActivity implements View.OnClickListener
 
         if (otp.equals(onetimepassword)) {
 
-            verified(mobile, registrationnumber, firebase);
+            Toast.makeText(this, "OTP Verified!", Toast.LENGTH_SHORT).show();
+
+            Intent go = new Intent(ForgotOTP.this, ChangePassword.class);
+
+            session.createChangePasswordSession();
+
+            startActivity(go);
+
+            finish();
+
 
         } else {
-
-            Toast.makeText(this, onetimepassword, Toast.LENGTH_SHORT).show();
 
             Toast.makeText(this, "Incorrect OTP!", Toast.LENGTH_SHORT).show();
 
         }
-
-    }
-
-
-    public void requestparamater() {
-
-        String countrycode = "91";
-
-        String cmob = countrycode + mobile;
-
-        String reg = registrationnumber;
-
-        String phone = mobile;
-
-        requestotp(cmob, reg, phone);
 
     }
 
@@ -208,7 +281,7 @@ public class ForgotOTP extends AppCompatActivity implements View.OnClickListener
 
                 resend.setVisibility(View.VISIBLE);
 
-                resend.setText(getResources(getString(R.string)));
+                resend.setText("Didn't Get OTP? Try Again.");
 
             }
 
@@ -358,15 +431,11 @@ public class ForgotOTP extends AppCompatActivity implements View.OnClickListener
 
                     submit.setEnabled(false);
 
-                    submit.setBackgroundColor(Color.parseColor("#992b2b2b"));
-
                 }
 
                 if (otpfieldfour.getText().toString().length() == 1) {
 
                     submit.setEnabled(true);
-
-                    submit.setBackgroundColor(Color.parseColor("#2b2b2b"));
 
                 }
 
@@ -388,6 +457,12 @@ public class ForgotOTP extends AppCompatActivity implements View.OnClickListener
         if (view == resend) {
 
             check("resend");
+
+        }
+
+        if (view == back) {
+
+            check("back");
 
         }
 

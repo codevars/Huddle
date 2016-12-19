@@ -9,6 +9,7 @@ import android.content.SharedPreferences.Editor;
 
 import com.google.firebase.iid.FirebaseInstanceId;
 import com.srmvdp.huddle.AdminPanel.AdminPanel;
+import com.srmvdp.huddle.Authentication.ChangePassword;
 import com.srmvdp.huddle.Authentication.ForgotOTP;
 import com.srmvdp.huddle.Authentication.ForgotPassword;
 import com.srmvdp.huddle.Dashboard;
@@ -33,6 +34,8 @@ public class SessionManagement {
 
     public static final String FORGOTPASSWORD = "Forgot";
 
+    public static final String CHANGEPASSWORD = "Change";
+
     public static final String ONETIMEPASSWORD = "No";
 
     public static final String DASHBOARD = "Nah";
@@ -48,6 +51,8 @@ public class SessionManagement {
     public static final String OTP = "OTP";
 
     public static final String OTP_HEADER = "Otp Header";
+
+    public static final String FORGOT_MOBILE = "ForgotOTP";
 
     public static final String TOKEN = "TOKEN";
 
@@ -77,22 +82,39 @@ public class SessionManagement {
 
     }
 
-    public void createForgotSession(String regnum, String otp ) {
+    public void createForgotSession(String regnum, String mobile, String otp, String header) {
 
         editor.putString(REG_NUM, regnum);
 
         editor.putString(OTP, otp);
 
+        editor.putString(OTP_HEADER, header);
+
+        editor.putString(FORGOT_MOBILE, mobile);
+
         editor.putBoolean(FORGOTPASSWORD, true);
 
         editor.commit();
-        
+
     }
 
 
-    public void createOTPHeaderSession(String header) {
+    public void createForgotCancelSession() {
 
-        editor.putString(OTP_HEADER, header);
+        editor.putBoolean(FORGOTPASSWORD, false);
+
+        editor.putBoolean(CHANGEPASSWORD, false);
+
+        editor.commit();
+
+    }
+
+
+    public void createChangePasswordSession() {
+
+        editor.putBoolean(FORGOT_MOBILE, false);
+
+        editor.putBoolean(CHANGEPASSWORD, true);
 
         editor.commit();
 
@@ -169,7 +191,7 @@ public class SessionManagement {
     }
 
 
-    public void  createProfilePicSession() {
+    public void createProfilePicSession() {
 
         editor.putBoolean(PROFILEPIC, true);
 
@@ -184,13 +206,37 @@ public class SessionManagement {
 
             Intent i = new Intent(_context, PhoneNumber.class);
 
+            i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+
+            _context.startActivity(i);
+
             i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
 
-            i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+            i.setFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
 
             i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
 
+        }
+
+
+    }
+
+
+    public void changepassword() {
+
+        if (this.changeIn()) {
+
+            Intent i = new Intent(_context, ChangePassword.class);
+
+            i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+
             _context.startActivity(i);
+
+            i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+
+            i.setFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
+
+            i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
 
         }
 
@@ -204,13 +250,15 @@ public class SessionManagement {
 
             Intent i = new Intent(_context, ForgotOTP.class);
 
-            i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-
             i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
 
-            i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
-
             _context.startActivity(i);
+
+            i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+
+            i.setFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
+
+            i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
 
         }
 
@@ -224,13 +272,15 @@ public class SessionManagement {
 
             Intent i = new Intent(_context, OTP.class);
 
-            i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-
             i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
 
-            i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
-
             _context.startActivity(i);
+
+            i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+
+            i.setFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
+
+            i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
 
         }
 
@@ -244,12 +294,15 @@ public class SessionManagement {
 
             Intent i = new Intent(_context, Dashboard.class);
 
-            i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+            i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
 
             _context.startActivity(i);
 
-            i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
+            i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
 
+            i.setFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
+
+            i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
 
         }
 
@@ -347,11 +400,33 @@ public class SessionManagement {
 
     public HashMap<String, String> getOTPDetails() {
 
+        HashMap<String, String> otpheader = new HashMap<String, String>();
+
+        otpheader.put(OTP, pref.getString(OTP, null));
+
+        return otpheader;
+
+    }
+
+
+    public HashMap<String, String> getOTPHeaderDetails() {
+
         HashMap<String, String> otp = new HashMap<String, String>();
 
-        otp.put(OTP, pref.getString(OTP, null));
+        otp.put(OTP_HEADER, pref.getString(OTP_HEADER, null));
 
         return otp;
+
+    }
+
+
+    public HashMap<String, String> getForgotMobileDetails() {
+
+        HashMap<String, String> mobile = new HashMap<String, String>();
+
+        mobile.put(FORGOT_MOBILE, pref.getString(FORGOT_MOBILE, null));
+
+        return mobile;
 
     }
 
@@ -391,6 +466,10 @@ public class SessionManagement {
 
     public boolean forgotIn() {
         return pref.getBoolean(FORGOTPASSWORD, false);
+    }
+
+    public boolean changeIn() {
+        return pref.getBoolean(CHANGEPASSWORD, false);
     }
 
     public boolean phoneIn() {

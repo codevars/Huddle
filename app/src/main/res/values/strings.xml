@@ -8,6 +8,12 @@
 
     <string name="password">********</string>
 
+    <string name="changepassword">Password</string>
+
+    <string name="confirmpassword">Confirm Password</string>
+
+    <string name="changeheader">Change Your Account Password</string>
+
     <string name="registrationnumber">Registration Number</string>
 
     <string name="swipelogin">SWIPE UP TO LOGIN</string>
@@ -30,6 +36,8 @@
 
     <string name="otpsent">An OTP has been sent to</string>
 
+    <string name="nootp">Did\'nt Get OTP? Try Again.</string>
+
     <string name="mobiledefault">9871495638</string>
 
     <string name="username">Rishabh Singh</string>
@@ -42,7 +50,7 @@
 
     <string name="sms">One Time Password</string>
 
-    <string name="call">Verfication Call</string>
+    <string name="call">Verification Call</string>
 
     <string name="actionsettings">Settings</string>
 
@@ -59,6 +67,8 @@
     <string name="image">Image</string>
 
     <string name="exit">Exit</string>
+
+    <string name="goback">Go Back To Login?</string>
 
     <string name="connected">Connected</string>
 

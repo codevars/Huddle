@@ -469,6 +469,8 @@ public class LoginFragment extends Fragment implements View.OnClickListener {
 
             startActivity(go);
 
+            getActivity().finish();
+
         }
 
     }

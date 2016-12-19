@@ -15,6 +15,7 @@ import android.view.animation.Animation;
 import android.view.animation.TranslateAnimation;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Toast;
@@ -24,6 +25,7 @@ import com.srmvdp.huddle.R;
 import com.srmvdp.huddle.Server.RegisterUserClass;
 
 import java.util.HashMap;
+import java.util.StringTokenizer;
 
 public class ForgotPassword extends AppCompatActivity implements View.OnClickListener {
 
@@ -43,6 +45,8 @@ public class ForgotPassword extends AppCompatActivity implements View.OnClickLis
 
     private String otp;
 
+    private String mobile;
+
     private RadioGroup methods;
 
     private RadioButton email;
@@ -52,6 +56,8 @@ public class ForgotPassword extends AppCompatActivity implements View.OnClickLis
     private RadioButton call;
 
     private Animation buttonup;
+
+    private LinearLayout back;
 
     private SessionManagement session;
 
@@ -66,8 +72,6 @@ public class ForgotPassword extends AppCompatActivity implements View.OnClickLis
 
         submit = (Button) findViewById(R.id.submit);
 
-        submit.setOnClickListener(this);
-
         methods = (RadioGroup) findViewById(R.id.methods);
 
         email = (RadioButton) findViewById(R.id.email);
@@ -75,6 +79,12 @@ public class ForgotPassword extends AppCompatActivity implements View.OnClickLis
         sms = (RadioButton) findViewById(R.id.sms);
 
         call = (RadioButton) findViewById(R.id.call);
+
+        back = (LinearLayout) findViewById(R.id.gobackcontainer);
+
+        submit.setOnClickListener(this);
+
+        back.setOnClickListener(this);
 
         hideStatusBar();
 
@@ -211,21 +221,21 @@ public class ForgotPassword extends AppCompatActivity implements View.OnClickLis
 
                     Toast.makeText(ForgotPassword.this, "Please Try Again!", Toast.LENGTH_LONG).show();
 
-                } else if (s.length() == 4) {
+                } else if (s.contains("@")) {
 
-                    otp = s;
+                    otp = s.substring(0, 4);
 
-                    session.createForgotSession(registrationnumber, otp);
+                    mobile = s.substring(4);
 
-                    session.createOTPHeaderSession("An Email Has Been Sent To");
+                    session.createForgotSession(registrationnumber, mobile, otp, "An Email Has Been Sent To");
 
                     Toast.makeText(ForgotPassword.this, "Email Sent Successfully!", Toast.LENGTH_LONG).show();
 
                     Intent back = new Intent(ForgotPassword.this, ForgotOTP.class);
 
-                    finish();
-
                     startActivity(back);
+
+                    finish();
 
                 } else {
 
@@ -279,19 +289,33 @@ public class ForgotPassword extends AppCompatActivity implements View.OnClickLis
                 super.onPostExecute(s);
                 loading.dismiss();
 
-                otp = s;
+                if (s.equalsIgnoreCase("")) {
 
-                session.createForgotSession(registrationnumber, otp);
+                    Toast.makeText(ForgotPassword.this, "Please Try Again!", Toast.LENGTH_LONG).show();
 
-                session.createOTPHeaderSession("An SMS Has Been Sent To");
+                }
 
-                Toast.makeText(ForgotPassword.this, "SMS Sent Successfully!", Toast.LENGTH_LONG).show();
+                else if (s.length() == 14) {
 
-                Intent back = new Intent(ForgotPassword.this, ForgotOTP.class);
+                    otp = s.substring(0, 4);
 
-                finish();
+                    mobile = s.substring(4, 14);
 
-                startActivity(back);
+                    session.createForgotSession(registrationnumber, mobile, otp, "An SMS Has Been Sent To");
+
+                    Toast.makeText(ForgotPassword.this, "SMS Sent Successfully!", Toast.LENGTH_LONG).show();
+
+                    Intent back = new Intent(ForgotPassword.this, ForgotOTP.class);
+
+                    startActivity(back);
+
+                    finish();
+
+                } else {
+
+                    Toast.makeText(ForgotPassword.this, s, Toast.LENGTH_LONG).show();
+
+                }
 
             }
 
@@ -342,21 +366,23 @@ public class ForgotPassword extends AppCompatActivity implements View.OnClickLis
 
                     Toast.makeText(ForgotPassword.this, "Please Try Again!", Toast.LENGTH_LONG).show();
 
-                } else if (s.length() == 10) {
+                } else if (s.length() == 20) {
 
                     otp = s.substring(0, 4);
 
-                    session.createForgotSession(registrationnumber, otp);
+                    mobile = s.substring(4, 14);
 
-                    session.createOTPHeaderSession("We Just Tried To Call You At");
+                    session.createForgotSession(registrationnumber, mobile, otp, "We Just Tried To Call You At");
 
                     Toast.makeText(ForgotPassword.this, "OTP Call Requested!", Toast.LENGTH_LONG).show();
 
-                    Intent back = new Intent(ForgotPassword.this, ForgotOTP.class);
-
                     finish();
 
+                    Intent back = new Intent(ForgotPassword.this, ForgotOTP.class);
+
                     startActivity(back);
+
+
 
                 } else {
 
@@ -392,6 +418,16 @@ public class ForgotPassword extends AppCompatActivity implements View.OnClickLis
         if (view == submit) {
 
             internetCheck();
+
+        }
+
+        if (view == back) {
+
+            Intent go = new Intent(ForgotPassword.this, LoginRegisterTabbed.class);
+
+            startActivity(go);
+
+            finish();
 
         }
 

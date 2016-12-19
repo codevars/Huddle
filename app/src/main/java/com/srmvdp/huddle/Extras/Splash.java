@@ -18,7 +18,7 @@ public class Splash extends AppCompatActivity {
 
         super.onCreate(savedInstanceState);
 
-        if (!session.forgotIn() & !session.phoneIn() & !session.otpIn() & !session.dashboardIn()) {
+        if (!session.forgotIn() & !session.changeIn() & !session.phoneIn() & !session.otpIn() & !session.dashboardIn()) {
 
             Intent go = new Intent(Splash.this, LoginRegisterTabbed.class);
 
@@ -29,6 +29,8 @@ public class Splash extends AppCompatActivity {
         }
 
         else {
+
+            session.changepassword();
 
             session.forgotpassword();
 

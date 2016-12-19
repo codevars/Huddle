@@ -7,7 +7,7 @@
         jumboMode="true"
         optimize="true"
         revision="24.0.3"
-        sha1="b2f5c279d12adffe1b15feb0c6322cccaa50293a">
+        sha1="abd41a07758d3d74c52df9c552e73bd2a2ebd233">
         <dex dex="/Users/Cheesetouch/Desktop/Android Studio/Huddle2/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_b1ca303090e3f839817657a65de71516bed7bd57/classes.dex" />
     </item>
     <item
@@ -313,7 +313,7 @@
         jumboMode="true"
         optimize="true"
         revision="24.0.3"
-        sha1="b7aaab4c4d3b1892bf051d5ac962c685e425268a">
+        sha1="c15b1acafefa10073eedbbe5ac1e13287142b127">
         <dex dex="/Users/Cheesetouch/Desktop/Android Studio/Huddle2/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_b86b0c294b58ac7d986560c1928e60223d40481a/classes.dex" />
     </item>
     <item

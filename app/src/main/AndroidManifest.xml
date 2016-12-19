@@ -20,6 +20,8 @@
         android:theme="@style/AppTheme">
         <activity
             android:name=".Extras.Splash"
+            android:noHistory="true"
+            android:screenOrientation="portrait"
             android:theme="@style/SplashTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -53,6 +55,7 @@
         <activity
             android:name=".Authentication.PhoneNumber"
             android:label="Verify Your Phone Number"
+            android:noHistory="true"
             android:screenOrientation="portrait"
             android:theme="@style/AppThemeLogged" />
         <activity
@@ -67,8 +70,9 @@
             android:theme="@style/AppThemeNoActionBar" />
         <activity
             android:name=".Authentication.ForgotOTP"
+            android:noHistory="true"
             android:screenOrientation="portrait"
-            android:theme="@style/AppThemeNoActionBar"/>
+            android:theme="@style/AppThemeNoActionBar" />
         <activity
             android:name=".Dashboard"
             android:label="Dashboard"
@@ -142,6 +146,7 @@
             android:label="Post"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.Design.Light" />
+        <activity android:name=".Authentication.ChangePassword"></activity>
     </application>
 
 </manifest>
