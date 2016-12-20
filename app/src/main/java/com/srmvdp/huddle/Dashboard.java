@@ -99,11 +99,11 @@ public class Dashboard extends AppCompatActivity implements ConnectivityReceiver
 
         drawerLayout = (DrawerLayout) findViewById(R.id.drawer);
 
-        NavigationDrawer();
-
         notification.setVisibility(View.GONE);
 
         initialInternetCheck();
+
+        NavigationDrawer();
 
     }
 
@@ -253,6 +253,8 @@ public class Dashboard extends AppCompatActivity implements ConnectivityReceiver
 
                     session.createUserProfile(fullname);
 
+                    NavigationDrawer();
+
                     generateProfile("done");
 
                 }
@@ -377,7 +379,7 @@ public class Dashboard extends AppCompatActivity implements ConnectivityReceiver
 
         TextView tv_email = (TextView) header.findViewById(R.id.tv_email);
 
-        tv_email.setText("codevars@gmail.com");
+        tv_email.setText(fullname);
 
 
         ActionBarDrawerToggle actionBarDrawerToggle = new ActionBarDrawerToggle(this, drawerLayout, toolbar, R.string.draweropen, R.string.drawerclose) {

@@ -9,7 +9,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ListView;
 import android.widget.Toast;
-
 import com.android.volley.Cache;
 import com.android.volley.Request;
 import com.android.volley.Response;
@@ -20,20 +19,16 @@ import com.srmvdp.huddle.Adapters.FeedListAdapter;
 import com.srmvdp.huddle.News.AppController;
 import com.srmvdp.huddle.News.FeedItem;
 import com.srmvdp.huddle.R;
-
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
-
 import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
 import java.util.List;
 
 public class NewsFragment extends Fragment implements SwipeRefreshLayout.OnRefreshListener {
 
-
-    public NewsFragment() {
-    }
+    public NewsFragment() {}
 
     private static final String TAG = NewsFragment.class.getSimpleName();
 
