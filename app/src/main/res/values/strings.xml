@@ -82,7 +82,7 @@
 
     <string name="titlenews">Title</string>
 
-    <string name="url"> URL (Optional)</string>
+    <string name="url">URL (Optional)</string>
 
     <string name="settings">Settings</string>
 
@@ -98,7 +98,7 @@
 
     <string name="inclass">Class :</string>
 
-    <string name="examplenumber">26</string>
+    <string name="examplenumber">Failed</string>
 
     <string name="exampleclass">CSE E</string>
 
@@ -115,6 +115,24 @@
     <string name="summary">Summary</string>
 
     <string name="title">Title</string>
+
+    <string name="verified">VERIFIED</string>
+
+    <string name="updatesection">Update Section</string>
+
+    <string name="invalidselection">Invalid Selection</string>
+
+    <string name="sectionupdate">Please Update Your Section</string>
+
+    <string name="sectionupdatesuccessful">Section Updated Successfully</string>
+
+    <string name="postsloading">Posts Loading</string>
+
+    <string name="postsloaded">Posts Loaded</string>
+
+    <string name="postsfailed">Loading Failed</string>
+
+    <string name="networkoverload">Network Overload. Try Again Later!</string>
 
     <string name="imagechooser">Select your image</string>
 
@@ -134,19 +152,41 @@
 
     <string-array name="subjects">
 
-        <item>Basic Mechanical Engineering</item>
+        <item>Select Category</item>
 
-        <item>Basic Electrical Engineering</item>
+        <item>GENERAL</item>
 
-        <item>Basic Civil Engineering</item>
+        <item>NOTICE</item>
+
+        <item>BASIC MECHANICAL ENGINEERING</item>
+
+        <item>BASIC ELECTRICAL ENGINEERING</item>
+
+        <item>BASIC CIVIL ENGINEERING</item>
 
         <item>SCILAB</item>
 
-        <item>Physics</item>
+        <item>PHYSICS</item>
 
-        <item>Chemistry</item>
+        <item>CHEMISTRY</item>
 
-        <item>Mathematics</item>
+        <item>MATHEMATICS</item>
+
+    </string-array>
+
+    <string-array name="sections">
+
+        <item>Select Section</item>
+
+        <item>A</item>
+
+        <item>B</item>
+
+        <item>C</item>
+
+        <item>D</item>
+
+        <item>E</item>
 
     </string-array>
 

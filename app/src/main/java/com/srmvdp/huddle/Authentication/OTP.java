@@ -170,9 +170,7 @@ public class OTP extends AppCompatActivity implements View.OnClickListener {
 
                 verification();
 
-            }
-
-            else if (prompt.equalsIgnoreCase("resend")) {
+            } else if (prompt.equalsIgnoreCase("resend")) {
 
                 requestparamater();
 

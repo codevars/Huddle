@@ -18,6 +18,7 @@ import android.view.animation.TranslateAnimation;
 import android.widget.EditText;
 import android.widget.SeekBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.srmvdp.huddle.Dashboard;
 import com.srmvdp.huddle.LocalStorage.SessionManagement;
@@ -33,6 +34,14 @@ public class LoginFragment extends Fragment implements View.OnClickListener {
     private View view;
 
     private String token;
+
+    private String username;
+
+    private String pass;
+
+    private String department;
+
+    private String section;
 
     private EditText registrationnumber;
 
@@ -50,7 +59,8 @@ public class LoginFragment extends Fragment implements View.OnClickListener {
 
     private SessionManagement session;
 
-    public LoginFragment() {}
+    public LoginFragment() {
+    }
 
 
     @Override
@@ -195,11 +205,46 @@ public class LoginFragment extends Fragment implements View.OnClickListener {
 
     private void login() {
 
-        String username = registrationnumber.getText().toString().trim();
+        username = registrationnumber.getText().toString().trim();
 
-        String pass = password.getText().toString().trim();
+        pass = password.getText().toString().trim();
+
+        departmentCheck();
 
         userLogin(username, pass, token);
+
+    }
+
+
+    private void departmentCheck() {
+
+        if (username.length() == 15) {
+
+            String departmentNumber = username.substring(8, 10);
+
+            if (departmentNumber.equalsIgnoreCase("20")) {
+
+                department = "MECH";
+
+            } else if (departmentNumber.equalsIgnoreCase("30")) {
+
+                department = "CSE";
+
+            } else if (departmentNumber.equalsIgnoreCase("40")) {
+
+                department = "ECE";
+
+            } else {
+
+                department = "INVALID";
+
+            }
+
+        } else {
+
+            department = "ANY";
+
+        }
 
     }
 
@@ -225,14 +270,106 @@ public class LoginFragment extends Fragment implements View.OnClickListener {
                 super.onPostExecute(s);
                 loading.dismiss();
 
-
-                if (s.equals("Student")) {
+                if (s.contains("student")) {
 
                     Snackbar snackbar = Snackbar.make(getView(), "Successfully Logged In!", Snackbar.LENGTH_SHORT);
 
                     snackbar.show();
 
-                    session.createVerifiedDashboardSession(username, s);
+                    if (s.length() == 8) {
+
+                        section = s.substring(7, 8);
+
+                    } else {
+
+                        section = "";
+
+                    }
+
+                    session.createVerifiedDashboardSession(username, "Student", department, section);
+
+                    new Handler().postDelayed(new Runnable() {
+                        @Override
+                        public void run() {
+
+                            Intent i = new Intent(getContext(), Dashboard.class);
+                            startActivity(i);
+                            getActivity().finish();
+                        }
+                    }, 1000);
+
+                    return;
+
+                }
+
+
+                if (s.contains("moderator")) {
+
+                    Snackbar snackbar = Snackbar.make(getView(), "Successfully Logged In!", Snackbar.LENGTH_SHORT);
+
+                    snackbar.show();
+
+                    if (s.length() == 10) {
+
+                        section = s.substring(9, 10);
+
+                    } else {
+
+                        section = "";
+
+                    }
+
+                    session.createVerifiedDashboardSession(username, "Moderator", department, section);
+
+                    new Handler().postDelayed(new Runnable() {
+                        @Override
+                        public void run() {
+
+                            Intent i = new Intent(getContext(), Dashboard.class);
+                            startActivity(i);
+                            getActivity().finish();
+                        }
+                    }, 1000);
+
+                    return;
+
+                }
+
+
+                if (s.equalsIgnoreCase("Dean")) {
+
+                    Snackbar snackbar = Snackbar.make(getView(), "Successfully Logged In!", Snackbar.LENGTH_SHORT);
+
+                    snackbar.show();
+
+                    section = "Dean";
+
+                    session.createVerifiedDashboardSession(username, s, department, section);
+
+                    new Handler().postDelayed(new Runnable() {
+                        @Override
+                        public void run() {
+
+                            Intent i = new Intent(getContext(), Dashboard.class);
+                            startActivity(i);
+                            getActivity().finish();
+                        }
+                    }, 1000);
+
+                    return;
+
+                }
+
+
+                if (s.equalsIgnoreCase("HOD")) {
+
+                    Snackbar snackbar = Snackbar.make(getView(), "Successfully Logged In!", Snackbar.LENGTH_SHORT);
+
+                    snackbar.show();
+
+                    section = "HOD";
+
+                    session.createVerifiedDashboardSession(username, s, department, section);
 
                     new Handler().postDelayed(new Runnable() {
                         @Override
@@ -255,7 +392,9 @@ public class LoginFragment extends Fragment implements View.OnClickListener {
 
                     snackbar.show();
 
-                    session.createVerifiedDashboardSession(username, s);
+                    section = "Admin";
+
+                    session.createVerifiedDashboardSession(username, s, department, section);
 
                     new Handler().postDelayed(new Runnable() {
                         @Override
@@ -278,7 +417,9 @@ public class LoginFragment extends Fragment implements View.OnClickListener {
 
                     snackbar.show();
 
-                    session.createVerifiedDashboardSession(username, s);
+                    section = "Teacher";
+
+                    session.createVerifiedDashboardSession(username, s, department, section);
 
                     new Handler().postDelayed(new Runnable() {
                         @Override
@@ -301,7 +442,9 @@ public class LoginFragment extends Fragment implements View.OnClickListener {
 
                     snackbar.show();
 
-                    session.createLoginSession(username, "Admin");
+                    String section = "ADMIN";
+
+                    session.createLoginSession(username, "Admin", department, section);
 
                     new Handler().postDelayed(new Runnable() {
                         @Override
@@ -318,13 +461,107 @@ public class LoginFragment extends Fragment implements View.OnClickListener {
                 }
 
 
-                if (s.equalsIgnoreCase("uStudent")) {
+                if (s.contains("uStudent")) {
 
                     Snackbar snackbar = Snackbar.make(getView(), "Successfully Logged In!", Snackbar.LENGTH_SHORT);
 
                     snackbar.show();
 
-                    session.createLoginSession(username, "Student");
+                    if (s.length() == 9) {
+
+                        section = s.substring(8, 9);
+
+                    } else {
+
+                        section = "";
+
+                    }
+
+                    session.createLoginSession(username, "Student", department, section);
+
+                    new Handler().postDelayed(new Runnable() {
+                        @Override
+                        public void run() {
+
+                            Intent i = new Intent(getContext(), PhoneNumber.class);
+                            startActivity(i);
+                            getActivity().finish();
+                        }
+                    }, 1000);
+
+                    return;
+
+                }
+
+
+                if (s.equalsIgnoreCase("uDean")) {
+
+                    Snackbar snackbar = Snackbar.make(getView(), "Successfully Logged In!", Snackbar.LENGTH_SHORT);
+
+                    snackbar.show();
+
+                    section = "DEAN";
+
+                    session.createLoginSession(username, "Dean", department, section);
+
+                    new Handler().postDelayed(new Runnable() {
+                        @Override
+                        public void run() {
+
+                            Intent i = new Intent(getContext(), PhoneNumber.class);
+                            startActivity(i);
+                            getActivity().finish();
+                        }
+                    }, 1000);
+
+                    return;
+
+                }
+
+
+                if (s.equalsIgnoreCase("uHOD")) {
+
+                    Snackbar snackbar = Snackbar.make(getView(), "Successfully Logged In!", Snackbar.LENGTH_SHORT);
+
+                    snackbar.show();
+
+                    section = "HOD";
+
+                    session.createLoginSession(username, "HOD", department, section);
+
+                    new Handler().postDelayed(new Runnable() {
+                        @Override
+                        public void run() {
+
+                            Intent i = new Intent(getContext(), PhoneNumber.class);
+                            startActivity(i);
+                            getActivity().finish();
+                        }
+                    }, 1000);
+
+                    return;
+
+                }
+
+
+                if (s.contains("uModerator")) {
+
+                    Snackbar snackbar = Snackbar.make(getView(), "Successfully Logged In!", Snackbar.LENGTH_SHORT);
+
+                    snackbar.show();
+
+                    if (s.length() == 11) {
+
+                        section = s.substring(10, 11);
+
+                    } else {
+
+                        section = "";
+
+                    }
+
+
+                    session.createLoginSession(username, "Moderator", department, section);
 
                     new Handler().postDelayed(new Runnable() {
                         @Override
@@ -347,7 +584,9 @@ public class LoginFragment extends Fragment implements View.OnClickListener {
 
                     snackbar.show();
 
-                    session.createLoginSession(username, "Teacher");
+                    section = "Teacher";
+
+                    session.createLoginSession(username, "Teacher", department, section);
 
                     new Handler().postDelayed(new Runnable() {
                         @Override
@@ -383,7 +622,6 @@ public class LoginFragment extends Fragment implements View.OnClickListener {
                     slide2.start();
 
                     return;
-
 
                 }
 
@@ -444,9 +682,7 @@ public class LoginFragment extends Fragment implements View.OnClickListener {
                 if (progress > 95) {
 
 
-                }
-
-                else {
+                } else {
 
                     swipetologin.setAnimation(slide2);
 

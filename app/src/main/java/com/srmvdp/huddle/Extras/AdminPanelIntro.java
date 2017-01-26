@@ -33,7 +33,6 @@ public class AdminPanelIntro extends AppIntro {
     }
 
 
-
     private void hideStatusBar() {
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {

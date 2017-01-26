@@ -12,7 +12,7 @@
     <dimen name="feed_item_profile_name">15sp</dimen>
     <dimen name="feed_item_timestamp">13sp</dimen>
     <dimen name="feed_item_status_pad_left_right">15sp</dimen>
-    <dimen name="feed_item_status_pad_top">13sp</dimen>
+    <dimen name="feed_item_status_pad_top">15sp</dimen>
     <dimen name="feed_item_corner_radius">3sp</dimen>
     <dimen name="feed_item_border_width">1sp</dimen>
 

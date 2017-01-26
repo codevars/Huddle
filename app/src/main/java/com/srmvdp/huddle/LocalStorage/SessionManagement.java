@@ -44,6 +44,10 @@ public class SessionManagement {
 
     public static final String FULLNAME = "fullname";
 
+    public static final String DEPARTMENT = "department";
+
+    public static final String SECTION = "section";
+
     public static final String REG_NUM = "regnum";
 
     public static final String MOB_NUM = "mobnum";
@@ -70,13 +74,17 @@ public class SessionManagement {
     }
 
 
-    public void createLoginSession(String regnum, String privilege) {
+    public void createLoginSession(String regnum, String privilege, String department, String section) {
 
         editor.putBoolean(PHONE, true);
 
         editor.putString(REG_NUM, regnum);
 
         editor.putString(PRIVILEGE, privilege);
+
+        editor.putString(DEPARTMENT, department);
+
+        editor.putString(SECTION, section);
 
         editor.commit();
 
@@ -159,7 +167,7 @@ public class SessionManagement {
     }
 
 
-    public void createVerifiedDashboardSession(String regnum, String privilege) {
+    public void createVerifiedDashboardSession(String regnum, String privilege, String department, String section) {
 
         editor.putBoolean(PHONE, false);
 
@@ -168,6 +176,10 @@ public class SessionManagement {
         editor.putString(REG_NUM, regnum);
 
         editor.putString(PRIVILEGE, privilege);
+
+        editor.putString(SECTION, section);
+
+        editor.putString(DEPARTMENT, department);
 
         editor.putBoolean(DASHBOARD, true);
 
@@ -206,6 +218,15 @@ public class SessionManagement {
     public void createProfilePicSession() {
 
         editor.putBoolean(PROFILEPIC, true);
+
+        editor.commit();
+
+    }
+
+
+    public void createUpdatedSectionSession(String section) {
+
+        editor.putString(SECTION, section);
 
         editor.commit();
 
@@ -406,6 +427,28 @@ public class SessionManagement {
         mobile.put(MOB_NUM, pref.getString(MOB_NUM, null));
 
         return mobile;
+
+    }
+
+
+    public HashMap<String, String> getDepartmentDetails() {
+
+        HashMap<String, String> dept = new HashMap<String, String>();
+
+        dept.put(DEPARTMENT, pref.getString(DEPARTMENT, null));
+
+        return dept;
+
+    }
+
+
+    public HashMap<String, String> getSectionDetails() {
+
+        HashMap<String, String> sec = new HashMap<String, String>();
+
+        sec.put(SECTION, pref.getString(SECTION, null));
+
+        return sec;
 
     }
 

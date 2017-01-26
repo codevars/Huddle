@@ -64,9 +64,9 @@ public class AdminPanel extends AppCompatActivity implements View.OnClickListene
 
                 Intent back = new Intent(AdminPanel.this, Dashboard.class);
 
-                finish();
-
                 startActivity(back);
+
+                finishAffinity();
 
                 return true;
 

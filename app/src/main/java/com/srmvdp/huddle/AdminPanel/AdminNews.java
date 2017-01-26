@@ -5,17 +5,17 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.net.ConnectivityManager;
 import android.net.Uri;
+import android.os.Bundle;
 import android.os.Handler;
 import android.provider.MediaStore;
 import android.support.design.widget.TextInputLayout;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.util.Base64;
+import android.util.Patterns;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.WindowManager;
@@ -25,6 +25,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.android.volley.AuthFailureError;
@@ -35,6 +36,7 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.srmvdp.huddle.Dashboard;
 import com.srmvdp.huddle.Extras.ConnectivityReceiver;
 import com.srmvdp.huddle.LocalStorage.SessionManagement;
 import com.srmvdp.huddle.News.AppController;
@@ -48,7 +50,7 @@ import java.util.Map;
 
 public class AdminNews extends AppCompatActivity implements View.OnClickListener, ConnectivityReceiver.ConnectivityReceiverListener {
 
-    private final String UPLOAD_URL = "http://codevars.esy.es/upload.php";
+    private final String UPLOAD_URL = "http://codevars.esy.es/news/uploadnews.php";
 
     private ActionBar bar;
 
@@ -58,7 +60,11 @@ public class AdminNews extends AppCompatActivity implements View.OnClickListener
 
     private LinearLayout previewcontainer;
 
+    private TextInputLayout titleparent;
+
     private TextInputLayout statusparent;
+
+    private TextInputLayout urlparent;
 
     private EditText titletext;
 
@@ -74,9 +80,13 @@ public class AdminNews extends AppCompatActivity implements View.OnClickListener
 
     private ImageView preview;
 
+    private String privilege;
+
     private String title;
 
     private String name;
+
+    private String registrationnumber;
 
     private String image;
 
@@ -88,6 +98,10 @@ public class AdminNews extends AppCompatActivity implements View.OnClickListener
 
     private String url;
 
+    private String subject;
+
+    private Spinner subjectspinner;
+
     private SessionManagement session;
 
     private Bitmap bitmap;
@@ -96,9 +110,17 @@ public class AdminNews extends AppCompatActivity implements View.OnClickListener
 
     private String KEY_NAME = "name";
 
+    private String KEY_REG = "registrationnumber";
+
+    private String KEY_PRIVILEGE = "privilege";
+
     private String KEY_IMAGE = "image";
 
+    private String KEY_TITLE = "title";
+
     private String KEY_STATUS = "status";
+
+    private String KEY_SUBJECT = "subject";
 
     private String KEY_PROFILEPIC = "profilepic";
 
@@ -112,20 +134,33 @@ public class AdminNews extends AppCompatActivity implements View.OnClickListener
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_admin_panel_news);
 
-
         session = new SessionManagement(getApplicationContext());
+
+        HashMap<String, String> priv = session.getPrivilegeDetails();
+
+        HashMap<String, String> reg = session.getRegistrationDetails();
+
+        privilege = priv.get(SessionManagement.PRIVILEGE);
+
+        registrationnumber = reg.get(SessionManagement.REG_NUM);
 
         bar = getSupportActionBar();
 
         bar.setDisplayHomeAsUpEnabled(true);
 
+        titletext = (EditText) findViewById(R.id.title);
+
+        titleparent = (TextInputLayout) findViewById(R.id.titleparent);
+
         statustext = (EditText) findViewById(R.id.status);
 
         statusparent = (TextInputLayout) findViewById(R.id.statusparent);
 
-        urltext = (EditText) findViewById(R.id.url);
+        urlparent = (TextInputLayout) findViewById(R.id.urlparent);
 
-        titletext = (EditText) findViewById(R.id.title2);
+        subjectspinner = (Spinner) findViewById(R.id.subject);
+
+        urltext = (EditText) findViewById(R.id.url);
 
         select = (Button) findViewById(R.id.selectImages);
 
@@ -218,6 +253,22 @@ public class AdminNews extends AppCompatActivity implements View.OnClickListener
 
     private void validation() {
 
+        url = urltext.getText().toString();
+
+        subject = subjectspinner.getSelectedItem().toString();
+
+        if (titletext.getText().toString().trim().isEmpty()) {
+
+            titleparent.setError("Please Enter Title!");
+
+            return;
+
+        } else {
+
+            titleparent.setErrorEnabled(false);
+
+        }
+
         if (statustext.getText().toString().trim().isEmpty()) {
 
             statusparent.setError("Please Enter Summary!");
@@ -230,24 +281,65 @@ public class AdminNews extends AppCompatActivity implements View.OnClickListener
 
         }
 
-        if (urltext.getText().toString().trim().isEmpty()) {
+        if (subject.equalsIgnoreCase("Select Category")) {
 
-            alert("warning");
-
-            return;
-
-        }
-
-        if (preview.getDrawable() == null) {
-
-            alert("noimage");
+            Toast.makeText(AdminNews.this, "Please Select The Category!", Toast.LENGTH_LONG).show();
 
             return;
+
+        } else {
+
+            if (!urltext.getText().toString().trim().isEmpty()) {
+
+                if (!Patterns.WEB_URL.matcher(url).matches()) {
+
+                    urlparent.setError("Please Enter Valid URL!");
+
+                } else {
+
+                    if (urltext.getText().toString().trim().isEmpty()) {
+
+                        alert("warning");
+
+                        return;
+
+                    }
+
+                    if (preview.getDrawable() == null) {
+
+                        alert("noimage");
+
+                        return;
+
+                    }
+
+                    uploadImage();
+
+                }
+
+                return;
+
+            }
+
+            if (urltext.getText().toString().trim().isEmpty()) {
+
+                alert("warning");
+
+                return;
+
+            }
+
+            if (preview.getDrawable() == null) {
+
+                alert("noimage");
+
+                return;
+
+            }
 
         }
 
         uploadImage();
-
 
     }
 
@@ -319,7 +411,6 @@ public class AdminNews extends AppCompatActivity implements View.OnClickListener
         }
 
 
-
         if (trigger.equalsIgnoreCase("noimage")) {
 
             warning = new AlertDialog.Builder(this);
@@ -359,8 +450,6 @@ public class AdminNews extends AppCompatActivity implements View.OnClickListener
 
         status = statustext.getText().toString();
 
-        url = urltext.getText().toString();
-
     }
 
 
@@ -377,7 +466,17 @@ public class AdminNews extends AppCompatActivity implements View.OnClickListener
 
                         loading.dismiss();
 
-                        Toast.makeText(AdminNews.this, s, Toast.LENGTH_LONG).show();
+                        if (s.equalsIgnoreCase("Successfully Uploaded!")) {
+
+                            Toast.makeText(AdminNews.this, s, Toast.LENGTH_LONG).show();
+
+                            Intent go = new Intent(AdminNews.this, Dashboard.class);
+
+                            startActivity(go);
+
+                            finishAffinity();
+
+                        }
 
                     }
 
@@ -414,9 +513,17 @@ public class AdminNews extends AppCompatActivity implements View.OnClickListener
 
                 params.put(KEY_NAME, name);
 
+                params.put(KEY_REG, registrationnumber);
+
+                params.put(KEY_PRIVILEGE, privilege);
+
                 params.put(KEY_IMAGE, image);
 
+                params.put(KEY_TITLE, title);
+
                 params.put(KEY_STATUS, status);
+
+                params.put(KEY_SUBJECT, subject);
 
                 params.put(KEY_PROFILEPIC, profilepic);
 
@@ -455,7 +562,16 @@ public class AdminNews extends AppCompatActivity implements View.OnClickListener
 
                         loading.dismiss();
 
-                        Toast.makeText(AdminNews.this, s, Toast.LENGTH_LONG).show();
+                        if (s.equalsIgnoreCase("Successfully Uploaded!")) {
+
+                            Toast.makeText(AdminNews.this, s, Toast.LENGTH_LONG).show();
+
+                            Intent go = new Intent(AdminNews.this, Dashboard.class);
+
+                            startActivity(go);
+
+                            finishAffinity();
+                        }
 
                     }
 
@@ -490,7 +606,15 @@ public class AdminNews extends AppCompatActivity implements View.OnClickListener
 
                 params.put(KEY_NAME, name);
 
+                params.put(KEY_REG, registrationnumber);
+
+                params.put(KEY_PRIVILEGE, privilege);
+
+                params.put(KEY_TITLE, title);
+
                 params.put(KEY_STATUS, status);
+
+                params.put(KEY_SUBJECT, subject);
 
                 params.put(KEY_PROFILEPIC, profilepic);
 
@@ -571,9 +695,9 @@ public class AdminNews extends AppCompatActivity implements View.OnClickListener
 
                 Intent intent = new Intent(this, AdminPanel.class);
 
-                finish();
-
                 startActivity(intent);
+
+                finishAffinity();
 
                 return true;
 

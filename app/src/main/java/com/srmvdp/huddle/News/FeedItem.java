@@ -1,22 +1,27 @@
 package com.srmvdp.huddle.News;
 
 public class FeedItem {
+
     private int id;
-    private String name, status, image, profilePic, uploadtime, url;
 
-    public FeedItem() {
-    }
+    private String name, privilege, title, status, image, subject, profilepic, uploadtime, url;
 
-    public FeedItem(int id, String name, String image, String status,
-                    String profilePic, String uploadtime, String url) {
+    public FeedItem() {}
+
+    public FeedItem(int id, String name, String privilege, String image, String title, String status, String subject, String profilepic, String uploadtime, String url) {
+
         super();
         this.id = id;
         this.name = name;
+        this.privilege = privilege;
         this.image = image;
+        this.title = title;
         this.status = status;
-        this.profilePic = profilePic;
+        this.subject = subject;
+        this.profilepic = profilepic;
         this.uploadtime = uploadtime;
         this.url = url;
+
     }
 
     public int getId() {
@@ -35,14 +40,28 @@ public class FeedItem {
         this.name = name;
     }
 
-    public String getImge() {
+    public String getPrivilege() {
+        return privilege;
+    }
+
+    public void setPrivilege(String privilege) {
+        this.privilege = privilege;
+    }
+
+    public String getImage() {
         return image;
     }
 
-    public void setImge(String image) {
-
+    public void setImage(String image) {
         this.image = image;
+    }
 
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
     }
 
     public String getStatus() {
@@ -53,12 +72,20 @@ public class FeedItem {
         this.status = status;
     }
 
-    public String getProfilePic() {
-        return profilePic;
+    public String getSubject() {
+        return subject;
     }
 
-    public void setProfilePic(String profilePic) {
-        this.profilePic = profilePic;
+    public void setSubject(String subject) {
+        this.subject = subject;
+    }
+
+    public String getProfilePic() {
+        return profilepic;
+    }
+
+    public void setProfilePic(String profilepic) {
+        this.profilepic = profilepic;
     }
 
     public String getTime() {
@@ -76,4 +103,5 @@ public class FeedItem {
     public void setUrl(String url) {
         this.url = url;
     }
+
 }

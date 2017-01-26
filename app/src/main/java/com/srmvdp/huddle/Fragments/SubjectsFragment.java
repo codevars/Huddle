@@ -16,15 +16,15 @@ public class SubjectsFragment extends Fragment {
 
     GridView androidGridView;
 
-    String[] gridViewString = {"Physics", "Civil", "Maths", "Chemistry", "English", "Electrical", "Scilab", "Mechanical"} ;
+    String[] gridViewString = {"Physics", "Civil", "Maths", "Chemistry", "English", "Electrical", "Scilab", "Mechanical"};
 
     int[] gridViewImageId = {
 
-            R.drawable.physics256, R.drawable.civil256, R.drawable.maths256,
+            R.drawable.physics, R.drawable.civil, R.drawable.maths,
 
-            R.drawable.chemistry256, R.drawable.english256,R.drawable.electrical256,
+            R.drawable.chemistry, R.drawable.english, R.drawable.electrical,
 
-            R.drawable.scilab256, R.drawable.mechanical256
+            R.drawable.scilab, R.drawable.mechanical
 
     };
 
@@ -35,14 +35,12 @@ public class SubjectsFragment extends Fragment {
 
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
         View view = inflater.inflate(R.layout.fragment_subjects, container, false);
 
         CustomGridViewActivity adapterViewAndroid = new CustomGridViewActivity(getContext(), gridViewString, gridViewImageId);
-        androidGridView=(GridView)view.findViewById(R.id.grid_view_image_text);
+        androidGridView = (GridView) view.findViewById(R.id.grid_view_image_text);
 
         androidGridView.setAdapter(adapterViewAndroid);
         androidGridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {

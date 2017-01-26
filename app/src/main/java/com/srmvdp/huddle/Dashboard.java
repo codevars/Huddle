@@ -40,11 +40,19 @@ import com.srmvdp.huddle.Teachers.TeacherList;
 
 import java.util.HashMap;
 
-public class Dashboard extends AppCompatActivity implements ConnectivityReceiver.ConnectivityReceiverListener {
+public class Dashboard extends AppCompatActivity implements ConnectivityReceiver.ConnectivityReceiverListener, View.OnClickListener {
 
     private static final String REQUEST_PROFILE = "http://codevars.esy.es/userinfo.php";
 
     private String fullname;
+
+    private String savename;
+
+    private String department;
+
+    private String section;
+
+    private TextView email;
 
     private Button notification;
 
@@ -75,13 +83,27 @@ public class Dashboard extends AppCompatActivity implements ConnectivityReceiver
 
         HashMap<String, String> right = session.getPrivilegeDetails();
 
+        HashMap<String, String> saveuser = session.getUserProfileDetails();
+
+        HashMap<String, String> dept = session.getDepartmentDetails();
+
+        HashMap<String, String> sec = session.getSectionDetails();
+
+        department = dept.get(SessionManagement.DEPARTMENT);
+
+        section = sec.get(SessionManagement.SECTION);
+
         privilege = right.get(SessionManagement.PRIVILEGE);
 
         registration = reg.get(SessionManagement.REG_NUM);
 
+        savename = saveuser.get(SessionManagement.FULLNAME);
+
         toolbar = (Toolbar) findViewById(R.id.toolbar);
 
         notification = (Button) findViewById(R.id.notification);
+
+        notification.setOnClickListener(this);
 
         setSupportActionBar(toolbar);
 
@@ -131,9 +153,7 @@ public class Dashboard extends AppCompatActivity implements ConnectivityReceiver
 
             return;
 
-        }
-
-        else {
+        } else {
 
             userprofilecheck();
 
@@ -164,7 +184,6 @@ public class Dashboard extends AppCompatActivity implements ConnectivityReceiver
         notification.setAnimation(slide);
 
     }
-
 
 
     private void generateProfile(String status) {
@@ -217,7 +236,6 @@ public class Dashboard extends AppCompatActivity implements ConnectivityReceiver
     }
 
 
-
     public void makeuserprofile(final String number) {
         class RegisterUser extends AsyncTask<String, Void, String> {
             RegisterUserClass ruc = new RegisterUserClass();
@@ -249,9 +267,13 @@ public class Dashboard extends AppCompatActivity implements ConnectivityReceiver
 
                 } else {
 
-                    fullname = s;
+                    session.createUserProfile(s);
 
-                    session.createUserProfile(fullname);
+                    HashMap<String, String> user = session.getUserProfileDetails();
+
+                    fullname = user.get(SessionManagement.FULLNAME);
+
+                    savename = fullname;
 
                     NavigationDrawer();
 
@@ -330,14 +352,13 @@ public class Dashboard extends AppCompatActivity implements ConnectivityReceiver
 
                     case R.id.adminpanel:
 
-                        if (privilege.equals("Admin")) {
+                        if (!privilege.equals("Student")) {
 
                             drawerLayout.closeDrawers();
 
                             Toast.makeText(getApplicationContext(), "Access Granted!", Toast.LENGTH_SHORT).show();
 
                             session.adminPanel();
-
 
                         } else {
 
@@ -377,10 +398,9 @@ public class Dashboard extends AppCompatActivity implements ConnectivityReceiver
 
         View header = navigationView.getHeaderView(0);
 
-        TextView tv_email = (TextView) header.findViewById(R.id.tv_email);
+        email = (TextView) header.findViewById(R.id.email);
 
-        tv_email.setText(fullname);
-
+        email.setText(savename + " (" + department + "-" + section + ")");
 
         ActionBarDrawerToggle actionBarDrawerToggle = new ActionBarDrawerToggle(this, drawerLayout, toolbar, R.string.draweropen, R.string.drawerclose) {
 
@@ -485,6 +505,18 @@ public class Dashboard extends AppCompatActivity implements ConnectivityReceiver
     public void onNetworkConnectionChanged(boolean isConnected) {
 
         showNotification(isConnected);
+
+    }
+
+
+    @Override
+    public void onClick(View view) {
+
+        if (view == notification) {
+
+            notification.setVisibility(View.GONE);
+
+        }
 
     }
 
