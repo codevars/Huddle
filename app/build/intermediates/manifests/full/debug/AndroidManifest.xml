@@ -153,7 +153,7 @@
             android:screenOrientation="portrait"
             android:theme="@style/Theme.Design.Light" />
         <activity
-            android:name="com.srmvdp.huddle.Teachers.ClassPosts"
+            android:name="com.srmvdp.huddle.ClassPosts"
             android:label="Post"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.Design.Light" />

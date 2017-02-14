@@ -2,6 +2,8 @@ package com.srmvdp.huddle.Fragments;
 
 import android.annotation.SuppressLint;
 import android.app.ProgressDialog;
+import android.content.Context;
+import android.net.ConnectivityManager;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Handler;
@@ -26,6 +28,7 @@ import com.android.volley.VolleyError;
 import com.android.volley.VolleyLog;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.srmvdp.huddle.Adapters.FeedClassPostsAdapter;
+import com.srmvdp.huddle.Dashboard;
 import com.srmvdp.huddle.LocalStorage.SessionManagement;
 import com.srmvdp.huddle.News.AppController;
 import com.srmvdp.huddle.News.FeedItem;
@@ -89,8 +92,6 @@ public class ShelfFragment extends Fragment implements SwipeRefreshLayout.OnRefr
 
     private String CLASS_FEED = "http://codevars.esy.es/classposts/";
 
-    private String UPDATED_CLASS_FEED = "";
-
     private Boolean VALID = false;
 
     private LinearLayout updatepanel;
@@ -148,6 +149,15 @@ public class ShelfFragment extends Fragment implements SwipeRefreshLayout.OnRefr
         loadCache();
 
         return view;
+
+    }
+
+
+    public boolean isOnline() {
+
+        final ConnectivityManager connectivityManager = ((ConnectivityManager) getContext().getSystemService(Context.CONNECTIVITY_SERVICE));
+
+        return connectivityManager.getActiveNetworkInfo() != null && connectivityManager.getActiveNetworkInfo().isConnected();
 
     }
 
@@ -557,23 +567,31 @@ public class ShelfFragment extends Fragment implements SwipeRefreshLayout.OnRefr
     @Override
     public void onRefresh() {
 
-        if (VALID) {
+        if (isOnline()) {
 
-            Toast.makeText(getContext(), "Crunching Class Posts!", Toast.LENGTH_SHORT).show();
+            if (VALID) {
 
-            getFeedCount();
+                Toast.makeText(getContext(), "Crunching Class Posts!", Toast.LENGTH_SHORT).show();
+
+                getFeedCount();
+
+            } else {
+
+                refresh.setRefreshing(false);
+
+                slide();
+
+                notification.setVisibility(View.VISIBLE);
+
+                notification.setBackground(getResources().getDrawable(R.drawable.notificationred));
+
+                notification.setText(getResources().getString(R.string.sectionupdate));
+
+            }
 
         } else {
 
-            refresh.setRefreshing(false);
-
-            slide();
-
-            notification.setVisibility(View.VISIBLE);
-
-            notification.setBackground(getResources().getDrawable(R.drawable.notificationred));
-
-            notification.setText(getResources().getString(R.string.sectionupdate));
+            Toast.makeText(getContext(), "No Internet Connection!", Toast.LENGTH_SHORT).show();
 
         }
 

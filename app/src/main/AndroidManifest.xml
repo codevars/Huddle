@@ -137,7 +137,7 @@
             android:screenOrientation="portrait"
             android:theme="@style/Theme.Design.Light" />
         <activity
-            android:name=".Teachers.ClassPosts"
+            android:name=".ClassPosts"
             android:label="Post"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.Design.Light" />

@@ -35,7 +35,6 @@ import com.srmvdp.huddle.LocalStorage.SessionManagement;
 import com.srmvdp.huddle.News.AppController;
 import com.srmvdp.huddle.Profile.BioPage;
 import com.srmvdp.huddle.Server.RegisterUserClass;
-import com.srmvdp.huddle.Teachers.ClassPosts;
 import com.srmvdp.huddle.Teachers.TeacherList;
 
 import java.util.HashMap;

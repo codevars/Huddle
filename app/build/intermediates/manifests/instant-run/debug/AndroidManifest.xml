@@ -154,11 +154,13 @@
             android:screenOrientation="portrait"
             android:theme="@style/Theme.Design.Light" />
         <activity
-            android:name="com.srmvdp.huddle.Teachers.ClassPosts"
+            android:name="com.srmvdp.huddle.ClassPosts"
             android:label="Post"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.Design.Light" />
-        <activity android:name="com.srmvdp.huddle.Authentication.ChangePassword" />
+        <activity
+            android:name="com.srmvdp.huddle.Authentication.ChangePassword"
+            android:screenOrientation="portrait" />
         <activity
             android:name="com.google.android.gms.common.api.GoogleApiActivity"
             android:exported="false"

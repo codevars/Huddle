@@ -184,7 +184,6 @@ public class AdminNews extends AppCompatActivity implements View.OnClickListener
 
         initialInternetCheck();
 
-
     }
 
 
@@ -193,6 +192,17 @@ public class AdminNews extends AppCompatActivity implements View.OnClickListener
         final ConnectivityManager connectivityManager = ((ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE));
 
         return connectivityManager.getActiveNetworkInfo() != null && connectivityManager.getActiveNetworkInfo().isConnected();
+
+    }
+
+
+    private void slide() {
+
+        slide = new TranslateAnimation(0, 0, 500, 0);
+
+        slide.setDuration(1000);
+
+        notification.setAnimation(slide);
 
     }
 
@@ -214,26 +224,15 @@ public class AdminNews extends AppCompatActivity implements View.OnClickListener
     }
 
 
-    private void slide() {
-
-        slide = new TranslateAnimation(0, 0, 500, 0);
-
-        slide.setDuration(1000);
-
-        notification.setAnimation(slide);
-
-    }
-
-
     private void currentTimeStamp() {
 
-        String timestampprefix = "930";
+        String timestamppostfix = "930";
 
         Long time = System.currentTimeMillis() / 1000;
 
         String current = time.toString();
 
-        timestamp = current + timestampprefix;
+        timestamp = current + timestamppostfix;
 
     }
 
@@ -366,7 +365,6 @@ public class AdminNews extends AppCompatActivity implements View.OnClickListener
 
                         break;
 
-
                     case DialogInterface.BUTTON_NEGATIVE:
 
                         break;
@@ -376,7 +374,6 @@ public class AdminNews extends AppCompatActivity implements View.OnClickListener
             }
 
         };
-
 
         DialogInterface.OnClickListener image = new DialogInterface.OnClickListener() {
 
@@ -401,7 +398,6 @@ public class AdminNews extends AppCompatActivity implements View.OnClickListener
 
         };
 
-
         if (trigger.equalsIgnoreCase("warning")) {
 
             warning = new AlertDialog.Builder(this);
@@ -410,7 +406,6 @@ public class AdminNews extends AppCompatActivity implements View.OnClickListener
 
         }
 
-
         if (trigger.equalsIgnoreCase("noimage")) {
 
             warning = new AlertDialog.Builder(this);
@@ -418,7 +413,6 @@ public class AdminNews extends AppCompatActivity implements View.OnClickListener
             warning.setMessage("No Image Is Provided. Do You Want To Continue?").setPositiveButton("Yes", image).setNegativeButton("No", image).show();
 
         }
-
 
     }
 
@@ -537,7 +531,6 @@ public class AdminNews extends AppCompatActivity implements View.OnClickListener
 
         };
 
-
         RequestQueue requestQueue = Volley.newRequestQueue(this);
 
         requestQueue.add(stringRequest);
@@ -628,7 +621,6 @@ public class AdminNews extends AppCompatActivity implements View.OnClickListener
 
         };
 
-
         RequestQueue requestQueue = Volley.newRequestQueue(this);
 
         requestQueue.add(stringRequest);
@@ -679,7 +671,23 @@ public class AdminNews extends AppCompatActivity implements View.OnClickListener
 
         if (view == post) {
 
-            validation();
+            if (isOnline()) {
+
+                validation();
+
+            }
+
+            else {
+
+                slide();
+
+                notification.setVisibility(View.VISIBLE);
+
+                notification.setBackground(getResources().getDrawable(R.drawable.notificationred));
+
+                notification.setText(getResources().getString(R.string.notconnected));
+
+            }
 
         }
 

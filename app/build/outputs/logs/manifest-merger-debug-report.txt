@@ -312,7 +312,7 @@ ADDED from C:\Users\gregh_000\Desktop\Github\Huddle2\app\src\main\AndroidManifes
 		ADDED from C:\Users\gregh_000\Desktop\Github\Huddle2\app\src\main\AndroidManifest.xml:138:13-54
 	android:name
 		ADDED from C:\Users\gregh_000\Desktop\Github\Huddle2\app\src\main\AndroidManifest.xml:135:13-49
-activity#com.srmvdp.huddle.Teachers.ClassPosts
+activity#com.srmvdp.huddle.ClassPosts
 ADDED from C:\Users\gregh_000\Desktop\Github\Huddle2\app\src\main\AndroidManifest.xml:139:9-143:57
 	android:screenOrientation
 		ADDED from C:\Users\gregh_000\Desktop\Github\Huddle2\app\src\main\AndroidManifest.xml:142:13-49
@@ -321,7 +321,7 @@ ADDED from C:\Users\gregh_000\Desktop\Github\Huddle2\app\src\main\AndroidManifes
 	android:theme
 		ADDED from C:\Users\gregh_000\Desktop\Github\Huddle2\app\src\main\AndroidManifest.xml:143:13-54
 	android:name
-		ADDED from C:\Users\gregh_000\Desktop\Github\Huddle2\app\src\main\AndroidManifest.xml:140:13-48
+		ADDED from C:\Users\gregh_000\Desktop\Github\Huddle2\app\src\main\AndroidManifest.xml:140:13-39
 activity#com.srmvdp.huddle.Authentication.ChangePassword
 ADDED from C:\Users\gregh_000\Desktop\Github\Huddle2\app\src\main\AndroidManifest.xml:144:9-146:51
 	android:screenOrientation

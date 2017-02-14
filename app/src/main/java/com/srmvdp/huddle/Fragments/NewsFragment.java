@@ -1,6 +1,8 @@
 package com.srmvdp.huddle.Fragments;
 
 import android.annotation.SuppressLint;
+import android.content.Context;
+import android.net.ConnectivityManager;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.v4.app.Fragment;
@@ -90,6 +92,15 @@ public class NewsFragment extends Fragment implements SwipeRefreshLayout.OnRefre
         loadCache();
 
         return view;
+
+    }
+
+
+    public boolean isOnline() {
+
+        final ConnectivityManager connectivityManager = ((ConnectivityManager) getContext().getSystemService(Context.CONNECTIVITY_SERVICE));
+
+        return connectivityManager.getActiveNetworkInfo() != null && connectivityManager.getActiveNetworkInfo().isConnected();
 
     }
 
@@ -343,9 +354,19 @@ public class NewsFragment extends Fragment implements SwipeRefreshLayout.OnRefre
     @Override
     public void onRefresh() {
 
-        Toast.makeText(getContext(), "Crunching Latest News!", Toast.LENGTH_SHORT).show();
+        if (isOnline()) {
 
-        getFeedCount();
+            Toast.makeText(getContext(), "Crunching Latest News!", Toast.LENGTH_SHORT).show();
+
+            getFeedCount();
+
+        }
+
+        else {
+
+            Toast.makeText(getContext(), "No Internet Connection!", Toast.LENGTH_SHORT).show();
+
+        }
 
     }
 
