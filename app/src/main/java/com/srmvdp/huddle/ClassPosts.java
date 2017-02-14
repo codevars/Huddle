@@ -51,7 +51,7 @@ import java.util.Map;
 
 public class ClassPosts extends AppCompatActivity implements View.OnClickListener, ConnectivityReceiver.ConnectivityReceiverListener {
 
-    private final String UPLOAD_URL = "http://codevars.esy.es/news/uploadnews.php";
+    private final String UPLOAD_URL = "http://codevars.esy.es/classposts/uploadclasspost.php";
 
     private ActionBar bar;
 
@@ -101,6 +101,12 @@ public class ClassPosts extends AppCompatActivity implements View.OnClickListene
 
     private String subject;
 
+    private String department;
+
+    private String section;
+
+    private String userclass;
+
     private Spinner subjectspinner;
 
     private SessionManagement session;
@@ -112,6 +118,8 @@ public class ClassPosts extends AppCompatActivity implements View.OnClickListene
     private String KEY_NAME = "name";
 
     private String KEY_REG = "registrationnumber";
+
+    private String KEY_CLASS = "userclass";
 
     private String KEY_PRIVILEGE = "privilege";
 
@@ -133,6 +141,7 @@ public class ClassPosts extends AppCompatActivity implements View.OnClickListene
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        this.getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN);
         setContentView(R.layout.activity_class_posts);
 
         session = new SessionManagement(getApplicationContext());
@@ -140,6 +149,14 @@ public class ClassPosts extends AppCompatActivity implements View.OnClickListene
         HashMap<String, String> priv = session.getPrivilegeDetails();
 
         HashMap<String, String> reg = session.getRegistrationDetails();
+
+        HashMap<String, String> dept = session.getDepartmentDetails();
+
+        HashMap<String, String> sec = session.getSectionDetails();
+
+        department = dept.get(SessionManagement.DEPARTMENT);
+
+        section = sec.get(SessionManagement.SECTION);
 
         privilege = priv.get(SessionManagement.PRIVILEGE);
 
@@ -176,8 +193,6 @@ public class ClassPosts extends AppCompatActivity implements View.OnClickListene
         select.setOnClickListener(this);
 
         post.setOnClickListener(this);
-
-        this.getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN);
 
         previewcontainer.setVisibility(View.GONE);
 
@@ -278,6 +293,26 @@ public class ClassPosts extends AppCompatActivity implements View.OnClickListene
         } else {
 
             statusparent.setErrorEnabled(false);
+
+        }
+
+        if (section.equals("")) {
+
+            slide();
+
+            notification.setVisibility(View.VISIBLE);
+
+            notification.setBackground(getResources().getDrawable(R.drawable.notificationred));
+
+            notification.setText("Update Your Section First");
+
+            return;
+
+        }
+
+        if (!section.equals("")) {
+
+            userclass = department + "-" + section;
 
         }
 
@@ -510,6 +545,8 @@ public class ClassPosts extends AppCompatActivity implements View.OnClickListene
 
                 params.put(KEY_REG, registrationnumber);
 
+                params.put(KEY_CLASS, userclass);
+
                 params.put(KEY_PRIVILEGE, privilege);
 
                 params.put(KEY_IMAGE, image);
@@ -580,7 +617,7 @@ public class ClassPosts extends AppCompatActivity implements View.OnClickListene
 
                         String error = volleyError.toString();
 
-                        Toast.makeText(ClassPosts.this, "Unstable Internet Connection!", Toast.LENGTH_LONG).show();
+                        Toast.makeText(ClassPosts.this, error, Toast.LENGTH_LONG).show();
                     }
 
                 }) {
@@ -601,6 +638,8 @@ public class ClassPosts extends AppCompatActivity implements View.OnClickListene
                 params.put(KEY_NAME, name);
 
                 params.put(KEY_REG, registrationnumber);
+
+                params.put(KEY_CLASS, userclass);
 
                 params.put(KEY_PRIVILEGE, privilege);
 
@@ -676,9 +715,7 @@ public class ClassPosts extends AppCompatActivity implements View.OnClickListene
 
                 validation();
 
-            }
-
-            else {
+            } else {
 
                 slide();
 

@@ -38,8 +38,8 @@
       <file leaf-file-name="Dashboard.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/srmvdp/huddle/Dashboard.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-3774">
-              <caret line="185" column="0" selection-start-line="185" selection-start-column="0" selection-end-line="185" selection-end-column="0" />
+            <state relative-caret-position="382">
+              <caret line="86" column="8" selection-start-line="86" selection-start-column="8" selection-end-line="92" selection-end-column="53" />
               <folding />
             </state>
           </provider>
@@ -48,17 +48,17 @@
       <file leaf-file-name="ClassPosts.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/srmvdp/huddle/ClassPosts.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="406">
-              <caret line="704" column="58" selection-start-line="704" selection-start-column="58" selection-end-line="704" selection-end-column="58" />
+            <state relative-caret-position="6218">
+              <caret line="474" column="26" selection-start-line="474" selection-start-column="26" selection-end-line="474" selection-end-column="56" />
               <folding>
-                <element signature="e#5757#5804#0" expanded="true" />
-                <element signature="e#8179#8784#0" expanded="true" />
-                <element signature="e#8783#8784#0" expanded="true" />
-                <element signature="e#8835#9266#0" expanded="true" />
-                <element signature="e#9265#9266#0" expanded="true" />
-                <element signature="e#16592#16639#0" expanded="true" />
-                <element signature="e#17392#17436#0" expanded="true" />
-                <element signature="e#17932#17979#0" expanded="true" />
+                <element signature="e#6161#6208#0" expanded="true" />
+                <element signature="e#8988#9593#0" expanded="true" />
+                <element signature="e#9592#9593#0" expanded="true" />
+                <element signature="e#9644#10075#0" expanded="true" />
+                <element signature="e#10074#10075#0" expanded="true" />
+                <element signature="e#17464#17511#0" expanded="true" />
+                <element signature="e#18264#18308#0" expanded="true" />
+                <element signature="e#18804#18851#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -1911,6 +1911,30 @@
               <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Huddle2" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Huddle2" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidSourceTypeNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
       <pane id="ProjectPane" />
@@ -2324,14 +2348,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/srmvdp/huddle/Dashboard.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-3774">
-          <caret line="185" column="0" selection-start-line="185" selection-start-column="0" selection-end-line="185" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1986">
@@ -2374,19 +2390,27 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/srmvdp/huddle/Dashboard.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="382">
+          <caret line="86" column="8" selection-start-line="86" selection-start-column="8" selection-end-line="92" selection-end-column="53" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/srmvdp/huddle/ClassPosts.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="406">
-          <caret line="704" column="58" selection-start-line="704" selection-start-column="58" selection-end-line="704" selection-end-column="58" />
+        <state relative-caret-position="6218">
+          <caret line="474" column="26" selection-start-line="474" selection-start-column="26" selection-end-line="474" selection-end-column="56" />
           <folding>
-            <element signature="e#5757#5804#0" expanded="true" />
-            <element signature="e#8179#8784#0" expanded="true" />
-            <element signature="e#8783#8784#0" expanded="true" />
-            <element signature="e#8835#9266#0" expanded="true" />
-            <element signature="e#9265#9266#0" expanded="true" />
-            <element signature="e#16592#16639#0" expanded="true" />
-            <element signature="e#17392#17436#0" expanded="true" />
-            <element signature="e#17932#17979#0" expanded="true" />
+            <element signature="e#6161#6208#0" expanded="true" />
+            <element signature="e#8988#9593#0" expanded="true" />
+            <element signature="e#9592#9593#0" expanded="true" />
+            <element signature="e#9644#10075#0" expanded="true" />
+            <element signature="e#10074#10075#0" expanded="true" />
+            <element signature="e#17464#17511#0" expanded="true" />
+            <element signature="e#18264#18308#0" expanded="true" />
+            <element signature="e#18804#18851#0" expanded="true" />
           </folding>
         </state>
       </provider>

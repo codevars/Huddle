@@ -5,61 +5,78 @@
     density="xxhdpi"
     format="8"
     plugin-version="2.2.3"
-    timestamp="115386633982079"
+    timestamp="147796039751960"
     token="1780684749105911980"
     verifier="COMPATIBLE" >
 
     <task
         name="javac"
-        duration="1874" />
+        duration="1986" />
     <task
         name="instant-run-dex"
-        duration="849" />
+        duration="867" />
     <task
         name="instant-run-transform"
-        duration="140" />
+        duration="409" />
     <task
         name="verifier"
-        duration="164" />
+        duration="57" />
 
     <artifact
         location="C:\Users\gregh_000\Desktop\Github\Huddle2\app\build\intermediates\reload-dex\debug\classes.dex"
         type="RELOAD_DEX" />
 
     <build
-        timestamp="115053483512615"
-        verifier="MANIFEST_FILE_CHANGE" >
+        timestamp="147142225306219"
+        verifier="FULL_BUILD_REQUESTED" >
         <artifact
             location="C:\Users\gregh_000\Desktop\Github\Huddle2\app\build\outputs\apk\app-debug.apk"
             type="MAIN" />
     </build>
     <build
-        timestamp="115306795490775"
-        verifier="COLD_SWAP_REQUESTED" >
+        timestamp="147355311633784"
+        verifier="COMPATIBLE" >
         <artifact
-            location="C:\Users\gregh_000\Desktop\Github\Huddle2\app\build\intermediates\instant-run-resources\resources-debug.ir.ap_"
-            type="RESOURCES" />
-        <artifact
-            location="C:\Users\gregh_000\Desktop\Github\Huddle2\app\build\intermediates\transforms\dex\debug\folders\1000\5\slice_0\classes.dex"
-            type="DEX" />
-        <artifact
-            location="C:\Users\gregh_000\Desktop\Github\Huddle2\app\build\intermediates\transforms\dex\debug\folders\1000\5\slice_4\classes.dex"
-            type="DEX" />
-        <artifact
-            location="C:\Users\gregh_000\Desktop\Github\Huddle2\app\build\intermediates\transforms\dex\debug\folders\1000\5\slice_2\classes.dex"
-            type="DEX" />
-        <artifact
-            location="C:\Users\gregh_000\Desktop\Github\Huddle2\app\build\intermediates\transforms\dex\debug\folders\1000\5\slice_5\classes.dex"
-            type="DEX" />
-        <artifact
-            location="C:\Users\gregh_000\Desktop\Github\Huddle2\app\build\intermediates\transforms\dex\debug\folders\1000\5\slice_8\classes.dex"
-            type="DEX" />
-        <artifact
-            location="C:\Users\gregh_000\Desktop\Github\Huddle2\app\build\intermediates\transforms\dex\debug\folders\1000\5\slice_9\classes.dex"
-            type="DEX" />
+            location="C:\Users\gregh_000\Desktop\Github\Huddle2\app\build\intermediates\builds\debug\147355311633784\classes.dex"
+            type="RELOAD_DEX" />
     </build>
     <build
-        timestamp="115386633982079"
+        timestamp="147598420668267"
+        verifier="COMPATIBLE" >
+        <artifact
+            location="C:\Users\gregh_000\Desktop\Github\Huddle2\app\build\intermediates\builds\debug\147598420668267\classes.dex"
+            type="RELOAD_DEX" />
+    </build>
+    <build
+        timestamp="147640992584529"
+        verifier="COMPATIBLE" >
+        <artifact
+            location="C:\Users\gregh_000\Desktop\Github\Huddle2\app\build\intermediates\builds\debug\147640992584529\classes.dex"
+            type="RELOAD_DEX" />
+    </build>
+    <build
+        timestamp="147675734052964"
+        verifier="COMPATIBLE" >
+        <artifact
+            location="C:\Users\gregh_000\Desktop\Github\Huddle2\app\build\intermediates\builds\debug\147675734052964\classes.dex"
+            type="RELOAD_DEX" />
+    </build>
+    <build
+        timestamp="147730748625734"
+        verifier="COMPATIBLE" >
+        <artifact
+            location="C:\Users\gregh_000\Desktop\Github\Huddle2\app\build\intermediates\builds\debug\147730748625734\classes.dex"
+            type="RELOAD_DEX" />
+    </build>
+    <build
+        timestamp="147772909704743"
+        verifier="COMPATIBLE" >
+        <artifact
+            location="C:\Users\gregh_000\Desktop\Github\Huddle2\app\build\intermediates\builds\debug\147772909704743\classes.dex"
+            type="RELOAD_DEX" />
+    </build>
+    <build
+        timestamp="147796039751960"
         verifier="COMPATIBLE" >
         <artifact
             location="C:\Users\gregh_000\Desktop\Github\Huddle2\app\build\intermediates\reload-dex\debug\classes.dex"
