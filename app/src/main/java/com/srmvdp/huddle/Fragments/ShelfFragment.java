@@ -142,8 +142,6 @@ public class ShelfFragment extends Fragment implements SwipeRefreshLayout.OnRefr
 
         updatepanel.setVisibility(View.GONE);
 
-        loadSpinner();
-
         infoCheck();
 
         loadCache();
@@ -162,13 +160,37 @@ public class ShelfFragment extends Fragment implements SwipeRefreshLayout.OnRefr
     }
 
 
-    private void loadSpinner() {
+    private void loadSpinner(String department) {
 
-        String sections[] = {"Select Section", "A", "B", "C", "D", "E"};
+        String cse[] = {"Select Section", "A", "B", "C", "D", "E"};
 
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(getContext(), R.layout.spinner, sections);
+        String mech[] = {"Select Section", "A", "B", "C"};
 
-        sectionspinner.setAdapter(adapter);
+        String ece[] = {"Select Section", "A", "B"};
+
+        if (department.equalsIgnoreCase("CSE")) {
+
+            ArrayAdapter<String> adapter = new ArrayAdapter<String>(getContext(), R.layout.spinner, cse);
+
+            sectionspinner.setAdapter(adapter);
+
+        }
+
+        else if (department.equalsIgnoreCase("MECH")) {
+
+            ArrayAdapter<String> adapter = new ArrayAdapter<String>(getContext(), R.layout.spinner, mech);
+
+            sectionspinner.setAdapter(adapter);
+
+        }
+
+        if (department.equalsIgnoreCase("ECE")) {
+
+            ArrayAdapter<String> adapter = new ArrayAdapter<String>(getContext(), R.layout.spinner, ece);
+
+            sectionspinner.setAdapter(adapter);
+
+        }
 
     }
 
@@ -194,6 +216,24 @@ public class ShelfFragment extends Fragment implements SwipeRefreshLayout.OnRefr
         } else {
 
             VALID = false;
+
+            if (department.equalsIgnoreCase("CSE")) {
+
+                loadSpinner("CSE");
+
+            }
+
+            else if (department.equalsIgnoreCase("MECH")) {
+
+                loadSpinner("MECH");
+
+            }
+
+            else if (department.equalsIgnoreCase("ECE")) {
+
+                loadSpinner("ECE");
+
+            }
 
             slide();
 

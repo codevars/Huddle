@@ -143,7 +143,15 @@
             android:theme="@style/Theme.Design.Light" />
         <activity
             android:name=".Authentication.ChangePassword"
-            android:screenOrientation="portrait"/>
+            android:screenOrientation="portrait" />
+        <activity android:name=".Subjects.Physics" />
+        <activity android:name=".Subjects.Chemistry" />
+        <activity android:name=".Subjects.Maths" />
+        <activity android:name=".Subjects.Civil" />
+        <activity android:name=".Subjects.English" />
+        <activity android:name=".Subjects.Electrical" />
+        <activity android:name=".Subjects.Scilab" />
+        <activity android:name=".Subjects.Mechanical"></activity>
     </application>
 
 </manifest>
