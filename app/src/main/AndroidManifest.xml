@@ -135,7 +135,7 @@
             android:name=".Teachers.TeacherList"
             android:label="Teachers"
             android:screenOrientation="portrait"
-            android:theme="@style/Theme.Design.Light" />
+            android:theme="@style/AppThemeNoActionBar" />
         <activity
             android:name=".ClassPosts"
             android:label="Post"

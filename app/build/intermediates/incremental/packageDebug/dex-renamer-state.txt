@@ -1,7 +1,0 @@
-#Wed Feb 15 17:57:41 IST 2017
-base.0=C\:\\Users\\gregh_000\\Desktop\\Github\\Huddle2\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\instant-run_4443130ad4d5991ee3a1d030fa7122c3c425eea2
-renamed.1=classes.dex
-renamed.0=classes2.dex
-file.1=C\:\\Users\\gregh_000\\Desktop\\Github\\Huddle2\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\instant-run-bootstrap_9f7588d38b1b5529187efee41284f73458d2d876\\classes.dex
-base.1=C\:\\Users\\gregh_000\\Desktop\\Github\\Huddle2\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\instant-run-bootstrap_9f7588d38b1b5529187efee41284f73458d2d876
-file.0=C\:\\Users\\gregh_000\\Desktop\\Github\\Huddle2\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\instant-run_4443130ad4d5991ee3a1d030fa7122c3c425eea2\\classes.dex
