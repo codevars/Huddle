@@ -1,6 +1,6 @@
 -- Merging decision tree log ---
 manifest
-ADDED from C:\Users\gregh_000\Desktop\Github\Huddle2\app\src\main\AndroidManifest.xml:2:1-149:12
+ADDED from C:\Users\gregh_000\Desktop\Github\Huddle2\app\src\main\AndroidManifest.xml:2:1-157:12
 	package
 		ADDED from C:\Users\gregh_000\Desktop\Github\Huddle2\app\src\main\AndroidManifest.xml:3:5-32
 		INJECTED from C:\Users\gregh_000\Desktop\Github\Huddle2\app\src\main\AndroidManifest.xml
@@ -56,7 +56,7 @@ ADDED from C:\Users\gregh_000\Desktop\Github\Huddle2\app\src\main\AndroidManifes
 	android:name
 		ADDED from C:\Users\gregh_000\Desktop\Github\Huddle2\app\src\main\AndroidManifest.xml:13:22-71
 application
-ADDED from C:\Users\gregh_000\Desktop\Github\Huddle2\app\src\main\AndroidManifest.xml:15:5-147:19
+ADDED from C:\Users\gregh_000\Desktop\Github\Huddle2\app\src\main\AndroidManifest.xml:15:5-155:19
 MERGED from [com.android.support:design:24.2.1] C:\Users\gregh_000\Desktop\Github\Huddle2\app\build\intermediates\exploded-aar\com.android.support\design\24.2.1\AndroidManifest.xml:22:5-20
 MERGED from [de.hdodenhof:circleimageview:1.2.1] C:\Users\gregh_000\Desktop\Github\Huddle2\app\build\intermediates\exploded-aar\de.hdodenhof\circleimageview\1.2.1\AndroidManifest.xml:9:5-20
 MERGED from [com.google.firebase:firebase-auth:9.2.0] C:\Users\gregh_000\Desktop\Github\Huddle2\app\build\intermediates\exploded-aar\com.google.firebase\firebase-auth\9.2.0\AndroidManifest.xml:20:5-21:19
@@ -323,11 +323,43 @@ ADDED from C:\Users\gregh_000\Desktop\Github\Huddle2\app\src\main\AndroidManifes
 	android:name
 		ADDED from C:\Users\gregh_000\Desktop\Github\Huddle2\app\src\main\AndroidManifest.xml:140:13-39
 activity#com.srmvdp.huddle.Authentication.ChangePassword
-ADDED from C:\Users\gregh_000\Desktop\Github\Huddle2\app\src\main\AndroidManifest.xml:144:9-146:51
+ADDED from C:\Users\gregh_000\Desktop\Github\Huddle2\app\src\main\AndroidManifest.xml:144:9-146:52
 	android:screenOrientation
 		ADDED from C:\Users\gregh_000\Desktop\Github\Huddle2\app\src\main\AndroidManifest.xml:146:13-49
 	android:name
 		ADDED from C:\Users\gregh_000\Desktop\Github\Huddle2\app\src\main\AndroidManifest.xml:145:13-58
+activity#com.srmvdp.huddle.Subjects.Physics
+ADDED from C:\Users\gregh_000\Desktop\Github\Huddle2\app\src\main\AndroidManifest.xml:147:9-54
+	android:name
+		ADDED from C:\Users\gregh_000\Desktop\Github\Huddle2\app\src\main\AndroidManifest.xml:147:19-51
+activity#com.srmvdp.huddle.Subjects.Chemistry
+ADDED from C:\Users\gregh_000\Desktop\Github\Huddle2\app\src\main\AndroidManifest.xml:148:9-56
+	android:name
+		ADDED from C:\Users\gregh_000\Desktop\Github\Huddle2\app\src\main\AndroidManifest.xml:148:19-53
+activity#com.srmvdp.huddle.Subjects.Maths
+ADDED from C:\Users\gregh_000\Desktop\Github\Huddle2\app\src\main\AndroidManifest.xml:149:9-52
+	android:name
+		ADDED from C:\Users\gregh_000\Desktop\Github\Huddle2\app\src\main\AndroidManifest.xml:149:19-49
+activity#com.srmvdp.huddle.Subjects.Civil
+ADDED from C:\Users\gregh_000\Desktop\Github\Huddle2\app\src\main\AndroidManifest.xml:150:9-52
+	android:name
+		ADDED from C:\Users\gregh_000\Desktop\Github\Huddle2\app\src\main\AndroidManifest.xml:150:19-49
+activity#com.srmvdp.huddle.Subjects.English
+ADDED from C:\Users\gregh_000\Desktop\Github\Huddle2\app\src\main\AndroidManifest.xml:151:9-54
+	android:name
+		ADDED from C:\Users\gregh_000\Desktop\Github\Huddle2\app\src\main\AndroidManifest.xml:151:19-51
+activity#com.srmvdp.huddle.Subjects.Electrical
+ADDED from C:\Users\gregh_000\Desktop\Github\Huddle2\app\src\main\AndroidManifest.xml:152:9-57
+	android:name
+		ADDED from C:\Users\gregh_000\Desktop\Github\Huddle2\app\src\main\AndroidManifest.xml:152:19-54
+activity#com.srmvdp.huddle.Subjects.Scilab
+ADDED from C:\Users\gregh_000\Desktop\Github\Huddle2\app\src\main\AndroidManifest.xml:153:9-53
+	android:name
+		ADDED from C:\Users\gregh_000\Desktop\Github\Huddle2\app\src\main\AndroidManifest.xml:153:19-50
+activity#com.srmvdp.huddle.Subjects.Mechanical
+ADDED from C:\Users\gregh_000\Desktop\Github\Huddle2\app\src\main\AndroidManifest.xml:154:9-66
+	android:name
+		ADDED from C:\Users\gregh_000\Desktop\Github\Huddle2\app\src\main\AndroidManifest.xml:154:19-54
 uses-sdk
 INJECTED from C:\Users\gregh_000\Desktop\Github\Huddle2\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 MERGED from [com.android.support:design:24.2.1] C:\Users\gregh_000\Desktop\Github\Huddle2\app\build\intermediates\exploded-aar\com.android.support\design\24.2.1\AndroidManifest.xml:20:5-43

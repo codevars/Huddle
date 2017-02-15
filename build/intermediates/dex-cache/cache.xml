@@ -25,7 +25,7 @@
         jumboMode="true"
         optimize="true"
         revision="25.0.1"
-        sha1="92ae52fefc3b696260d4c2f98374670243d9a1cd">
+        sha1="ea95e2a95712a302a641365c4f000414e1281b8e">
         <dex dex="C:\Users\gregh_000\Desktop\Github\Huddle2\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run-bootstrap_9f7588d38b1b5529187efee41284f73458d2d876\classes.dex" />
     </item>
     <item
@@ -48,21 +48,21 @@
     </item>
     <item
         is-multidex="true"
-        jar="C:\Users\gregh_000\Desktop\Github\Huddle2\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.1"
-        sha1="77c7adb2e5eda830ebfb5e5e10f18b6310f43f93">
-        <dex dex="C:\Users\gregh_000\Desktop\Github\Huddle2\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run_4443130ad4d5991ee3a1d030fa7122c3c425eea2\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
         jar="C:\Users\gregh_000\Desktop\Github\Huddle2\app\build\intermediates\exploded-aar\com.android.support\support-compat\24.2.1\jars\libs\internal_impl-24.2.1.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.1"
         sha1="7e4389bd133359a2ff88623ff1e4ff93d6e6f780">
         <dex dex="C:\Users\gregh_000\Desktop\Github\Huddle2\app\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-24.2.1_4b962dcd02225c9eae451783776f9d3f05398a59\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\gregh_000\Desktop\Github\Huddle2\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.1"
+        sha1="0a58dd725781962f8ae32c7e8f4450c9c1b022e5">
+        <dex dex="C:\Users\gregh_000\Desktop\Github\Huddle2\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run_4443130ad4d5991ee3a1d030fa7122c3c425eea2\classes.dex" />
     </item>
     <item
         is-multidex="true"
@@ -129,21 +129,21 @@
     </item>
     <item
         is-multidex="true"
-        jar="C:\Users\gregh_000\Desktop\Github\Huddle2\app\build\intermediates\exploded-aar\com.android.support\support-compat\24.2.1\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.1"
-        sha1="0ecb4b595fa0f0f8018a149ace3ea6525624f94e">
-        <dex dex="C:\Users\gregh_000\Desktop\Github\Huddle2\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-compat-24.2.1_fa666954c8a571879f96affac7429ad56e497701\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
         jar="C:\Users\gregh_000\Desktop\Github\Huddle2\app\build\intermediates\exploded-aar\com.android.support\support-vector-drawable\24.2.1\jars\classes.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.1"
         sha1="d5c731fc64c03dfe04d51134955b483551c35849">
         <dex dex="C:\Users\gregh_000\Desktop\Github\Huddle2\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-vector-drawable-24.2.1_d6c8e5898411a4056cb6b045fd6c7da9c88c8597\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\gregh_000\Desktop\Github\Huddle2\app\build\intermediates\exploded-aar\com.android.support\support-compat\24.2.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.1"
+        sha1="0ecb4b595fa0f0f8018a149ace3ea6525624f94e">
+        <dex dex="C:\Users\gregh_000\Desktop\Github\Huddle2\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-compat-24.2.1_fa666954c8a571879f96affac7429ad56e497701\classes.dex" />
     </item>
     <item
         is-multidex="true"

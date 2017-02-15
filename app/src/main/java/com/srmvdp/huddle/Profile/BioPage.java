@@ -57,6 +57,8 @@ public class BioPage extends AppCompatActivity implements SwipeRefreshLayout.OnR
 
     private String section;
 
+    private String userclass;
+
     private TextView name;
 
     private TextView posts;
@@ -109,6 +111,8 @@ public class BioPage extends AppCompatActivity implements SwipeRefreshLayout.OnR
 
         section = sec.get(SessionManagement.SECTION);
 
+        userclass = department + "-" + section;
+
         button = (Button) findViewById(R.id.editbutton);
 
         button.setOnClickListener(this);
@@ -145,7 +149,7 @@ public class BioPage extends AppCompatActivity implements SwipeRefreshLayout.OnR
 
         initialInternetCheck();
 
-        requestFeed(registrationnumber);
+        requestFeed(registrationnumber, userclass);
 
         loadCache();
 
@@ -394,7 +398,7 @@ public class BioPage extends AppCompatActivity implements SwipeRefreshLayout.OnR
     }
 
 
-    private void requestFeed(final String registrationnumber) {
+    private void requestFeed(final String registrationnumber, final String theclass) {
         class RegisterUser extends AsyncTask<String, Void, String> {
             RegisterUserClass ruc = new RegisterUserClass();
 
@@ -474,6 +478,7 @@ public class BioPage extends AppCompatActivity implements SwipeRefreshLayout.OnR
 
                 HashMap<String, String> data = new HashMap<String, String>();
                 data.put("registrationnumber", params[0]);
+                data.put("userclass", params[1]);
 
                 String result = ruc.sendPostRequest(REQUEST_FEED, data);
 
@@ -483,7 +488,7 @@ public class BioPage extends AppCompatActivity implements SwipeRefreshLayout.OnR
 
         RegisterUser ru = new RegisterUser();
 
-        ru.execute(registrationnumber);
+        ru.execute(registrationnumber, theclass);
 
     }
 
