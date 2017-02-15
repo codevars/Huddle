@@ -1,0 +1,165 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/introfive">
+
+
+    <LinearLayout
+        android:id="@+id/center_point"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_centerInParent="true"
+        android:orientation="vertical" />
+
+    <LinearLayout
+        android:id="@+id/containerone"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/center_point"
+        android:baselineAligned="false">
+
+
+        <LinearLayout
+            android:id="@+id/adminpostscontainer"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="10sp"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center">
+
+
+            <ImageView
+                android:id="@+id/adminposts"
+                android:layout_width="150sp"
+                android:layout_height="wrap_content"
+                android:background="?attr/selectableItemBackground"
+                android:clickable="true"
+                android:contentDescription="@string/image"
+                android:src="@drawable/post" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="@string/introtwoheader"
+                android:textColor="#fff"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                android:layout_marginTop="-40sp" />
+
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="10sp"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center">
+
+
+            <ImageView
+                android:id="@+id/adminnews"
+                android:layout_width="150sp"
+                android:layout_height="wrap_content"
+                android:background="?attr/selectableItemBackground"
+                android:clickable="true"
+                android:contentDescription="@string/image"
+                android:src="@drawable/news" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="@string/introthreeheader"
+                android:textColor="#fff"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                android:layout_marginTop="-40sp"/>
+
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/containertwo"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/center_point"
+        android:baselineAligned="false">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="10sp"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center">
+
+
+            <ImageView
+                android:id="@+id/adminusers"
+                android:layout_width="150sp"
+                android:layout_height="wrap_content"
+                android:background="?attr/selectableItemBackground"
+                android:clickable="true"
+                android:contentDescription="@string/image"
+                android:src="@drawable/users" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="@string/introfourheader"
+                android:textColor="#fff"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                android:layout_marginTop="-40sp"/>
+
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="10sp"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center">
+
+
+            <ImageView
+                android:id="@+id/adminnotifications"
+                android:layout_width="150sp"
+                android:layout_height="wrap_content"
+                android:background="?attr/selectableItemBackground"
+                android:clickable="true"
+                android:contentDescription="@string/image"
+                android:src="@drawable/notification" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="@string/introfiveheader"
+                android:textColor="#fff"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                android:layout_marginTop="-40sp"/>
+
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+
+</RelativeLayout>
