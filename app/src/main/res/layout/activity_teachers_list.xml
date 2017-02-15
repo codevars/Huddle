@@ -4,17 +4,46 @@
     android:id="@+id/activity_teachers_list"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.srmvdp.huddle.Teachers.TeacherList">
+    tools:context="com.srmvdp.huddle.Teachers.TeacherList"
+    android:background="#fff">
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:id="@+id/tListLn1"
+        android:layout_marginTop="20dp"
+        android:layout_centerHorizontal="true">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Teachers"
+            android:layout_gravity="center"
+            android:textColor="#000"
+            android:gravity="center_horizontal"
+            android:id="@+id/tListTitle"
+            android:textSize="30dp"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_below="@id/tListLn1">
 
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:drawableLeft="@drawable/search"
-            android:hint="@string/searchT" />
+            android:padding="10dp"
+            android:textSize="20dp"
+            android:drawableLeft="@drawable/search4"
+            android:hint="@string/searchT"
+            android:gravity="center_horizontal"
+            android:id="@+id/tListEdit1"
+            android:background="@drawable/blackmaterial" />
 
     </LinearLayout>
 

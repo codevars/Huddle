@@ -151,7 +151,7 @@
             android:name="com.srmvdp.huddle.Teachers.TeacherList"
             android:label="Teachers"
             android:screenOrientation="portrait"
-            android:theme="@style/Theme.Design.Light" />
+            android:theme="@style/AppThemeNoActionBar" />
         <activity
             android:name="com.srmvdp.huddle.ClassPosts"
             android:label="Post"
@@ -160,6 +160,14 @@
         <activity
             android:name="com.srmvdp.huddle.Authentication.ChangePassword"
             android:screenOrientation="portrait" />
+        <activity android:name="com.srmvdp.huddle.Subjects.Physics" />
+        <activity android:name="com.srmvdp.huddle.Subjects.Chemistry" />
+        <activity android:name="com.srmvdp.huddle.Subjects.Maths" />
+        <activity android:name="com.srmvdp.huddle.Subjects.Civil" />
+        <activity android:name="com.srmvdp.huddle.Subjects.English" />
+        <activity android:name="com.srmvdp.huddle.Subjects.Electrical" />
+        <activity android:name="com.srmvdp.huddle.Subjects.Scilab" />
+        <activity android:name="com.srmvdp.huddle.Subjects.Mechanical" />
         <activity
             android:name="com.google.android.gms.common.api.GoogleApiActivity"
             android:exported="false"
