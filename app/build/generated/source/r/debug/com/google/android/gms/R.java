@@ -96,8 +96,8 @@ public final class R {
 		public static final int normal = 0x7f0d000c;
 		public static final int radio = 0x7f0d005e;
 		public static final int standard = 0x7f0d003e;
-		public static final int text = 0x7f0d0126;
-		public static final int text2 = 0x7f0d0124;
+		public static final int text = 0x7f0d012c;
+		public static final int text2 = 0x7f0d012a;
 		public static final int url = 0x7f0d0087;
 		public static final int wide = 0x7f0d003f;
 		public static final int wrap_content = 0x7f0d0020;

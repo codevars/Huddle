@@ -76,7 +76,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:drawableRight="@drawable/name3"
-                        android:hint="Name" />
+                        android:hint="Name"
+                        android:id="@+id/nameEdit"/>
 
                 </LinearLayout>
 
@@ -97,6 +98,7 @@
                         android:drawableLeft="@drawable/bio2"
                         android:hint="Bio"
                         android:inputType="textMultiLine"
+                        android:id="@+id/bioEdit"
 
                         />
 
@@ -117,7 +119,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:drawableLeft="@drawable/rollno"
-                        android:hint="Roll no (Sensitive)" />
+                        android:hint="Roll no (Sensitive)"
+                        android:id="@+id/rollnoEdit"/>
 
                 </LinearLayout>
 
@@ -169,7 +172,8 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:drawableLeft="@drawable/name"
-                            android:hint="Email" />
+                            android:hint="Email"
+                            android:id="@+id/emailEdit"/>
 
                     </LinearLayout>
 
@@ -187,7 +191,8 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:drawableLeft="@drawable/name"
-                            android:hint="Phone Number:" />
+                            android:hint="Phone Number:"
+                            android:id="@+id/phoneEdit"/>
 
                     </LinearLayout>
 
@@ -198,6 +203,7 @@
                         android:layout_marginBottom="20dp"
                         android:layout_marginLeft="25dp"
                         android:layout_marginRight="25dp"
+                        android:id="@+id/submitSelfProfile"
                         android:background="@drawable/customgreenbutton"
                         android:text="SUBMIT"
                         android:textColor="@color/colorPrimary" />
